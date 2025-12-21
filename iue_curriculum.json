@@ -1,0 +1,79 @@
+[
+    {
+        "department": "Electrical and Electronics Engineering",
+        "course_code": "Semester",
+        "course_name": "Automation and Industry 4.0",
+        "semester": "Theory(hour/week)",
+        "type": "ELECTIVE_COURSE",
+        "ects": "MCE 420",
+        "objectives": "The aim of this course is to provide Mechatronic Engineering students with basic knowledge on Industrial Automation Technologies and to provide basic analysis, design, and application skills with a program enriched with application examples.",
+        "description": "Introduction to Automation of Production Systems, components of the automation system, effective use of hardware and software tools used in automation, selection and installation of an appropriate automation system for a production system, application of digital and analog control structures, integration of basic mechanical, electrical, and computer programming skill, project examples.",
+        "prerequisites": "None",
+        "weekly_topics": [
+            {
+                "week": "1",
+                "topic": "Introduction to Automation of Manufacturing Systems / Industrial Automation"
+            },
+            {
+                "week": "2",
+                "topic": "Introduction to Programmable Logic Controllers"
+            },
+            {
+                "week": "3",
+                "topic": "PLC Hardware and Software, Creating Hardware Configuration, Project Startup"
+            },
+            {
+                "week": "4",
+                "topic": "Electrotechnics; Relays and Contactors"
+            },
+            {
+                "week": "5",
+                "topic": "Logic Sensors; Proximity and Analog Sensors"
+            },
+            {
+                "week": "6",
+                "topic": "Boolean Logic Design, K-Map Method"
+            },
+            {
+                "week": "7",
+                "topic": "Logic Actuators; Solenoids, Valves, Pneumatic and Hydraulic Actuators, Midterm"
+            },
+            {
+                "week": "9",
+                "topic": "Ladder Logic (LD), Function Block Programming (FBD). Structured Programming (ST)"
+            },
+            {
+                "week": "10",
+                "topic": "Supervisory Control, SCADA, HMI"
+            },
+            {
+                "week": "11",
+                "topic": "Analog Signal Processing"
+            },
+            {
+                "week": "12",
+                "topic": "PWM Technique, Electric Motors"
+            },
+            {
+                "week": "13",
+                "topic": "Closed Loop Control, PID 2. VISA"
+            },
+            {
+                "week": "14",
+                "topic": "Closed Loop Control, PID"
+            },
+            {
+                "week": "15",
+                "topic": "Industrial Communication, BUS Systems, MCC, Motor Control Panels. Latest Innovations in Automation, Flexible Manufacturing Systems (FMS), Intelligent Computer Integrated Manufacturing Systems (iCIM) and Industry 4.0"
+            },
+            {
+                "week": "8",
+                "topic": "Midterm"
+            },
+            {
+                "week": "16",
+                "topic": "Final Exam"
+            }
+        ]
+    }
+]
