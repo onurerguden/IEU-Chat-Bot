@@ -13,6 +13,13 @@ class IUEScraper:
         }
         self.all_courses = []
 
+    def build_department_urls(self, sections):
+        base = "https://ects.ieu.edu.tr/new/akademik.php"
+        return {
+            name: f"{base}?section={section}&sid=curr"
+            for name, section in sections.items()
+        }
+
     def get_course_links(self, dept_url):
         print(f"\n--- Bölüm Sayfası İnceleniyor: {dept_url}")
         try:
@@ -30,6 +37,51 @@ class IUEScraper:
             print(f"HATA: Bölüm linkleri alınamadı: {e}")
             return []
 
+    def parse_curriculum(self, dept_url):
+        response = requests.get(dept_url, headers=self.headers, timeout=15)
+        soup = BeautifulSoup(response.content, "html.parser")
+
+        curriculum_map = {}
+
+        current_year = None
+        current_semester_name = None
+        current_semester_number = None
+
+        for row in soup.find_all("tr"):
+            title_cell = row.find("td", class_="title")
+            if title_cell:
+                title_text = title_cell.get_text(strip=True)
+
+                match = re.match(r"(\d+)\.\s*Year\s*(Fall|Spring)\s*Semester", title_text, re.IGNORECASE)
+                if match:
+                    current_year = int(match.group(1))
+                    sem_name = match.group(2).lower()
+
+                    if sem_name == "fall":
+                        current_semester_number = (current_year - 1) * 2 + 1
+                        current_semester_name = "FALL"
+                    else:
+                        current_semester_number = (current_year - 1) * 2 + 2
+                        current_semester_name = "SPRING"
+                continue
+
+            cells = row.find_all("td")
+            if len(cells) >= 3 and current_year and current_semester_number:
+                course_code = cells[0].get_text(strip=True)
+
+                ects = cells[-2].get_text(strip=True)
+                local_credit = cells[-1].get_text(strip=True)
+
+                curriculum_map[course_code] = {
+                    "year": current_year,
+                    "semester": current_semester_number,
+                    "semester_name": current_semester_name,
+                    "ects": int(ects) if ects.isdigit() else None,
+                    "local_credit": int(local_credit) if local_credit.isdigit() else None
+                }
+
+        return curriculum_map
+
     def scrape_course_details(self, url, department_name):
         try:
             if 'lang=en' not in url:
@@ -42,14 +94,15 @@ class IUEScraper:
                 "department": department_name,
                 "course_code": "",
                 "course_name": "",
-                "semester": "",
+                "semester": None,
                 "type": "",
-                "ects": "",
-                "local_credit": "",
+                "ects": None,
+                "local_credit": None,
                 "objectives": "",
                 "description": "",
                 "prerequisites": "None",
-                "weekly_topics": []
+                "weekly_topics": [],
+                "year": None,
             }
 
             # 1. TEMEL BİLGİLER (Code, Semester, ECTS vb. içeren id="my_table")
@@ -61,13 +114,30 @@ class IUEScraper:
 
                 info_map = dict(zip(headers, values))
                 course_data["course_code"] = info_map.get("Code", "")
-                course_data["semester"] = info_map.get("Semester", "")
-                course_data["ects"] = info_map.get("ECTS", "")
-                course_data["local_credit"] = (
-                    info_map.get("Local Credits") or
-                    info_map.get("Credits") or
-                    ""
-                )
+                # semester normalization
+                semester_raw = info_map.get("Semester", "").strip()
+
+                semester_map = {
+                    "FALL": 1,
+                    "SPRING": 2
+                }
+
+                if semester_raw.isdigit():
+                    semester_num = int(semester_raw)
+                elif semester_raw.upper() in semester_map:
+                    # fallback if only FALL / SPRING is given (cannot infer year)
+                    semester_num = None
+                else:
+                    semester_num = None
+
+                course_data["semester"] = semester_num
+
+                # ECTS numeric normalization
+                ects_raw = info_map.get("ECTS", "")
+                course_data["ects"] = int(ects_raw) if ects_raw.isdigit() else None
+                # Local credit numeric normalization
+                credit_raw = info_map.get("Local Credits") or info_map.get("Credits") or ""
+                course_data["local_credit"] = int(credit_raw) if credit_raw.isdigit() else None
 
             # 2. DERS ADI (H1 veya ilk tablodan)
             # Genelde <h1> içinde yazar veya ilk tablonun 2. hücresindedir
@@ -98,6 +168,9 @@ class IUEScraper:
                     parent_td = label_cell.find_parent('td') if label_cell.name != 'td' else label_cell
                     if parent_td and parent_td.find_next_sibling('td'):
                         course_data[key] = re.sub(r'\s+', ' ', parent_td.find_next_sibling('td').get_text()).strip()
+            # Normalize course type
+            if course_data["type"]:
+                course_data["type"] = course_data["type"].replace("_", " ").title()
 
             # 4. HAFTALIK KONULAR (id="weeks" tablosu)
             weeks_table = soup.find('table', id='weeks')
@@ -117,6 +190,7 @@ class IUEScraper:
 
     def run(self, departments):
         for dept_name, url in departments.items():
+            curriculum_map = self.parse_curriculum(url)
             course_links = self.get_course_links(url)
             print(f"--- {dept_name}: {len(course_links)} ders bulundu. İşleniyor...")
 
@@ -126,6 +200,15 @@ class IUEScraper:
                 if not code_match: continue
 
                 details = self.scrape_course_details(link, dept_name)
+
+                if details:
+                    code = details.get("course_code")
+                    if code in curriculum_map:
+                        details["year"] = curriculum_map[code]["year"]
+                        details["semester"] = curriculum_map[code]["semester"]
+                        details["semester_name"] = curriculum_map[code]["semester_name"]
+                        details["ects"] = curriculum_map[code]["ects"]
+                        details["local_credit"] = curriculum_map[code]["local_credit"]
 
                 if details and details["course_code"] and details["course_code"] != "N/A":
                     real_code = details["course_code"]
@@ -142,12 +225,13 @@ class IUEScraper:
 
 
 if __name__ == "__main__":
-    target_depts = {
-        "Software Engineering": "https://ects.ieu.edu.tr/new/akademik.php?section=se.cs.ieu.edu.tr&sid=curr",
-        "Computer Engineering": "https://ects.ieu.edu.tr/new/akademik.php?section=ce.cs.ieu.edu.tr&sid=curr",
-        "Industrial Engineering": "https://ects.ieu.edu.tr/new/akademik.php?section=is.cs.ieu.edu.tr&sid=curr",
-        "Electrical and Electronics Engineering": "https://ects.ieu.edu.tr/new/akademik.php?section=ete.cs.ieu.edu.tr&sid=curr"
+    DEPARTMENT_SECTIONS = {
+        "Software Engineering": "se.cs.ieu.edu.tr",
+        "Computer Engineering": "ce.cs.ieu.edu.tr",
+        "Industrial Engineering": "is.cs.ieu.edu.tr",
+        "Electrical and Electronics Engineering": "ete.cs.ieu.edu.tr"
     }
 
     scraper = IUEScraper()
+    target_depts = scraper.build_department_urls(DEPARTMENT_SECTIONS)
     scraper.run(target_depts)
