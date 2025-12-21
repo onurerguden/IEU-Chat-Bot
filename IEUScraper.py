@@ -72,12 +72,16 @@ class IUEScraper:
                 ects = cells[-2].get_text(strip=True)
                 local_credit = cells[-1].get_text(strip=True)
 
+                table = row.find_parent("table")
+                course_type = "elective" if table and "elective" in table.get("class", []) else "mandatory"
+
                 curriculum_map[course_code] = {
                     "year": current_year,
                     "semester": current_semester_number,
                     "semester_name": current_semester_name,
                     "ects": int(ects) if ects.isdigit() else None,
-                    "local_credit": int(local_credit) if local_credit.isdigit() else None
+                    "local_credit": int(local_credit) if local_credit.isdigit() else None,
+                    "type": course_type
                 }
 
         return curriculum_map
@@ -155,7 +159,6 @@ class IUEScraper:
             # 3. DETAYLI METİNLER (Objectives, Description, Prerequisites)
             # Bu kısımlar dikey tablolardadır: TD(Label) -> TD(Value)
             labels_map = {
-                "Course Type": "type",
                 "Course Objectives": "objectives",
                 "Course Description": "description",
                 "Prerequisites": "prerequisites"
@@ -168,9 +171,6 @@ class IUEScraper:
                     parent_td = label_cell.find_parent('td') if label_cell.name != 'td' else label_cell
                     if parent_td and parent_td.find_next_sibling('td'):
                         course_data[key] = re.sub(r'\s+', ' ', parent_td.find_next_sibling('td').get_text()).strip()
-            # Normalize course type
-            if course_data["type"]:
-                course_data["type"] = course_data["type"].replace("_", " ").title()
 
             # 4. HAFTALIK KONULAR (id="weeks" tablosu)
             weeks_table = soup.find('table', id='weeks')
@@ -204,11 +204,13 @@ class IUEScraper:
                 if details:
                     code = details.get("course_code")
                     if code in curriculum_map:
-                        details["year"] = curriculum_map[code]["year"]
-                        details["semester"] = curriculum_map[code]["semester"]
-                        details["semester_name"] = curriculum_map[code]["semester_name"]
-                        details["ects"] = curriculum_map[code]["ects"]
-                        details["local_credit"] = curriculum_map[code]["local_credit"]
+                        meta = curriculum_map[code]
+                        details["year"] = meta["year"]
+                        details["semester"] = meta["semester"]
+                        details["semester_name"] = meta["semester_name"]
+                        details["ects"] = meta["ects"]
+                        details["local_credit"] = meta["local_credit"]
+                        details["type"] = meta["type"]
 
                 if details and details["course_code"] and details["course_code"] != "N/A":
                     real_code = details["course_code"]
