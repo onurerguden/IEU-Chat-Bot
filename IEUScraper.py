@@ -11,7 +11,7 @@ class IUEScraper:
         self.headers = {
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
         }
-        self.all_courses = {}
+        self.all_courses = []
 
     def get_course_links(self, dept_url):
         print(f"\n--- Bölüm Sayfası İnceleniyor: {dept_url}")
@@ -45,6 +45,7 @@ class IUEScraper:
                 "semester": "",
                 "type": "",
                 "ects": "",
+                "local_credit": "",
                 "objectives": "",
                 "description": "",
                 "prerequisites": "None",
@@ -62,19 +63,24 @@ class IUEScraper:
                 course_data["course_code"] = info_map.get("Code", "")
                 course_data["semester"] = info_map.get("Semester", "")
                 course_data["ects"] = info_map.get("ECTS", "")
+                course_data["local_credit"] = (
+                    info_map.get("Local Credits") or
+                    info_map.get("Credits") or
+                    ""
+                )
 
             # 2. DERS ADI (H1 veya ilk tablodan)
             # Genelde <h1> içinde yazar veya ilk tablonun 2. hücresindedir
             h1_text = soup.find('h1')
             if h1_text:
-                course_data["course_name"] = h1_text.get_text(strip=True).replace(
+                course_data["course_name"] = re.sub(r'\s+', ' ', h1_text.get_text()).replace(
                     "COURSE INTRODUCTION AND APPLICATION INFORMATION", "").strip()
 
             # Eğer H1 boşsa tablodan dene
             if not course_data["course_name"]:
                 name_td = soup.find('td', string=re.compile("Course Name"))
                 if name_td:
-                    course_data["course_name"] = name_td.find_next_sibling('td').get_text(strip=True)
+                    course_data["course_name"] = re.sub(r'\s+', ' ', name_td.find_next_sibling('td').get_text()).strip()
 
             # 3. DETAYLI METİNLER (Objectives, Description, Prerequisites)
             # Bu kısımlar dikey tablolardadır: TD(Label) -> TD(Value)
@@ -91,7 +97,7 @@ class IUEScraper:
                     # En yakın TD'yi bul ve bir sonrakini al
                     parent_td = label_cell.find_parent('td') if label_cell.name != 'td' else label_cell
                     if parent_td and parent_td.find_next_sibling('td'):
-                        course_data[key] = parent_td.find_next_sibling('td').get_text(strip=True)
+                        course_data[key] = re.sub(r'\s+', ' ', parent_td.find_next_sibling('td').get_text()).strip()
 
             # 4. HAFTALIK KONULAR (id="weeks" tablosu)
             weeks_table = soup.find('table', id='weeks')
@@ -100,8 +106,8 @@ class IUEScraper:
                     cols = row.find_all('td')
                     if len(cols) >= 2:
                         course_data["weekly_topics"].append({
-                            "week": cols[0].get_text(strip=True),
-                            "topic": cols[1].get_text(strip=True)
+                            "week": re.sub(r'\s+', ' ', cols[0].get_text()).strip(),
+                            "topic": re.sub(r'\s+', ' ', cols[1].get_text()).strip()
                         })
 
             return course_data
@@ -119,27 +125,20 @@ class IUEScraper:
                 code_match = re.search(r'course_code=([^&]+)', link)
                 if not code_match: continue
 
-                temp_code = code_match.group(1).replace('+', ' ').replace('%20', ' ')
-
-                # ORTAK DERS KONTROLÜ (IUE 100, MATH 153 vb.)
-                if temp_code in self.all_courses:
-                    # print(f"Atlanıyor (Zaten var): {temp_code}")
-                    continue
-
                 details = self.scrape_course_details(link, dept_name)
 
                 if details and details["course_code"] and details["course_code"] != "N/A":
                     real_code = details["course_code"]
-                    self.all_courses[real_code] = details
+                    self.all_courses.append(details)
                     print(f"BAŞARILI: {real_code} - {details['course_name'][:30]}...")
 
                 time.sleep(0.1)
 
         # JSON Kayıt
         with open('iue_curriculum.json', 'w', encoding='utf-8') as f:
-            json.dump(list(self.all_courses.values()), f, ensure_ascii=False, indent=4)
+            json.dump(self.all_courses, f, ensure_ascii=False, indent=4)
 
-        print(f"\nİŞLEM TAMAM! Toplam {len(self.all_courses)} benzersiz ders kaydedildi.")
+        print(f"\nİŞLEM TAMAM! Toplam {len(self.all_courses)} ders kaydedildi.")
 
 
 if __name__ == "__main__":
