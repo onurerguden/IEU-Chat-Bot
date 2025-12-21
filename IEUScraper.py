@@ -14,7 +14,7 @@ class IUEScraper:
         self.all_courses = {}
 
     def get_course_links(self, dept_url):
-        print(f"\n--- Sayfa inceleniyor: {dept_url}")
+        print(f"\n--- Bölüm Sayfası İnceleniyor: {dept_url}")
         try:
             response = requests.get(dept_url, headers=self.headers, timeout=15)
             soup = BeautifulSoup(response.content, 'html.parser')
@@ -27,7 +27,7 @@ class IUEScraper:
                     links.append(full_link)
             return links
         except Exception as e:
-            print(f"HATA: Linkler alınamadı: {e}")
+            print(f"HATA: Bölüm linkleri alınamadı: {e}")
             return []
 
     def scrape_course_details(self, url, department_name):
@@ -38,7 +38,6 @@ class IUEScraper:
             response = requests.get(url, headers=self.headers, timeout=10)
             soup = BeautifulSoup(response.content, 'html.parser')
 
-            # Veri iskeleti
             course_data = {
                 "department": department_name,
                 "course_code": "",
@@ -52,36 +51,52 @@ class IUEScraper:
                 "weekly_topics": []
             }
 
-            # TÜM tablo hücrelerini (td ve th) tara
-            cells = soup.find_all(['td', 'th'])
-            for i, cell in enumerate(cells):
-                text = cell.get_text(strip=True)
+            # 1. TEMEL BİLGİLER (Code, Semester, ECTS vb. içeren id="my_table")
+            # Bu tablo yatay bir yapıdadır: THEAD başlıklar, TBODY veriler
+            basic_info_table = soup.find('table', id='my_table')
+            if basic_info_table:
+                headers = [th.get_text(strip=True) for th in basic_info_table.find('thead').find_all('th')]
+                values = [td.get_text(strip=True) for td in basic_info_table.find('tbody').find_all('td')]
 
-                # Eğer hücrede anahtar kelime varsa, bir sonraki hücre veridir
-                if i + 1 < len(cells):
-                    next_val = cells[i + 1].get_text(strip=True)
+                info_map = dict(zip(headers, values))
+                course_data["course_code"] = info_map.get("Code", "")
+                course_data["semester"] = info_map.get("Semester", "")
+                course_data["ects"] = info_map.get("ECTS", "")
 
-                    if text == "Code":
-                        course_data["course_code"] = next_val
-                    elif text == "Course Name":
-                        course_data["course_name"] = next_val
-                    elif text == "Semester":
-                        course_data["semester"] = next_val
-                    elif text == "ECTS":
-                        course_data["ects"] = next_val
-                    elif text == "Course Type":
-                        course_data["type"] = next_val
-                    elif "Course Objectives" in text:
-                        course_data["objectives"] = next_val
-                    elif "Course Description" in text:
-                        course_data["description"] = next_val
-                    elif "Prerequisites" in text:
-                        course_data["prerequisites"] = next_val
+            # 2. DERS ADI (H1 veya ilk tablodan)
+            # Genelde <h1> içinde yazar veya ilk tablonun 2. hücresindedir
+            h1_text = soup.find('h1')
+            if h1_text:
+                course_data["course_name"] = h1_text.get_text(strip=True).replace(
+                    "COURSE INTRODUCTION AND APPLICATION INFORMATION", "").strip()
 
-            # Haftalık Konular (Tablo ID'si ile çekme)
+            # Eğer H1 boşsa tablodan dene
+            if not course_data["course_name"]:
+                name_td = soup.find('td', string=re.compile("Course Name"))
+                if name_td:
+                    course_data["course_name"] = name_td.find_next_sibling('td').get_text(strip=True)
+
+            # 3. DETAYLI METİNLER (Objectives, Description, Prerequisites)
+            # Bu kısımlar dikey tablolardadır: TD(Label) -> TD(Value)
+            labels_map = {
+                "Course Type": "type",
+                "Course Objectives": "objectives",
+                "Course Description": "description",
+                "Prerequisites": "prerequisites"
+            }
+
+            for label, key in labels_map.items():
+                label_cell = soup.find(['td', 'th', 'strong'], string=re.compile(label, re.IGNORECASE))
+                if label_cell:
+                    # En yakın TD'yi bul ve bir sonrakini al
+                    parent_td = label_cell.find_parent('td') if label_cell.name != 'td' else label_cell
+                    if parent_td and parent_td.find_next_sibling('td'):
+                        course_data[key] = parent_td.find_next_sibling('td').get_text(strip=True)
+
+            # 4. HAFTALIK KONULAR (id="weeks" tablosu)
             weeks_table = soup.find('table', id='weeks')
             if weeks_table:
-                for row in weeks_table.find_all('tr')[1:]:
+                for row in weeks_table.find_all('tr')[1:]:  # Header'ı atla
                     cols = row.find_all('td')
                     if len(cols) >= 2:
                         course_data["weekly_topics"].append({
@@ -91,37 +106,40 @@ class IUEScraper:
 
             return course_data
         except Exception as e:
-            print(f"HATA: {url} taranırken hata: {e}")
+            print(f"HATA: {url} parse edilemedi: {e}")
             return None
 
     def run(self, departments):
         for dept_name, url in departments.items():
             course_links = self.get_course_links(url)
-            print(f"--- {dept_name}: {len(course_links)} link bulundu. İşleniyor...")
+            print(f"--- {dept_name}: {len(course_links)} ders bulundu. İşleniyor...")
 
             for link in course_links:
-                # Linkten ders kodunu tahmin et (Örn: SE 380)
+                # Linkten ders kodunu tahmin et (Tekrar kontrolü için hızlı yöntem)
                 code_match = re.search(r'course_code=([^&]+)', link)
-                if code_match:
-                    temp_code = code_match.group(1).replace('+', ' ').replace('%20', ' ')
+                if not code_match: continue
 
-                    # ORTAK DERS KONTROLÜ
-                    if temp_code in self.all_courses:
-                        continue
+                temp_code = code_match.group(1).replace('+', ' ').replace('%20', ' ')
 
-                    details = self.scrape_course_details(link, dept_name)
-                    if details and details["course_code"]:
-                        # Sayfadan gelen gerçek kodu kullan
-                        real_code = details["course_code"]
-                        self.all_courses[real_code] = details
-                        print(f"Başarılı: {real_code}")
+                # ORTAK DERS KONTROLÜ (IUE 100, MATH 153 vb.)
+                if temp_code in self.all_courses:
+                    # print(f"Atlanıyor (Zaten var): {temp_code}")
+                    continue
 
-                time.sleep(0.1)  # Hızlandırdım
+                details = self.scrape_course_details(link, dept_name)
 
-        # Kayıt
+                if details and details["course_code"] and details["course_code"] != "N/A":
+                    real_code = details["course_code"]
+                    self.all_courses[real_code] = details
+                    print(f"BAŞARILI: {real_code} - {details['course_name'][:30]}...")
+
+                time.sleep(0.1)
+
+        # JSON Kayıt
         with open('iue_curriculum.json', 'w', encoding='utf-8') as f:
             json.dump(list(self.all_courses.values()), f, ensure_ascii=False, indent=4)
-        print(f"\nBİTTİ! Toplam {len(self.all_courses)} benzersiz ders 'iue_curriculum.json' dosyasına yazıldı.")
+
+        print(f"\nİŞLEM TAMAM! Toplam {len(self.all_courses)} benzersiz ders kaydedildi.")
 
 
 if __name__ == "__main__":
