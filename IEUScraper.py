@@ -69,8 +69,8 @@ class IUEScraper:
             if len(cells) >= 3 and current_year and current_semester_number:
                 course_code = cells[0].get_text(strip=True)
 
-                ects = cells[-2].get_text(strip=True)
-                local_credit = cells[-1].get_text(strip=True)
+                local_credit = cells[-2].get_text(strip=True)
+                ects = cells[-1].get_text(strip=True)
 
                 table = row.find_parent("table")
                 course_type = "elective" if table and "elective" in table.get("class", []) else "mandatory"
