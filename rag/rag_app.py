@@ -4,9 +4,7 @@ import faiss
 import numpy as np
 from pathlib import Path
 from sentence_transformers import SentenceTransformer
-from google import genai
-from google.genai import types
-
+import ollama  # Ollama kütüphanesini ekledik
 
 # ==================================================
 # CONFIG
@@ -18,19 +16,14 @@ INDEX_PATH = FAISS_DIR / "courses.index"
 META_PATH = FAISS_DIR / "metadata.json"
 
 EMBED_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
-TOP_K = 6
-
+TOP_K = 15  # Daha geniş kapsamlı cevaplar için 15 idealdir
 
 SYSTEM_PROMPT = """
-You are an academic assistant answering questions about university curricula.
-
-Rules:
-- Use ONLY the provided context.
-- Do NOT use external knowledge.
-- If the answer is not supported by the context, say:
-  "The curriculum data does not support this information."
-- Do not speculate or guess.
-- Base comparisons strictly on retrieved evidence.
+You are an academic assistant for Izmir University of Economics.
+- Answer the user's questions based ONLY on the provided context.
+- If the question is a greeting (like "Hello", "Hi", "Merhaba"), respond politely as an AI assistant.
+- For academic questions, if the information is NOT in the context, say: "The curriculum data does not support this information."
+- Do not speculate or hallucinate.
 """
 
 USER_PROMPT_TEMPLATE = """
@@ -43,16 +36,14 @@ Question:
 Answer (grounded strictly in the context):
 """
 
-
 # ==================================================
 # HELPERS
 # ==================================================
 def format_context(docs: list[dict]) -> str:
     """
-    Formats retrieved chunks into a readable context block
+    Retrieved chunk'ları okunabilir bir blok haline getirir.
     """
     blocks = []
-
     for d in docs:
         meta = d["metadata"]
         header = (
@@ -62,12 +53,10 @@ def format_context(docs: list[dict]) -> str:
             f"Chunk: {meta.get('chunk_type')}]"
         )
         blocks.append(f"{header}\n{d['text']}")
-
     return "\n\n".join(blocks)
 
-
 # ==================================================
-# RAG ENGINE (FAISS + GEMINI)
+# RAG ENGINE (FAISS + OLLAMA)
 # ==================================================
 class FAISSRAG:
 
@@ -91,17 +80,13 @@ class FAISSRAG:
             self.data = json.load(f)
 
         # --------------------
-        # Gemini (NEW SDK)
+        # Ollama Modeli
         # --------------------
-        api_key = os.getenv("GEMINI_API_KEY")
-        if not api_key:
-            raise RuntimeError("GEMINI_API_KEY environment variable not set")
-
-        self.client = genai.Client(api_key=api_key)
-        self.model = "gemini-2.5-flash"
+        # Terminalde 'ollama run llama3.1:8b' ile indirdiğin model ismi
+        self.model = "llama3.1:8b"
 
     # --------------------
-    # RETRIEVAL
+    # RETRIEVAL (GETİRME)
     # --------------------
     def retrieve(self, query: str) -> list[dict]:
         q_emb = self.embedder.encode(
@@ -115,15 +100,19 @@ class FAISSRAG:
 
         results = []
         for idx in indices[0]:
-            if idx != -1:
+            if idx != -1 and idx < len(self.data):
                 results.append(self.data[idx])
 
         return results
 
     # --------------------
-    # GENERATION
+    # GENERATION (ÜRETME)
     # --------------------
     def answer(self, question: str) -> str:
+        # Selamlaşma kontrolü
+        if question.lower() in ["hello", "hi", "merhaba"]:
+            return "Hello! I am the IEU Engineering Curriculum Assistant. How can I help you today?"
+
         retrieved = self.retrieve(question)
 
         if not retrieved:
@@ -131,43 +120,47 @@ class FAISSRAG:
 
         context = format_context(retrieved)
 
-        prompt = f"""{SYSTEM_PROMPT}
-
-{USER_PROMPT_TEMPLATE.format(
-    context=context,
-    question=question
-)}
-"""
-
-        response = self.client.models.generate_content(
-            model=self.model,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                temperature=0.0,
-                max_output_tokens=512
+        # Ollama Chat API Çağrısı
+        try:
+            response = ollama.chat(
+                model=self.model,
+                messages=[
+                    {'role': 'system', 'content': SYSTEM_PROMPT},
+                    {'role': 'user', 'content': USER_PROMPT_TEMPLATE.format(
+                        context=context,
+                        question=question
+                    )}
+                ],
+                options={
+                    'temperature': 0.0  # Kesin bilgi için 0.0
+                }
             )
-        )
-
-        return response.text.strip()
-
+            return response['message']['content'].strip()
+        except Exception as e:
+            return f"Error connecting to Ollama: {str(e)}. Please ensure Ollama app is running."
 
 # ==================================================
 # CLI APP
 # ==================================================
 def main():
-    print("IEU Engineering Curriculum Chatbot (FAISS)")
+    print("IEU Engineering Curriculum Chatbot (FAISS + Ollama)")
     print("Type 'exit' to quit\n")
 
-    rag = FAISSRAG()
+    try:
+        rag = FAISSRAG()
+    except Exception as e:
+        print(f"Initialization Error: {e}")
+        return
 
     while True:
         q = input("You: ").strip()
+        if not q:
+            continue
         if q.lower() in {"exit", "quit"}:
             break
 
         ans = rag.answer(q)
         print("\nBot:", ans, "\n")
-
 
 if __name__ == "__main__":
     main()
