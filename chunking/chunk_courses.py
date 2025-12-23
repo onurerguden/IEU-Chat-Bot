@@ -2,7 +2,7 @@ import json
 import re
 from tqdm import tqdm
 from pathlib import Path
-
+from collections import defaultdict
 
 # --------------------------------------------------
 # PATHS
@@ -38,6 +38,7 @@ def build_base_metadata(course: dict) -> dict:
         "course_code": course.get("course_code"),
         "year": course.get("year"),
         "semester": course.get("semester"),
+        "semester_name": course.get("semester_name"),
         "type": course.get("type"),
         "ects": course.get("ects"),
         "local_credit": course.get("local_credit"),
@@ -45,11 +46,16 @@ def build_base_metadata(course: dict) -> dict:
 
 
 # --------------------------------------------------
-# CHUNKING LOGIC
+# ENHANCED CHUNKING LOGIC
 # --------------------------------------------------
 def chunk_course(course: dict) -> list[dict]:
+    """
+    BEST PRACTICE: Multi-level chunking
+    - Course overview (searchable by description)
+    - Metadata-rich summaries (searchable by year/semester/type)
+    - Objectives, Prerequisites, Weekly topics
+    """
     chunks = []
-
     base_meta = build_base_metadata(course)
 
     department = safe_str(course.get("department", "unknown_department"))
@@ -57,15 +63,48 @@ def chunk_course(course: dict) -> list[dict]:
     course_code = course_code_raw.replace(" ", "").lower()
 
     # --------------------------------------------------
-    # 1. COURSE OVERVIEW
+    # 1. METADATA-RICH COURSE SUMMARY (CRITICAL!)
+    # --------------------------------------------------
+    # Bu chunk, "second year mandatory courses" gibi sorulara cevap verebilmek için
+    summary_parts = [
+        f"Course: {course.get('course_name', 'N/A')}",
+        f"Code: {course_code_raw}",
+        f"Department: {course.get('department', 'N/A')}",
+    ]
+
+    if course.get('year'):
+        summary_parts.append(f"Year: {course.get('year')} (Year {course.get('year')})")
+    if course.get('semester_name'):
+        summary_parts.append(f"Semester: {course.get('semester_name')}")
+    if course.get('type'):
+        summary_parts.append(f"Type: {course.get('type').capitalize()}")
+    if course.get('ects'):
+        summary_parts.append(f"ECTS: {course.get('ects')}")
+
+    # Description ekliyoruz ki semantic search de çalışsın
+    if course.get('description'):
+        summary_parts.append(f"Description: {normalize_text(course.get('description', ''))[:200]}")
+
+    summary_text = ". ".join(summary_parts) + "."
+
+    chunks.append({
+        "id": f"{department}_{course_code}_metadata_summary",
+        "text": summary_text,
+        "metadata": {
+            **base_meta,
+            "chunk_type": "metadata_summary"
+        }
+    })
+
+    # --------------------------------------------------
+    # 2. COURSE OVERVIEW (Full description for content search)
     # --------------------------------------------------
     overview_text = f"{course.get('course_name', '')}. {course.get('description', '')}"
     overview_text = normalize_text(overview_text)
 
     if overview_text:
-        chunk_id = f"{department}_{course_code}_overview_0"
         chunks.append({
-            "id": chunk_id,
+            "id": f"{department}_{course_code}_overview",
             "text": overview_text,
             "metadata": {
                 **base_meta,
@@ -74,14 +113,15 @@ def chunk_course(course: dict) -> list[dict]:
         })
 
     # --------------------------------------------------
-    # 2. OBJECTIVES
+    # 3. OBJECTIVES (with metadata context)
     # --------------------------------------------------
     objectives_text = normalize_text(course.get("objectives", ""))
     if objectives_text:
-        chunk_id = f"{department}_{course_code}_objectives_0"
+        # Metadata ekliyoruz ki "optimization course objectives" bulabilsin
+        enriched_obj = f"Course {course_code_raw} objectives: {objectives_text}"
         chunks.append({
-            "id": chunk_id,
-            "text": objectives_text,
+            "id": f"{department}_{course_code}_objectives",
+            "text": enriched_obj,
             "metadata": {
                 **base_meta,
                 "chunk_type": "objectives"
@@ -89,14 +129,13 @@ def chunk_course(course: dict) -> list[dict]:
         })
 
     # --------------------------------------------------
-    # 3. PREREQUISITES
+    # 4. PREREQUISITES
     # --------------------------------------------------
     prereq_text = normalize_text(course.get("prerequisites", ""))
     if prereq_text and prereq_text.lower() not in ["none", "n/a", "-"]:
-        chunk_id = f"{department}_{course_code}_prerequisites_0"
         chunks.append({
-            "id": chunk_id,
-            "text": prereq_text,
+            "id": f"{department}_{course_code}_prerequisites",
+            "text": f"Prerequisites for {course_code_raw}: {prereq_text}",
             "metadata": {
                 **base_meta,
                 "chunk_type": "prerequisites"
@@ -104,7 +143,7 @@ def chunk_course(course: dict) -> list[dict]:
         })
 
     # --------------------------------------------------
-    # 4. WEEKLY TOPICS (INDEXED!)
+    # 5. WEEKLY TOPICS (with context)
     # --------------------------------------------------
     weekly_topics = course.get("weekly_topics", [])
     for idx, wt in enumerate(weekly_topics):
@@ -114,11 +153,12 @@ def chunk_course(course: dict) -> list[dict]:
         if not topic:
             continue
 
-        chunk_id = f"{department}_{course_code}_weekly_{idx}"
+        # Topic'lere course context ekliyoruz
+        enriched_topic = f"{course_code_raw} Week {week}: {topic}"
 
         chunks.append({
-            "id": chunk_id,
-            "text": f"Week {week}: {topic}",
+            "id": f"{department}_{course_code}_weekly_{idx}",
+            "text": enriched_topic,
             "metadata": {
                 **base_meta,
                 "chunk_type": "weekly_topic",
@@ -127,6 +167,75 @@ def chunk_course(course: dict) -> list[dict]:
         })
 
     return chunks
+
+
+# --------------------------------------------------
+# CURRICULUM-LEVEL SUMMARIES (NEW!)
+# --------------------------------------------------
+def create_curriculum_summaries(courses: list[dict]) -> list[dict]:
+    """
+    BEST PRACTICE: Create aggregated chunks for year/semester/type queries
+    Bu, "second year courses" gibi sorulara doğrudan cevap verebilmemizi sağlar
+    """
+    summaries = []
+
+    # Department → Year → Semester → Type → Courses mapping
+    curriculum_map = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: defaultdict(list))))
+
+    for course in courses:
+        dept = course.get("department")
+        year = course.get("year")
+        semester = course.get("semester")
+        ctype = course.get("type", "unknown")
+
+        if not all([dept, year, semester]):
+            continue
+
+        curriculum_map[dept][year][semester][ctype].append(course)
+
+    # Generate summary chunks
+    for dept, years in curriculum_map.items():
+        dept_safe = safe_str(dept)
+
+        for year, semesters in years.items():
+            for semester, types in semesters.items():
+                for ctype, course_list in types.items():
+                    if not course_list:
+                        continue
+
+                    # Create a summary text
+                    course_names = [f"{c.get('course_code')} - {c.get('course_name')}"
+                                    for c in course_list if c.get('course_code')]
+
+                    semester_name = course_list[0].get('semester_name', f'Semester {semester}')
+
+                    summary_text = (
+                        f"{dept} Year {year} {semester_name} {ctype.capitalize()} Courses: "
+                        f"{', '.join(course_names[:10])}"  # İlk 10 kursu listele
+                    )
+
+                    if len(course_names) > 10:
+                        summary_text += f" and {len(course_names) - 10} more courses"
+
+                    total_ects = sum(c.get('ects', 0) for c in course_list if c.get('ects'))
+                    summary_text += f". Total ECTS: {total_ects}."
+
+                    summaries.append({
+                        "id": f"{dept_safe}_y{year}_s{semester}_{ctype}_summary",
+                        "text": summary_text,
+                        "metadata": {
+                            "department": dept,
+                            "year": year,
+                            "semester": semester,
+                            "semester_name": semester_name,
+                            "type": ctype,
+                            "course_count": len(course_list),
+                            "total_ects": total_ects,
+                            "chunk_type": "curriculum_summary"
+                        }
+                    })
+
+    return summaries
 
 
 # --------------------------------------------------
@@ -143,21 +252,30 @@ def main():
 
     all_chunks = []
 
+    # 1. Course-level chunks
+    print("Creating course-level chunks...")
     for course in tqdm(courses, desc="Chunking courses"):
         if not course.get("course_code"):
             continue
         course_chunks = chunk_course(course)
         all_chunks.extend(course_chunks)
 
-    # --------- FINAL SAFETY CHECK ---------
+    # 2. Curriculum-level summaries (NEW!)
+    print("Creating curriculum-level summaries...")
+    curriculum_chunks = create_curriculum_summaries(courses)
+    all_chunks.extend(curriculum_chunks)
+
+    # Final safety check
     ids = [c["id"] for c in all_chunks]
     if len(ids) != len(set(ids)):
-        raise ValueError("CRITICAL: Duplicate chunk IDs still exist!")
+        raise ValueError("CRITICAL: Duplicate chunk IDs exist!")
 
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(all_chunks, f, ensure_ascii=False, indent=4)
 
-    print(f"\nDONE. Total chunks created: {len(all_chunks)}")
+    print(f"\n✅ DONE. Total chunks created: {len(all_chunks)}")
+    print(f"   - Course chunks: {len(all_chunks) - len(curriculum_chunks)}")
+    print(f"   - Curriculum summaries: {len(curriculum_chunks)}")
     print(f"Saved to: {OUT_PATH}")
 
 

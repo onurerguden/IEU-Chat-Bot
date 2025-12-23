@@ -1,0 +1,110 @@
+[
+  {
+    "category": "single_department",
+    "question": "What are the core courses in the second year of Software Engineering?",
+    "answer": "Based on the provided context chunks, I can identify the core courses in the second year of Software Engineering as follows:\n\nFor SPRING Semester (Year 2):\n- CE 223 - Database Systems\n- SFL 202 - Second Foreign Languages IV\n- MATH 240 - Probability for Engineers\n- SE 226 - Advanced Programming\n- SE 216 - Software Project Management\n- ENG 210 - Technical English for Engineers\n\nFor FALL Semester (Year 2):\n- SFL 201 - Second Foreign Languages III\n- CE 221 - Data Structures and Algorithms I\n- CE 215 - Discrete Mathematics for Computer Science\n- HIST 100 - Principles of Atatürk and History of Revolution\n- MATH 207 - Introduction to Differential Equations I\n\nNote that the context does not explicitly state which courses are \"core\" or \"mandatory\", but it does list all mandatory courses for each semester.",
+    "quality": "GOOD (Detailed answer)"
+  },
+  {
+    "category": "single_department",
+    "question": "Which mandatory courses are offered in the fifth year of Computer Engineering?",
+    "answer": "No relevant curriculum information was found.",
+    "quality": "POOR (Missing data)"
+  },
+  {
+    "category": "single_department",
+    "question": "Which courses focus on optimization techniques in Industrial Engineering?",
+    "answer": "Based on the provided context chunks, I have identified the following courses that focus on optimization techniques in Industrial Engineering:\n\n1. IE 357 - Special Topics in Optimization (Year: 4)\n2. IE 251 - Optimization I (Year: 2)\n3. IE 252 - Optimization II (Year: 2)\n4. IE 359 - Network Optimization (Year: 4)\n5. IE 358 - Heuristics in Optimization (Year: 4)\n\nThese courses cover various aspects of optimization techniques, including linear programming, network flow problems, and heuristics.\n\nAdditionally, the course IE 321 - Dynamic and Nonlinear Programming (Year: 3) also covers optimization techniques, specifically dynamic and nonlinear programming.",
+    "quality": "GOOD (Listed courses)"
+  },
+  {
+    "category": "single_department",
+    "question": "List all first year mandatory courses in Electrical Engineering",
+    "answer": "Based on the provided context chunks, here are the first year mandatory courses in Electrical Engineering:\n\n1. IUE 100 - Orientation and Career Planning (FALL)\n2. ENG 101 - Academic Skills in English I (FALL)\n3. PHYS 100 - General Physics I (FALL)\n4. MATH 153 - Calculus I (FALL)\n5. SFL 1013 - Second Foreign Languages I (FALL)\n6. SE 113 - Introduction to Programming (FALL)\n7. FENG 101 - Fundamentals of Engineering Culture (FALL)\n8. MATH 154 - Calculus II (SPRING)\n9. CHEM 100 - General Chemistry (SPRING)\n10. ENG 102 - Academic Skills in English II (SPRING)\n11. SFL 1024 - Second Foreign Languages II (SPRING)\n12. PHYS 102 - General Physics II (SPRING)\n13. EEE 102 - Introduction to Electrical and Electronics Engineering (SPRING)\n\nTotal number of mandatory courses: 13",
+    "quality": "GOOD (Listed courses)"
+  },
+  {
+    "category": "topic_based",
+    "question": "Which engineering departments offer machine-learning-related courses?",
+    "answer": "Based on the provided context chunks, the engineering departments that offer machine-learning-related courses are:\n\n1. Industrial Engineering (CE 345: Introduction to Machine Learning, CE 344: Advanced Automatic Learning)\n2. Computer Engineering (CE 345: Introduction to Machine Learning, CE 344: Advanced Automatic Learning, CE 455: Deep Neural Networks)\n3. Software Engineering (CE 345: Introduction to Machine Learning, CE 455: Deep Neural Networks)\n\nNote that there are multiple courses with the same code (CE 345 and CE 455) across different departments, but I have listed all relevant courses for each department.",
+    "quality": "GOOD (Detailed answer)"
+  },
+  {
+    "category": "topic_based",
+    "question": "Which courses cover signal processing topics?",
+    "answer": "Based on the provided context chunks, the following courses cover signal processing topics:\n\n1. EEE 309: Signals and Systems (Department of Electrical and Electronics Engineering)\n2. EEE 416: Radar, Sonar and Sismic Signal Processing (Department of Electrical and Electronics Engineering)\n3. EEE 413: Digital Signal Processing (Department of Electrical and Electronics Engineering)\n\nThese courses are mentioned in the metadata_summary chunks as covering topics related to signal processing.",
+    "quality": "GOOD (Listed courses)"
+  },
+  {
+    "category": "topic_based",
+    "question": "Which departments have courses on data structures?",
+    "answer": "Based on the provided context chunks, I can see that there are two departments with courses related to data structures:\n\n1. Computer Engineering (CE) - CE 221: Data Structures and Algorithms I\n2. Software Engineering (SE) - SE 221: Data Structures and Algorithms I \n\nNote that both courses have the same name but different department codes.",
+    "quality": "GOOD (Detailed answer)"
+  },
+  {
+    "category": "topic_based",
+    "question": "Find courses related to artificial intelligence",
+    "answer": "Good day! I'd be happy to help you find courses related to artificial intelligence.\n\nBased on the provided context chunks, here are the courses related to Artificial Intelligence:\n\n1. SE 420 - Artificial Intelligence and Expert Systems (Computer Engineering, Software Engineering, Industrial Engineering)\n2. SE 354 - Artificial Intelligence in Computer Games (Computer Engineering, Software Engineering)\n3. CE 455 - Deep Neural Networks (Computer Engineering, Industrial Engineering, Software Engineering)\n\nThese courses cover various aspects of artificial intelligence, including expert systems, deep neural networks, and applications in computer games.\n\nPlease let me know if you need any further assistance!",
+    "quality": "GOOD (Detailed answer)"
+  },
+  {
+    "category": "cross_department",
+    "question": "List programming-focused courses in Software Engineering and Computer Engineering.",
+    "answer": "Based on the provided context chunks, here are the programming-focused courses in Software Engineering:\n\n1. SE 115 - Introduction to Programming I (Year: 1)\n2. SE 104 - Foundations of Software Engineering (Year: 1) *Note: This course covers fundamental topics and application areas of software engineering, but it's not exclusively focused on programming.\n3. SE 226 - Advanced Programming (Year: 2)\n4. SE 323 - Concepts of Programming Languages (Year: 3)\n5. SE 311 - Software Architecture (Year: 3) *Note: This course covers the principals behind software design patterns and their application in constructing software components, which involves programming.\n6. SE 307 - Concepts of Object-Oriented Programming (Year: 4)\n\nThere are no programming-focused courses mentioned in the context for Computer Engineering.",
+    "quality": "GOOD (Listed courses)"
+  },
+  {
+    "category": "cross_department",
+    "question": "Which department emphasizes data analysis more strongly?",
+    "answer": "Based on the provided context chunks, I can see that several departments offer courses related to data science and analysis. However, upon closer inspection, I notice that the course objectives for CE 477 in various departments mention \"statistical analysis of data\" as one of the key topics.\n\nTherefore, I would say that the following departments emphasize data analysis more strongly:\n\n* Computer Engineering (CE 477)\n* Electrical and Electronics Engineering (CE 477)\n* Industrial Engineering (CE 477)\n* Software Engineering (CE 477)\n\nThese courses all have similar objectives that include statistical analysis of data as a key topic.",
+    "quality": "GOOD (Detailed answer)"
+  },
+  {
+    "category": "cross_department",
+    "question": "Compare database courses across all departments",
+    "answer": "Good day! I'd be happy to help compare database courses across all departments.\n\nBased on the provided context chunks, here are the database-related courses:\n\n**Database Systems (Year 2)**\n\n* CE 223: Database Systems (Computer Engineering)\n* CE 223: Database Systems (Software Engineering)\n\nThese two courses have the same code and description, but they belong to different departments.\n\n**Database Management Systems (Year 4)**\n\n* SE 306: Database Management Systems (Computer Engineering)\n* SE 306: Database Management Systems (Software Engineering)\n* CE 370: Distributed Database Systems (Industrial Engineering) - Note that this course is not exactly \"Database Management Systems\", but it's related to database systems.\n* CE 370: Distributed Database Systems (Computer Engineering)\n* CE 370: Distributed Database Systems (Software Engineering)\n\nThese courses are all in the fourth year and have similar descriptions, but they belong to different departments.\n\n**Data Mining (Year 4)**\n\n* IE 343: Data Mining (Industrial Engineering) - This course is not directly related to database systems, but it's a data-related course.\n\nThere is no other database-related course mentioned in the context chunks.",
+    "quality": "GOOD (Detailed answer)"
+  },
+  {
+    "category": "quantitative",
+    "question": "How many elective courses are offered in the final year of Software Engineering?",
+    "answer": "ERROR: 'NoneType' object has no attribute 'search'",
+    "quality": "error"
+  },
+  {
+    "category": "quantitative",
+    "question": "Which academic year has the highest total ECTS load in Computer Engineering?",
+    "answer": "ERROR: 'NoneType' object has no attribute 'search'",
+    "quality": "error"
+  },
+  {
+    "category": "quantitative",
+    "question": "Count mandatory courses in third year of Industrial Engineering",
+    "answer": "ERROR: 'NoneType' object has no attribute 'search'",
+    "quality": "error"
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Does the Software Engineering department offer a course on Quantum Thermodynamics?",
+    "answer": "The curriculum data does not support this information.\n\nI have carefully read all the provided context chunks and did not find any mention of a course related to \"Quantum Thermodynamics\" in the Software Engineering department.",
+    "quality": "CORRECT (Properly rejected)"
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Is there a compulsory course on Astrophysics in Computer Engineering?",
+    "answer": "There is no compulsory course on Astrophysics in Computer Engineering.\n\nThe curriculum data does not support this information.",
+    "quality": "CORRECT (Properly rejected)"
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Does Industrial Engineering have a course on Underwater Basket Weaving?",
+    "answer": "I'm happy to assist you.\n\nUnfortunately, I couldn't find any mention of \"Underwater Basket Weaving\" in the provided course data for Industrial Engineering. It's possible that such a course may not exist or may be listed under a different department or faculty.\n\nIf you're looking for courses related to a specific topic, I can try to help you identify relevant courses based on their descriptions. However, without further information, I couldn't find any matches for \"Underwater Basket Weaving\".",
+    "quality": "CORRECT (Properly rejected)"
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Is Quantum Computing mandatory in first year of Electrical Engineering?",
+    "answer": "Good morning! I've reviewed the provided context chunks for the Electrical and Electronics Engineering department at Izmir University of Economics.\n\nUnfortunately, there's no mention of Quantum Computing in any of the context chunks related to the first year courses or course descriptions. The curriculum data does not support this information.\n\nHowever, based on the metadata_summary chunk for EEE 102 (Introduction to Electrical and Electronics Engineering), it mentions \"the necessary computational programming knowledge.\" This might imply that some form of programming is covered in the course, but without further details, I couldn't confirm if Quantum Computing is specifically included.",
+    "quality": "CORRECT (Properly rejected)"
+  }
+]
