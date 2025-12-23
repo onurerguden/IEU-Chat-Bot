@@ -1,214 +1,336 @@
 """
-IEU Engineering Curriculum Chat - Desktop GUI
-Modern PyQt5 interface with IEU branding
-Author: Onur Ergüden inspired design
+IEU Engineering Curriculum Chat - Modern PyQt6 Implementation
+Clean flat design without gradients and shadows
+Author: Senior Frontend Engineer Refactor
 """
 
 import sys
 import threading
 from pathlib import Path
-from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
-                             QHBoxLayout, QPushButton, QLabel, QScrollArea,
-                             QFrame, QTextEdit, QGraphicsDropShadowEffect)
-from PyQt5.QtCore import Qt, QTimer, pyqtSignal, QObject, QPropertyAnimation, QEasingCurve, QRect
-from PyQt5.QtGui import QFont, QColor, QPainter, QPixmap, QPainterPath
+from datetime import datetime
+from typing import Optional, Literal
+from dataclasses import dataclass
 
-# Add parent directory to path for imports
+from PyQt6.QtWidgets import (
+    QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
+    QPushButton, QLabel, QScrollArea, QFrame, QTextEdit, QSizePolicy
+)
+from PyQt6.QtCore import (
+    Qt, QTimer, pyqtSignal, QObject, QPropertyAnimation,
+    QEasingCurve, QRect, QSize, pyqtSlot
+)
+from PyQt6.QtGui import (
+    QFont, QColor, QPainter, QPixmap, QPainterPath,
+    QBrush, QPalette, QKeyEvent
+)
+
+# Add parent directory for imports
 BASE_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(BASE_DIR))
 
 from rag.rag_app import FAISSRAG
 
 
-# Signal handler for thread-safe GUI updates
+# ============================================================================
+# THEME SYSTEM
+# ============================================================================
+
+@dataclass
+class ColorScheme:
+    """Flat color scheme definition"""
+    primary: str
+    primary_hover: str
+    secondary: str
+    background: str
+    surface: str
+    surface_variant: str
+    text_primary: str
+    text_secondary: str
+    border: str
+    border_focus: str
+    success: str
+    warning: str
+    error: str
+
+
+class Theme:
+    """Centralized theme management"""
+
+    DARK = ColorScheme(
+        primary="#e85a2a",  # Daha koyu turuncu
+        primary_hover="#d14d20",  # Hover için daha da koyu
+        secondary="#e85a2a",
+        background="#0f172a",
+        surface="#1e293b",
+        surface_variant="#334155",
+        text_primary="#f1f5f9",
+        text_secondary="#94a3b8",
+        border="#334155",
+        border_focus="#e85a2a",
+        success="#10b981",
+        warning="#fbbf24",
+        error="#ef4444"
+    )
+
+    @staticmethod
+    def get_stylesheet(scheme: ColorScheme) -> str:
+        """Generate flat stylesheet from color scheme"""
+        return f"""
+        QMainWindow {{ 
+            background-color: {scheme.background};
+        }}
+
+        QLabel {{ 
+            color: {scheme.text_primary}; 
+            font-family: 'Segoe UI', 'San Francisco', 'Roboto', sans-serif; 
+        }}
+
+        QPushButton {{ 
+            border: none; 
+            border-radius: 12px; 
+            padding: 12px 24px; 
+            font-weight: 600; 
+            font-size: 14px; 
+            color: white;
+        }}
+
+        QPushButton#SendBtn {{ 
+            background-color: {scheme.primary};
+        }}
+
+        QPushButton#SendBtn:hover {{ 
+            background-color: {scheme.primary_hover};
+        }}
+
+        QPushButton#SendBtn:disabled {{ 
+            background-color: {scheme.surface_variant}; 
+            color: {scheme.text_secondary}; 
+        }}
+
+        QScrollArea {{ 
+            border: none; 
+            background-color: transparent; 
+        }}
+
+        QTextEdit {{
+            background-color: {scheme.surface};
+            color: {scheme.text_primary};
+            border: 2px solid {scheme.border};
+            border-radius: 12px;
+            padding: 12px;
+            font-size: 13px;
+            font-family: 'Segoe UI', 'San Francisco', 'Roboto', sans-serif;
+            selection-background-color: {scheme.primary};
+        }}
+
+        QTextEdit:focus {{
+            border: 2px solid {scheme.border_focus};
+        }}
+
+        QScrollBar:vertical {{
+            background: {scheme.surface};
+            width: 12px;
+            border-radius: 6px;
+            margin: 0;
+        }}
+
+        QScrollBar::handle:vertical {{
+            background: {scheme.surface_variant};
+            border-radius: 6px;
+            min-height: 30px;
+        }}
+
+        QScrollBar::handle:vertical:hover {{
+            background: {scheme.text_secondary};
+        }}
+
+        QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {{
+            height: 0px;
+        }}
+        """
+
+
+# ============================================================================
+# SIGNAL HANDLER
+# ============================================================================
+
 class SignalHandler(QObject):
+    """Thread-safe signal handler for UI updates"""
     message_signal = pyqtSignal(str, str)  # role, content
-    status_signal = pyqtSignal(str, str)  # text, color
+    status_signal = pyqtSignal(str, str, str)  # text, color, bg_color
 
 
-STYLESHEET = """
-QMainWindow { 
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
-                                stop:0 #0f172a, stop:1 #1e293b);
-}
-QLabel { 
-    color: #f1f5f9; 
-    font-family: 'Segoe UI', Arial, sans-serif; 
-}
-QPushButton { 
-    border: none; 
-    border-radius: 12px; 
-    padding: 12px 24px; 
-    font-weight: bold; 
-    font-size: 14px; 
-    color: white; 
-}
-QPushButton#SendBtn { 
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-                                stop:0 #ff6b35, stop:1 #ff8c42);
-}
-QPushButton#SendBtn:hover { 
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-                                stop:0 #e85a2a, stop:1 #e67935);
-}
-QPushButton#SendBtn:disabled { 
-    background-color: #475569; 
-    color: #94a3b8; 
-}
-QScrollArea { 
-    border: none; 
-    background-color: transparent; 
-}
-QTextEdit {
-    background-color: #1e293b;
-    color: #f1f5f9;
-    border: 2px solid #334155;
-    border-radius: 12px;
-    padding: 12px;
-    font-size: 13px;
-    font-family: 'Segoe UI', Arial;
-}
-QTextEdit:focus {
-    border: 2px solid #ff6b35;
-}
-"""
+# ============================================================================
+# CUSTOM WIDGETS
+# ============================================================================
 
+class IEULogo(QWidget):
+    """Flat IEU Logo"""
 
-class IEULogo(QLabel):
-    """Custom IEU Logo Widget - Diamond shape with gradient"""
-
-    def __init__(self, size=60):
-        super().__init__()
-        self.setFixedSize(size, size)
+    def __init__(self, size: int = 60, parent=None):
+        super().__init__(parent)
         self.logo_size = size
+        self.setFixedSize(size, size)
+        self.theme = Theme.DARK
 
     def paintEvent(self, event):
+        """Custom paint with antialiasing"""
         painter = QPainter(self)
-        painter.setRenderHint(QPainter.Antialiasing)
+        painter.setRenderHint(QPainter.RenderHint.Antialiasing)
 
-        # Create diamond shape
+        # Diamond path
         path = QPainterPath()
         center = self.logo_size / 2
-        path.moveTo(center, 5)  # Top
-        path.lineTo(self.logo_size - 5, center)  # Right
-        path.lineTo(center, self.logo_size - 5)  # Bottom
-        path.lineTo(5, center)  # Left
+        margin = 5
+
+        path.moveTo(center, margin)
+        path.lineTo(self.logo_size - margin, center)
+        path.lineTo(center, self.logo_size - margin)
+        path.lineTo(margin, center)
         path.closeSubpath()
 
-        # Gradient fill
-        from PyQt5.QtGui import QLinearGradient, QBrush
-        gradient = QLinearGradient(0, 0, self.logo_size, self.logo_size)
-        gradient.setColorAt(0, QColor("#ff6b35"))
-        gradient.setColorAt(1, QColor("#ff8c42"))
+        # Flat color fill
+        painter.fillPath(path, QBrush(QColor(self.theme.primary)))
 
-        painter.fillPath(path, QBrush(gradient))
-
-        # Draw "IEU" text
-        painter.setPen(Qt.white)
-        painter.setFont(QFont("Segoe UI", int(self.logo_size * 0.25), QFont.Bold))
-        painter.drawText(self.rect(), Qt.AlignCenter, "IEU")
+        # Text
+        painter.setPen(Qt.GlobalColor.white)
+        font = QFont("Segoe UI", int(self.logo_size * 0.25), QFont.Weight.Bold)
+        painter.setFont(font)
+        painter.drawText(self.rect(), Qt.AlignmentFlag.AlignCenter, "IEU")
 
 
 class MessageBubble(QFrame):
-    """Modern chat message bubble"""
+    """Flat message bubble with timestamp"""
 
-    def __init__(self, text, is_user=False, parent=None):
+    def __init__(self, text: str, is_user: bool = False, parent=None):
         super().__init__(parent)
         self.is_user = is_user
         self.full_text = text
         self.displayed_text = ""
         self.char_index = 0
+        self.theme = Theme.DARK
+        self.timestamp = datetime.now()
 
+        # Responsive sizing
+        self.setSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Minimum)
         self.setMaximumWidth(650)
 
-        if is_user:
-            self.setStyleSheet("""
-                QFrame {
-                    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-                                                stop:0 #ff6b35, stop:1 #ff8c42);
-                    border-radius: 16px;
-                    padding: 4px;
-                }
-            """)
-        else:
-            self.setStyleSheet("""
-                QFrame {
-                    background-color: #1e293b;
-                    border-radius: 16px;
-                    border: 1px solid #334155;
-                    padding: 4px;
-                }
-            """)
+        self._setup_ui()
+        self._apply_styles()
 
+        # Typing animation for assistant
+        if not is_user:
+            self.typing_timer = QTimer()
+            self.typing_timer.timeout.connect(self._animate_typing)
+            self.typing_timer.start(8)
+        else:
+            self.content_label.setText(text)
+            self.adjustSize()
+
+    def _setup_ui(self):
+        """Setup bubble layout"""
         layout = QVBoxLayout(self)
         layout.setContentsMargins(16, 12, 16, 12)
+        layout.setSpacing(8)
+
+        # Header with role and timestamp
+        header_layout = QHBoxLayout()
+        header_layout.setSpacing(12)
 
         # Role label
-        role_label = QLabel("You" if is_user else "Assistant")
-        role_label.setStyleSheet(f"""
-            color: {'white' if is_user else '#ff6b35'};
+        self.role_label = QLabel("You" if self.is_user else "Assistant")
+        self.role_label.setStyleSheet(f"""
+            color: {'white' if self.is_user else self.theme.primary};
             font-size: 10px;
-            font-weight: bold;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
         """)
-        layout.addWidget(role_label)
+        header_layout.addWidget(self.role_label)
+
+        # Timestamp
+        self.time_label = QLabel(self.timestamp.strftime("%H:%M"))
+        self.time_label.setStyleSheet(f"""
+            color: {self.theme.text_secondary};
+            font-size: 9px;
+            font-weight: 500;
+        """)
+        header_layout.addWidget(self.time_label)
+        header_layout.addStretch()
+
+        layout.addLayout(header_layout)
 
         # Message content
         self.content_label = QLabel("")
         self.content_label.setWordWrap(True)
-        self.content_label.setTextFormat(Qt.PlainText)
+        self.content_label.setTextFormat(Qt.TextFormat.PlainText)
+        self.content_label.setTextInteractionFlags(
+            Qt.TextInteractionFlag.TextSelectableByMouse
+        )
         self.content_label.setStyleSheet(f"""
-            color: {'white' if is_user else '#e2e8f0'};
+            color: {'white' if self.is_user else self.theme.text_primary};
             font-size: 13px;
             line-height: 1.6;
             padding: 4px 0;
         """)
         layout.addWidget(self.content_label)
 
-        # Add shadow effect
-        shadow = QGraphicsDropShadowEffect()
-        shadow.setBlurRadius(20)
-        shadow.setXOffset(0)
-        shadow.setYOffset(4)
-        shadow.setColor(QColor(0, 0, 0, 80))
-        self.setGraphicsEffect(shadow)
-
-        # For bot messages, animate typing
-        if not is_user:
-            self.typing_timer = QTimer()
-            self.typing_timer.timeout.connect(self.animate_typing)
-            self.typing_timer.start(10)  # Fast typing effect
+    def _apply_styles(self):
+        """Apply flat bubble styling"""
+        if self.is_user:
+            self.setStyleSheet(f"""
+                QFrame {{
+                    background-color: {self.theme.primary};
+                    border-radius: 16px;
+                    padding: 4px;
+                }}
+            """)
         else:
-            self.content_label.setText(text)
-            self.adjustSize()
+            self.setStyleSheet(f"""
+                QFrame {{
+                    background-color: {self.theme.surface};
+                    border-radius: 16px;
+                    border: 1px solid {self.theme.border};
+                    padding: 4px;
+                }}
+            """)
 
-    def animate_typing(self):
-        """Typing animation effect"""
+    @pyqtSlot()
+    def _animate_typing(self):
+        """Smooth typing animation"""
         if self.char_index < len(self.full_text):
-            self.displayed_text += self.full_text[self.char_index]
+            chunk_size = 2 if len(self.full_text) > 100 else 1
+            end_idx = min(self.char_index + chunk_size, len(self.full_text))
+
+            self.displayed_text = self.full_text[:end_idx]
             self.content_label.setText(self.displayed_text)
-            self.char_index += 1
+            self.char_index = end_idx
             self.adjustSize()
         else:
             self.typing_timer.stop()
 
 
 class ChatContainer(QWidget):
-    """Scrollable chat container"""
+    """Responsive scrollable chat container"""
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        super().__init__(parent)
         self.layout = QVBoxLayout(self)
-        self.layout.setAlignment(Qt.AlignTop)
+        self.layout.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.layout.setSpacing(16)
         self.layout.setContentsMargins(20, 20, 20, 20)
 
-    def add_message(self, text, is_user=False):
-        """Add a message bubble"""
+        self.setSizePolicy(
+            QSizePolicy.Policy.Expanding,
+            QSizePolicy.Policy.Expanding
+        )
+
+    def add_message(self, text: str, is_user: bool = False) -> MessageBubble:
+        """Add message with proper alignment"""
         container = QWidget()
         container_layout = QHBoxLayout(container)
         container_layout.setContentsMargins(0, 0, 0, 0)
+        container_layout.setSpacing(0)
 
         bubble = MessageBubble(text, is_user)
 
@@ -222,281 +344,109 @@ class ChatContainer(QWidget):
         self.layout.addWidget(container)
         return bubble
 
+    def resizeEvent(self, event):
+        """Handle container resize"""
+        super().resizeEvent(event)
+        self.updateGeometry()
 
-class LoadingIndicator(QLabel):
-    """Animated loading dots"""
 
-    def __init__(self):
-        super().__init__("Thinking")
-        self.setStyleSheet("""
-            color: #94a3b8;
+class ThinkingIndicator(QWidget):
+    """Animated thinking indicator with dots"""
+
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.theme = Theme.DARK
+        self.dot_count = 3
+        self.current_dot = 0
+
+        # Setup UI
+        layout = QHBoxLayout(self)
+        layout.setContentsMargins(20, 12, 20, 12)
+        layout.setSpacing(8)
+
+        self.text_label = QLabel("Thinking")
+        self.text_label.setStyleSheet(f"""
+            color: {self.theme.text_secondary};
             font-size: 13px;
-            font-style: italic;
-            padding: 12px 20px;
-            background-color: #1e293b;
-            border-radius: 12px;
-            border: 1px solid #334155;
+            font-weight: 500;
         """)
-        self.dots = 0
+        layout.addWidget(self.text_label)
+
+        # Create dot labels
+        self.dots = []
+        for i in range(self.dot_count):
+            dot = QLabel("●")
+            dot.setStyleSheet(f"""
+                color: {self.theme.text_secondary};
+                font-size: 16px;
+            """)
+            self.dots.append(dot)
+            layout.addWidget(dot)
+
+        layout.addStretch()
+
+        # Container styling
+        self.setStyleSheet(f"""
+            QWidget {{
+                background-color: {self.theme.surface};
+                border-radius: 12px;
+                border: 1px solid {self.theme.border};
+            }}
+        """)
+
+        # Animation timer
         self.timer = QTimer()
-        self.timer.timeout.connect(self.update_dots)
+        self.timer.timeout.connect(self._animate_dots)
 
     def start(self):
+        """Start animation"""
+        self.current_dot = 0
+        self._update_dots()
         self.timer.start(400)
         self.show()
 
     def stop(self):
+        """Stop animation"""
         self.timer.stop()
         self.hide()
 
-    def update_dots(self):
-        self.dots = (self.dots + 1) % 4
-        self.setText("Thinking" + "." * self.dots)
+    @pyqtSlot()
+    def _animate_dots(self):
+        """Animate dots"""
+        self.current_dot = (self.current_dot + 1) % (self.dot_count + 1)
+        self._update_dots()
+
+    def _update_dots(self):
+        """Update dot colors"""
+        for i, dot in enumerate(self.dots):
+            if i < self.current_dot:
+                # Active dot
+                dot.setStyleSheet(f"""
+                    color: {self.theme.primary};
+                    font-size: 16px;
+                """)
+            else:
+                # Inactive dot
+                dot.setStyleSheet(f"""
+                    color: {self.theme.text_secondary};
+                    font-size: 16px;
+                """)
 
 
-class MainChatWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle("IEU Engineering Curriculum Assistant")
-        self.resize(1200, 850)
-        self.setStyleSheet(STYLESHEET)
+class StatusBadge(QLabel):
+    """Flat status indicator"""
 
-        # Signal handler for thread-safe updates
-        self.signals = SignalHandler()
-        self.signals.message_signal.connect(self._add_message_to_ui)
-        self.signals.status_signal.connect(self._update_status_ui)
+    def __init__(self, parent=None):
+        super().__init__("● Initializing", parent)
+        self.theme = Theme.DARK
+        self._current_color = self.theme.warning
 
-        self.rag = None
-        self.is_processing = False
+    def update_status(self, text: str, color: str, bg_color: str):
+        """Update status with color"""
+        self.setText(text)
+        self._current_color = color
 
-        self.setup_ui()
-        self.initialize_rag()
-
-    def setup_ui(self):
-        """Setup the main UI"""
-        central = QWidget()
-        self.setCentralWidget(central)
-        main_layout = QVBoxLayout(central)
-        main_layout.setContentsMargins(0, 0, 0, 0)
-        main_layout.setSpacing(0)
-
-        # === HEADER ===
-        header = QFrame()
-        header.setStyleSheet("""
-            QFrame {
-                background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-                                            stop:0 #1e293b, stop:1 #334155);
-                border-bottom: 2px solid #ff6b35;
-            }
-        """)
-        header.setFixedHeight(100)
-        header_layout = QHBoxLayout(header)
-        header_layout.setContentsMargins(30, 20, 30, 20)
-
-        # Logo
-        logo = IEULogo(60)
-        header_layout.addWidget(logo)
-
-        header_layout.addSpacing(20)
-
-        # Title section
-        title_container = QVBoxLayout()
-        title_container.setSpacing(4)
-
-        title = QLabel("IEU Engineering")
-        title.setStyleSheet("""
-            color: white;
-            font-size: 26px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        """)
-
-        subtitle = QLabel("Curriculum Assistant • AI Powered")
-        subtitle.setStyleSheet("""
-            color: #ff6b35;
-            font-size: 13px;
-            font-weight: 600;
-        """)
-
-        title_container.addWidget(title)
-        title_container.addWidget(subtitle)
-        header_layout.addLayout(title_container)
-
-        header_layout.addStretch()
-
-        # Status indicator
-        self.status_badge = QLabel("● Initializing")
-        self.status_badge.setStyleSheet("""
-            color: #fbbf24;
-            font-size: 12px;
-            font-weight: 600;
-            padding: 8px 16px;
-            background-color: rgba(251, 191, 36, 0.1);
-            border-radius: 20px;
-            border: 1px solid #fbbf24;
-        """)
-        header_layout.addWidget(self.status_badge)
-
-        main_layout.addWidget(header)
-
-        # === CHAT AREA ===
-        self.scroll_area = QScrollArea()
-        self.scroll_area.setWidgetResizable(True)
-        self.scroll_area.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.scroll_area.setStyleSheet("QScrollArea { background-color: #0f172a; }")
-
-        self.chat_container = ChatContainer()
-        self.scroll_area.setWidget(self.chat_container)
-
-        main_layout.addWidget(self.scroll_area)
-
-        # === LOADING INDICATOR ===
-        loading_container = QWidget()
-        loading_layout = QHBoxLayout(loading_container)
-        loading_layout.setContentsMargins(20, 0, 20, 0)
-
-        self.loading_indicator = LoadingIndicator()
-        self.loading_indicator.hide()
-        loading_layout.addWidget(self.loading_indicator)
-        loading_layout.addStretch()
-
-        main_layout.addWidget(loading_container)
-
-        # === INPUT AREA ===
-        input_container = QFrame()
-        input_container.setStyleSheet("""
-            QFrame {
-                background-color: #1e293b;
-                border-top: 1px solid #334155;
-            }
-        """)
-        input_container.setFixedHeight(140)
-        input_layout = QVBoxLayout(input_container)
-        input_layout.setContentsMargins(30, 20, 30, 20)
-
-        input_row = QHBoxLayout()
-        input_row.setSpacing(15)
-
-        # Text input
-        self.input_field = QTextEdit()
-        self.input_field.setPlaceholderText("Ask about courses, requirements, ECTS credits...")
-        self.input_field.setFixedHeight(80)
-        self.input_field.setFont(QFont("Segoe UI", 12))
-        input_row.addWidget(self.input_field)
-
-        # Send button
-        self.send_btn = QPushButton("Send ▶")
-        self.send_btn.setObjectName("SendBtn")
-        self.send_btn.setFixedSize(120, 80)
-        self.send_btn.setCursor(Qt.PointingHandCursor)
-        self.send_btn.clicked.connect(self.send_message)
-
-        btn_shadow = QGraphicsDropShadowEffect()
-        btn_shadow.setBlurRadius(20)
-        btn_shadow.setColor(QColor(255, 107, 53, 100))
-        btn_shadow.setOffset(0, 4)
-        self.send_btn.setGraphicsEffect(btn_shadow)
-
-        input_row.addWidget(self.send_btn)
-        input_layout.addLayout(input_row)
-
-        main_layout.addWidget(input_container)
-
-        # Key bindings
-        self.input_field.installEventFilter(self)
-
-        # Welcome message
-        self.add_welcome_message()
-
-    def add_welcome_message(self):
-        """Add initial welcome messages"""
-        welcome = """Hello! I can help you with information about courses, prerequisites, ECTS credits, and curriculum details across all engineering departments.
-
-Try asking:
-• What are the second year Software Engineering courses?
-• Which courses cover machine learning?
-• List mandatory courses in Computer Engineering"""
-
-        self.chat_container.add_message(welcome, is_user=False)
-
-    def initialize_rag(self):
-        """Initialize RAG system in background"""
-
-        def load_rag():
-            try:
-                self.rag = FAISSRAG()
-                self.signals.status_signal.emit(
-                    f"● Ready ({len(self.rag.data)} chunks loaded)",
-                    "#10b981"
-                )
-            except Exception as e:
-                self.signals.status_signal.emit("● Error", "#ef4444")
-                self.signals.message_signal.emit("system", f"Error loading RAG: {str(e)}")
-
-        thread = threading.Thread(target=load_rag, daemon=True)
-        thread.start()
-
-    def send_message(self):
-        """Handle send button click"""
-        if self.is_processing or not self.rag:
-            return
-
-        message = self.input_field.toPlainText().strip()
-        if not message:
-            return
-
-        # Clear input
-        self.input_field.clear()
-
-        # Add user message
-        self.chat_container.add_message(message, is_user=True)
-        self.scroll_to_bottom()
-
-        # Show loading
-        self.loading_indicator.start()
-        self.is_processing = True
-        self.send_btn.setEnabled(False)
-        self.send_btn.setText("Processing...")
-        self.signals.status_signal.emit("● Processing", "#fbbf24")
-
-        # Get response in background
-        def get_response():
-            try:
-                response = self.rag.answer(message)
-                self.signals.message_signal.emit("assistant", response)
-            except Exception as e:
-                self.signals.message_signal.emit("assistant", f"Error: {str(e)}")
-
-        thread = threading.Thread(target=get_response, daemon=True)
-        thread.start()
-
-    def _add_message_to_ui(self, role, content):
-        """Thread-safe message addition"""
-        self.loading_indicator.stop()
-
-        if role == "assistant":
-            self.chat_container.add_message(content, is_user=False)
-
-        self.scroll_to_bottom()
-        self.is_processing = False
-        self.send_btn.setEnabled(True)
-        self.send_btn.setText("Send ▶")
-        self.signals.status_signal.emit("● Ready", "#10b981")
-        self.input_field.setFocus()
-
-    def _update_status_ui(self, text, color):
-        """Thread-safe status update"""
-        self.status_badge.setText(text)
-
-        # Update border color based on status
-        if color == "#10b981":  # Ready/Success
-            bg_color = "rgba(16, 185, 129, 0.1)"
-        elif color == "#fbbf24":  # Processing
-            bg_color = "rgba(251, 191, 36, 0.1)"
-        else:  # Error
-            bg_color = "rgba(239, 68, 68, 0.1)"
-
-        self.status_badge.setStyleSheet(f"""
+        self.setStyleSheet(f"""
             color: {color};
             font-size: 12px;
             font-weight: 600;
@@ -506,27 +456,325 @@ Try asking:
             border: 1px solid {color};
         """)
 
-    def scroll_to_bottom(self):
-        """Scroll chat to bottom"""
+
+# ============================================================================
+# MAIN WINDOW
+# ============================================================================
+
+class MainChatWindow(QMainWindow):
+    """Professional chat interface with flat design"""
+
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("IEU Engineering Curriculum Assistant")
+        self.resize(1200, 850)
+        self.setMinimumSize(800, 600)
+
+        # State management
+        self.theme = Theme.DARK
+        self.rag: Optional[FAISSRAG] = None
+        self.is_processing = False
+
+        # Signal handler
+        self.signals = SignalHandler()
+        self.signals.message_signal.connect(self._add_message_to_ui)
+        self.signals.status_signal.connect(self._update_status_ui)
+
+        # Setup
+        self.setStyleSheet(Theme.get_stylesheet(self.theme))
+        self._setup_ui()
+        self._initialize_rag()
+
+    def _setup_ui(self):
+        """Setup main UI with responsive layout"""
+        central = QWidget()
+        self.setCentralWidget(central)
+
+        main_layout = QVBoxLayout(central)
+        main_layout.setContentsMargins(0, 0, 0, 0)
+        main_layout.setSpacing(0)
+
+        # Header
+        main_layout.addWidget(self._create_header())
+
+        # Chat area
+        self.scroll_area = QScrollArea()
+        self.scroll_area.setWidgetResizable(True)
+        self.scroll_area.setHorizontalScrollBarPolicy(
+            Qt.ScrollBarPolicy.ScrollBarAlwaysOff
+        )
+        self.scroll_area.setStyleSheet(
+            f"QScrollArea {{ background-color: {self.theme.background}; }}"
+        )
+
+        self.chat_container = ChatContainer()
+        self.scroll_area.setWidget(self.chat_container)
+        main_layout.addWidget(self.scroll_area, stretch=1)
+
+        # Thinking indicator
+        thinking_container = QWidget()
+        thinking_layout = QHBoxLayout(thinking_container)
+        thinking_layout.setContentsMargins(20, 0, 20, 10)
+
+        self.thinking_indicator = ThinkingIndicator()
+        self.thinking_indicator.hide()
+        thinking_layout.addWidget(self.thinking_indicator)
+        thinking_layout.addStretch()
+
+        main_layout.addWidget(thinking_container)
+
+        # Input area
+        main_layout.addWidget(self._create_input_area())
+
+        # Welcome message
+        self._add_welcome_message()
+
+    def _create_header(self) -> QFrame:
+        """Create flat header"""
+        header = QFrame()
+        header.setStyleSheet(f"""
+            QFrame {{
+                background-color: {self.theme.surface};
+                border-bottom: 2px solid {self.theme.primary};
+            }}
+        """)
+        header.setFixedHeight(100)
+
+        layout = QHBoxLayout(header)
+        layout.setContentsMargins(30, 20, 30, 20)
+        layout.setSpacing(20)
+
+        # Logo
+        logo = IEULogo(60)
+        layout.addWidget(logo)
+
+        # Title section
+        title_container = QVBoxLayout()
+        title_container.setSpacing(4)
+
+        title = QLabel("IEU Engineering")
+        title.setStyleSheet(f"""
+            color: white;
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        """)
+
+        subtitle = QLabel("Curriculum Assistant • AI Powered")
+        subtitle.setStyleSheet(f"""
+            color: {self.theme.primary};
+            font-size: 13px;
+            font-weight: 600;
+        """)
+
+        title_container.addWidget(title)
+        title_container.addWidget(subtitle)
+        layout.addLayout(title_container)
+        layout.addStretch()
+
+        # Status badge
+        self.status_badge = StatusBadge()
+        self.status_badge.update_status(
+            "● Initializing",
+            self.theme.warning,
+            "rgba(251, 191, 36, 0.1)"
+        )
+        layout.addWidget(self.status_badge)
+
+        return header
+
+    def _create_input_area(self) -> QFrame:
+        """Create flat input area"""
+        container = QFrame()
+        container.setStyleSheet(f"""
+            QFrame {{
+                background-color: {self.theme.surface};
+                border-top: 1px solid {self.theme.border};
+            }}
+        """)
+        container.setFixedHeight(140)
+
+        layout = QVBoxLayout(container)
+        layout.setContentsMargins(30, 20, 30, 20)
+
+        input_row = QHBoxLayout()
+        input_row.setSpacing(15)
+
+        # Text input
+        self.input_field = QTextEdit()
+        self.input_field.setPlaceholderText(
+            "Ask about courses, requirements, ECTS credits..."
+        )
+        self.input_field.setFixedHeight(80)
+        self.input_field.setFont(QFont("Segoe UI", 12))
+        self.input_field.installEventFilter(self)
+        input_row.addWidget(self.input_field)
+
+        # Send button
+        self.send_btn = QPushButton("Send ▶")
+        self.send_btn.setObjectName("SendBtn")
+        self.send_btn.setFixedSize(120, 80)
+        self.send_btn.setCursor(Qt.CursorShape.PointingHandCursor)
+        self.send_btn.clicked.connect(self._send_message)
+
+        input_row.addWidget(self.send_btn)
+        layout.addLayout(input_row)
+
+        return container
+
+    def _add_welcome_message(self):
+        """Add welcome message"""
+        welcome = """Hello! I can help you with information about courses, prerequisites, ECTS credits, and curriculum details across all engineering departments.
+
+Try asking:
+• What are the second year Software Engineering courses?
+• Which courses cover machine learning?
+• List mandatory courses in Computer Engineering"""
+
+        self.chat_container.add_message(welcome, is_user=False)
+
+    def _initialize_rag(self):
+        """Initialize RAG system asynchronously"""
+
+        def load_rag():
+            try:
+                self.rag = FAISSRAG()
+                chunk_count = len(self.rag.data)
+                self.signals.status_signal.emit(
+                    f"● Ready ({chunk_count} chunks loaded)",
+                    self.theme.success,
+                    "rgba(16, 185, 129, 0.1)"
+                )
+            except Exception as e:
+                self.signals.status_signal.emit(
+                    "● Error",
+                    self.theme.error,
+                    "rgba(239, 68, 68, 0.1)"
+                )
+                self.signals.message_signal.emit(
+                    "system",
+                    f"Error loading RAG: {str(e)}"
+                )
+
+        thread = threading.Thread(target=load_rag, daemon=True)
+        thread.start()
+
+    @pyqtSlot()
+    def _send_message(self):
+        """Handle message sending"""
+        if self.is_processing or not self.rag:
+            return
+
+        message = self.input_field.toPlainText().strip()
+        if not message:
+            return
+
+        # Clear and add user message
+        self.input_field.clear()
+        self.chat_container.add_message(message, is_user=True)
+        self._scroll_to_bottom()
+
+        # Update UI state
+        self.thinking_indicator.start()
+        self.is_processing = True
+        self.send_btn.setEnabled(False)
+        self.send_btn.setText("Processing...")
+        self.signals.status_signal.emit(
+            "● Processing",
+            self.theme.warning,
+            "rgba(251, 191, 36, 0.1)"
+        )
+
+        # Get response asynchronously
+        def get_response():
+            try:
+                response = self.rag.answer(message)
+                self.signals.message_signal.emit("assistant", response)
+            except Exception as e:
+                self.signals.message_signal.emit(
+                    "assistant",
+                    f"Error: {str(e)}"
+                )
+
+        thread = threading.Thread(target=get_response, daemon=True)
+        thread.start()
+
+    @pyqtSlot(str, str)
+    def _add_message_to_ui(self, role: str, content: str):
+        """Thread-safe message addition"""
+        self.thinking_indicator.stop()
+
+        if role == "assistant":
+            self.chat_container.add_message(content, is_user=False)
+
+        self._scroll_to_bottom()
+
+        # Reset UI state
+        self.is_processing = False
+        self.send_btn.setEnabled(True)
+        self.send_btn.setText("Send ▶")
+        self.signals.status_signal.emit(
+            "● Ready",
+            self.theme.success,
+            "rgba(16, 185, 129, 0.1)"
+        )
+        self.input_field.setFocus()
+
+    @pyqtSlot(str, str, str)
+    def _update_status_ui(self, text: str, color: str, bg_color: str):
+        """Thread-safe status update"""
+        self.status_badge.update_status(text, color, bg_color)
+
+    def _scroll_to_bottom(self):
+        """Smooth scroll to bottom"""
         QTimer.singleShot(100, lambda: self.scroll_area.verticalScrollBar().setValue(
             self.scroll_area.verticalScrollBar().maximum()
         ))
 
-    def eventFilter(self, obj, event):
-        """Handle key events"""
-        if obj == self.input_field and event.type() == event.KeyPress:
-            if event.key() == Qt.Key_Return and not event.modifiers() & Qt.ShiftModifier:
-                self.send_message()
+    def eventFilter(self, obj: QObject, event) -> bool:
+        """Handle keyboard shortcuts"""
+        if obj == self.input_field and event.type() == event.Type.KeyPress:
+            key_event: QKeyEvent = event
+            if (key_event.key() == Qt.Key.Key_Return and
+                    not key_event.modifiers() & Qt.KeyboardModifier.ShiftModifier):
+                self._send_message()
                 return True
         return super().eventFilter(obj, event)
 
+    def resizeEvent(self, event):
+        """Handle window resize"""
+        super().resizeEvent(event)
+        # Adjust max bubble width based on window size
+        new_max_width = min(650, int(self.width() * 0.7))
+        for i in range(self.chat_container.layout.count()):
+            item = self.chat_container.layout.itemAt(i)
+            if item and item.widget():
+                container = item.widget()
+                for j in range(container.layout().count()):
+                    widget = container.layout().itemAt(j).widget()
+                    if isinstance(widget, MessageBubble):
+                        widget.setMaximumWidth(new_max_width)
+
+
+# ============================================================================
+# APPLICATION ENTRY POINT
+# ============================================================================
 
 def main():
+    """Application entry point"""
     app = QApplication(sys.argv)
-    app.setStyle('Fusion')  # Modern look
+    app.setStyle('Fusion')
+
+    # Set application metadata
+    app.setApplicationName("IEU Chat Assistant")
+    app.setOrganizationName("IEU Engineering")
+    app.setApplicationVersion("2.0.0")
+
+    # Launch main window
     window = MainChatWindow()
     window.show()
-    sys.exit(app.exec_())
+
+    sys.exit(app.exec())
 
 
 if __name__ == "__main__":
