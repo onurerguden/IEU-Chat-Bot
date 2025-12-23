@@ -220,7 +220,7 @@ class IUEScraper:
                 time.sleep(0.1)
 
         # JSON Kayıt
-        with open('iue_curriculum.json', 'w', encoding='utf-8') as f:
+        with open('raw/iue_curriculum.json', 'w', encoding='utf-8') as f:
             json.dump(self.all_courses, f, ensure_ascii=False, indent=4)
 
         print(f"\nİŞLEM TAMAM! Toplam {len(self.all_courses)} ders kaydedildi.")
