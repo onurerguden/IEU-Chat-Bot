@@ -23,7 +23,7 @@ INDEX_PATH = FAISS_DIR / "courses.index"
 META_PATH = FAISS_DIR / "metadata.json"
 
 EMBED_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
-TOP_K = 30
+TOP_K = 25
 
 # ==================================================
 # ENHANCED SYSTEM PROMPT
