@@ -27,7 +27,7 @@ TOP_K = 25
 
 # ==================================================
 # ENHANCED SYSTEM PROMPT
-# ==================================================
+# =======ST===========================================
 SYSTEM_PROMPT = """
 You are an academic assistant for Izmir University of Economics Engineering Faculty.
 
@@ -59,7 +59,7 @@ ELECTIVE SYSTEM:
 
 QUANTITATIVE QUERIES - CRITICAL INSTRUCTIONS:
 When asked "How many" or "Total ECTS" or "Count":
-1. Look for curriculum_summary and statistics_summary chunks FIRST
+1. Look for curriculum_summary and statistics_summary chunks FIR
 2. Extract numbers from course lists in the context
 3. ALWAYS show your calculation step-by-step
 4. Format: "Fall: X courses + Spring: Y courses = Total: Z courses"
@@ -459,13 +459,13 @@ class FAISSRAG:
 
     def debug_retrieve(self, question: str) -> None:
         """Debug helper to inspect retrieval"""
-        print(f"\n🔍 DEBUG MODE: '{question}'")
+        print(f"\n DEBUG MODE: '{question}'")
 
         filters = self.query_processor.extract_filters(question)
-        print(f"📊 Extracted filters: {filters}")
+        print(f" Extracted filters: {filters}")
 
         retrieved = self.retrieve(question, top_k=10)
-        print(f"📚 Retrieved {len(retrieved)} chunks:")
+        print(f" Retrieved {len(retrieved)} chunks:")
 
         for i, doc in enumerate(retrieved, 1):
             meta = doc["metadata"]
@@ -490,9 +490,9 @@ def main():
 
     try:
         rag = FAISSRAG()
-        print(f"✅ System ready! Loaded {len(rag.data)} chunks.\n")
+        print(f" System ready! Loaded {len(rag.data)} chunks.\n")
     except Exception as e:
-        print(f"❌ Initialization Error: {e}")
+        print(f" Initialization Error: {e}")
         return
 
     while True:

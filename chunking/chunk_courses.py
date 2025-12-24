@@ -386,7 +386,7 @@ def main():
     with open(RAW_PATH, "r", encoding="utf-8") as f:
         courses = json.load(f)
 
-    print(f"📚 Loaded {len(courses)} courses")
+    print(f" Loaded {len(courses)} courses")
 
     all_chunks = []
 
@@ -399,12 +399,12 @@ def main():
         all_chunks.extend(course_chunks)
 
     # 2. Curriculum summaries
-    print("\n📊 Creating curriculum summaries...")
+    print("\n Creating curriculum summaries...")
     curriculum_chunks = create_curriculum_summaries(courses)
     all_chunks.extend(curriculum_chunks)
 
     # 3. Statistical summaries (NEW!)
-    print("\n📈 Creating statistical summaries...")
+    print("\n Creating statistical summaries...")
     stats_chunks = create_detailed_statistics(courses)
     all_chunks.extend(stats_chunks)
 
@@ -417,11 +417,11 @@ def main():
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(all_chunks, f, ensure_ascii=False, indent=2)
 
-    print(f"\n✅ DONE. Total chunks created: {len(all_chunks)}")
-    print(f"   📄 Course chunks: {len(all_chunks) - len(curriculum_chunks) - len(stats_chunks)}")
-    print(f"   📋 Curriculum summaries: {len(curriculum_chunks)}")
-    print(f"   📊 Statistical summaries: {len(stats_chunks)}")
-    print(f"\n💾 Saved to: {OUT_PATH}")
+    print(f"\n DONE. Total chunks created: {len(all_chunks)}")
+    print(f"    Course chunks: {len(all_chunks) - len(curriculum_chunks) - len(stats_chunks)}")
+    print(f"    Curriculum summaries: {len(curriculum_chunks)}")
+    print(f"    Statistical summaries: {len(stats_chunks)}")
+    print(f"\n Saved to: {OUT_PATH}")
 
 
 if __name__ == "__main__":

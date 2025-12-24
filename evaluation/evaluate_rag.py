@@ -218,9 +218,9 @@ def evaluate_system():
 
     try:
         rag = FAISSRAG()
-        print(f"✅ RAG initialized with {len(rag.data)} chunks\n")
+        print(f" RAG initialized with {len(rag.data)} chunks\n")
     except Exception as e:
-        print(f"❌ Failed to initialize RAG: {e}")
+        print(f" Failed to initialize RAG: {e}")
         return
 
     results = []
@@ -251,12 +251,12 @@ def evaluate_system():
 
                 print(f"\n✓ Quality: {quality}")
                 if details.get("course_count", 0) > 0:
-                    print(f"  📚 Courses found: {details['course_count']}")
+                    print(f"   Courses found: {details['course_count']}")
                 if details.get("has_numbers"):
-                    print(f"  🔢 Contains numeric data: Yes")
+                    print(f"  Contains numeric data: Yes")
 
             except Exception as e:
-                print(f"❌ ERROR: {e}")
+                print(f" ERROR: {e}")
                 import traceback
                 traceback.print_exc()
 
@@ -274,7 +274,7 @@ def evaluate_system():
         json.dump(results, f, ensure_ascii=False, indent=2)
 
     print(f"\n{'=' * 70}")
-    print(f"✅ Evaluation complete! Results saved to: {output_path}")
+    print(f" Evaluation complete! Results saved to: {output_path}")
     print(f"{'=' * 70}")
 
     print_summary(results)
@@ -289,10 +289,10 @@ def print_summary(results: List[Dict]):
     quality_counts = Counter([r["quality"] for r in results])
     category_counts = Counter([r["category"] for r in results])
 
-    print(f"\n📊 Total questions: {len(results)}")
+    print(f"\n Total questions: {len(results)}")
 
     # Category breakdown
-    print(f"\n📂 By category:")
+    print(f"\n By category:")
     for cat, count in sorted(category_counts.items()):
         cat_results = [r for r in results if r["category"] == cat]
         success = sum(1 for r in cat_results if
@@ -301,7 +301,7 @@ def print_summary(results: List[Dict]):
         print(f"  • {cat.replace('_', ' ').title()}: {success}/{count} ({rate:.1f}%)")
 
     # Quality breakdown
-    print(f"\n🎯 By quality:")
+    print(f"\n By quality:")
     for quality, count in sorted(quality_counts.items(), key=lambda x: -x[1]):
         print(f"  • {quality}: {count}")
 
@@ -311,7 +311,7 @@ def print_summary(results: List[Dict]):
     success_rate = (success_count / total * 100) if total > 0 else 0
 
     # Detailed category analysis
-    print(f"\n🔍 Detailed Analysis:")
+    print(f"\n Detailed Analysis:")
     for category in TEST_QUESTIONS.keys():
         cat_results = [r for r in results if r["category"] == category]
         if not cat_results:
@@ -326,15 +326,15 @@ def print_summary(results: List[Dict]):
         print(f"\n  {category.replace('_', ' ').title()}:")
         print(f"    Success: {success}/{total_cat} ({success / total_cat * 100:.1f}%)")
         if weakest["quality"] not in ["GOOD (Listed courses)", "GOOD (Detailed answer)", "CORRECT (Properly rejected)"]:
-            print(f"    ⚠️  Weakest: {weakest['question'][:60]}...")
+            print(f"      Weakest: {weakest['question'][:60]}...")
             print(f"       Quality: {weakest['quality']}")
 
     print(f"\n{'=' * 70}")
-    print(f"🎉 OVERALL SUCCESS RATE: {success_rate:.1f}%")
+    print(f"OVERALL SUCCESS RATE: {success_rate:.1f}%")
     print(f"{'=' * 70}\n")
 
     # Recommendations
-    print("💡 Recommendations:")
+    print(" Recommendations:")
     if quality_counts.get("POOR (No numeric answer)", 0) > 0:
         print("  • Improve quantitative query handling")
     if quality_counts.get("POOR (Missing data)", 0) > 0:
