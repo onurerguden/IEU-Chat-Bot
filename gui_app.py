@@ -679,7 +679,7 @@ Try asking:
         self.thinking_indicator.start()
         self.is_processing = True
         self.send_btn.setEnabled(False)
-        self.send_btn.setText("Processing...")
+        self.send_btn.setText("Processing")
         self.signals.status_signal.emit(
             "● Processing",
             self.theme.warning,
