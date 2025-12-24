@@ -1,0 +1,722 @@
+[
+  {
+    "category": "single_department",
+    "question": "What are the core courses in the second year of Software Engineering?",
+    "answer": "To find the core courses in the second year of Software Engineering, I will extract relevant courses from curriculum_summary chunks for both Fall and Spring semesters.\n\nFor Fall semester (Year 2):\n• SFL 201 - Second Foreign Languages III\n• CE 221 - Data Structures and Algorithms I\n• CE 215 - Discrete Mathematics for Computer Science\n• HIST 100 - Principles of Atatürk and History of Revolution\n• MATH 207 - Introduction to Differential Equations I\n\nTotal courses in Fall semester: 5\n\nFor Spring semester (Year 2):\n• CE 223 - Database Systems\n• SFL 202 - Second Foreign Languages IV\n• MATH 240 - Probability for Engineers\n• SE 226 - Advanced Programming\n• SE 216 - Software Project Management\n• ENG 210 - Technical English for Engineers\n\nTotal courses in Spring semester: 6\n\nThe core courses in the second year of Software Engineering are:\n \nFall semester: SFL 201, CE 221, CE 215, HIST 100, MATH 207\nSpring semester: CE 223, SFL 202, MATH 240, SE 226, SE 216",
+    "quality": "GOOD (Detailed answer)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 21,
+      "answer_length": 960,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "single_department",
+    "question": "Which mandatory courses are offered in the third year of Computer Engineering?",
+    "answer": "To answer the question, I will extract all relevant mandatory courses from both Fall and Spring semester curriculum_summary chunks for the third year of Computer Engineering.\n\n**Fall Semester:**\n• EEE 242 - Digital Design\n• SE 302 - Principles of Software Engineering\n• CE 323 - Operating System Concepts\n• CE 315 - Automata Theory and Formal Languages\n• MATH 250 - Linear Algebra for Engineers\n\nTotal courses in Fall semester: 5\n\n**Spring Semester:**\n• CE 326 - Computer Networks\n• CE 316 - Programming Paradigms\n• MATH 236 - Engineering Statistics\n• FENG 345 - Numerical Methods for Engineers I\n\nTotal courses in Spring semester: 4\n\nTherefore, the mandatory courses offered in the third year of Computer Engineering are:\n\n* Fall Semester:\n\t+ EEE 242 - Digital Design\n\t+ SE 302 - Principles of Software Engineering\n\t+ CE 323 - Operating System Concepts\n\t+ CE 315 - Automata Theory and Formal Languages\n\t+ MATH 250 - Linear Algebra for Engineers\n* Spring Semester:\n\t+ CE 326 - Computer Networks\n\t+ CE 316 - Programming Paradigms\n\t+ MATH 236 - Engineering Statistics\n\t+ FENG 345 - Numerical Methods for Engineers I",
+    "quality": "GOOD (Detailed answer)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 18,
+      "answer_length": 1113,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "single_department",
+    "question": "Which courses focus on optimization techniques in Industrial Engineering?",
+    "answer": "• IE 251 - Optimization I \n• IE 252 - Optimization II \n• IE 357 - Special Topics in Optimization \n• IE 358 - Heuristics in Optimization \n• IE 359 - Network Optimization \n\nThese courses focus on optimization techniques in Industrial Engineering.",
+    "quality": "GOOD (Listed courses)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 5,
+      "answer_length": 244,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "single_department",
+    "question": "List all database-related courses in Computer Engineering.",
+    "answer": "• CE 223 - Database Systems \n• SE 306 - Database Management Systems \n• CE 370 - Distributed Database Systems \n\nThe curriculum data does not support the existence of other database-related courses in Computer Engineering.",
+    "quality": "POOR (Missing data)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 3,
+      "answer_length": 220,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "single_department",
+    "question": "What programming courses are taught in year 1 of Software Engineering?",
+    "answer": "• SE 115 - Introduction to Programming I (FALL)\n• SE 116 - Introduction to Programming II (SPRING)",
+    "quality": "PARTIAL (Brief answer)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 2,
+      "answer_length": 98,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "single_department",
+    "question": "Which courses in Electrical Engineering cover power systems?",
+    "answer": "Based on the provided context chunks, I found two courses that cover power systems:\n\n* EEE 472: Electrical Energy Transmission and Distribution (Year 4, Semester SPRING)\n\t+ Description: The course covers major concepts and methods used in electrical power systems for transmission and distribution such as voltage levels, types of power transmission systems and their components, power distribution systems, and power factor improvement methods.\n* EEE 427: Introduction to Power Electronics (Year 4, Semester SPRING)\n\t+ Description: This course focuses on the basic concepts of power electronics, especially the operation and design of converter and inverter circuits. Students will engage in both theoretical learning and practical .\n\nThese courses are specifically mentioned as covering power systems, and there is no other relevant information provided in the context chunks.",
+    "quality": "PARTIAL (Few courses listed)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 2,
+      "answer_length": 878,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "single_department",
+    "question": "What are the elective options for Industrial Engineering students?",
+    "answer": "• CE 322 - Pattern Recognition\n• CE 340 - Cryptography and Network Security\n• CE 344 - Advanced Automatic Learning\n• CE 345 - Introduction to Machine Learning\n• CE 370 - Distributed Database Systems\n• CE 390 - Analysis of Algorithms\n• CE 395 - Special Topics in Machine Learning\n• CE 401 - Algorithms Design\n• CE 403 - Computer Architecture and Organization\n• CE 455 - Deep Neural Networks\n• CE 470 - Introduction to Neural Networks\n• CE 477 - Data Science\n• CIVE 209 - Technical Drawing\n• IE 313 - Human Factors Engineering\n• IE 314 - Facility Planning\n• IE 328 - Production and Service Systems Management\n• IE 342 - Decision Theory\n• IE 343 - Data Mining\n• IE 373 - Software Applications in Industry",
+    "quality": "GOOD (Detailed answer)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 19,
+      "answer_length": 701,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "single_department",
+    "question": "Which Software Engineering courses have 6 ECTS credit?",
+    "answer": "• ELEC 004 (Elective Course IV) - 5 ECTS \n• TMD 001 (Complementary Engineering Courses) - 4 ECTS \n• TMD 002 (Complementary Engineering Courses) - 4 ECTS",
+    "quality": "GOOD (Detailed answer)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 3,
+      "answer_length": 152,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "single_department",
+    "question": "List the mandatory courses in the final year of Computer Engineering.",
+    "answer": "• FENG 498 - Engineering Capstone Project\n• HIST 100 - Principles of Atatürk and History of Revolution\n• ELEC 004 - Elective Course IV\n• ELEC 005 - Elective Course V\n• TMD 002 - Complementary Engineering Courses\n• ELEC 006 - Elective Course VI\n\nFrom the curriculum_summary chunks for SPRING semester, Year 4:\n\n- FENG 498 - Engineering Capstone Project (1 course)\n- HIST 100 - Principles of Atatürk and History of Revolution (1 course)\n- ELEC 004 - Elective Course IV (1 course)\n- ELEC 005 - Elective Course V (1 course)\n- TMD 002 - Complementary Engineering Courses (1 course)\n- ELEC 006 - Elective Course VI (1 course)\n\nTotal courses in SPRING semester: 6\n\nFrom the curriculum_summary chunks for FALL semester, Year 4:\n\n- FENG 497 - Multidisciplinary Engineering Projects\n- ELEC 001 - Elective Course I\n- ELEC 002 - Elective Course II\n- ELEC 003 - Elective Course III\n- CEST 400 - Engineering Summer Training (4 weeks)\n- TMD 001 - Complementary Engineering Courses\n\nTotal courses in FALL semester: 6",
+    "quality": "GOOD (Listed courses)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 18,
+      "answer_length": 1000,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "single_department",
+    "question": "What courses in Industrial Engineering focus on quality control?",
+    "answer": "Fall: 1 course + Spring: 1 course = Total: 2 courses\n\n• IE 334 - Statistical Quality Control (FALL)\n• IE 336 - Advanced Statistics for Industrial Engineering (SPRING)",
+    "quality": "PARTIAL (Few courses listed)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 2,
+      "answer_length": 166,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "topic_based",
+    "question": "Which engineering departments offer machine-learning-related courses?",
+    "answer": "Based on the provided context chunks, the following engineering departments offer machine-learning-related courses:\n\n* Computer Engineering: \n  • CE 345 - Introduction to Machine Learning (5 ECTS)\n  • CE 344 - Advanced Automatic Learning (5 ECTS)\n  • CE 455 - Deep Neural Networks (5 ECTS)\n\n* Industrial Engineering: \n  • CE 345 - Introduction to Machine Learning (5 ECTS)\n  • CE 344 - Advanced Automatic Learning (5 ECTS)\n  • IE 343 - Data Mining (5 ECTS)\n  • CE 455 - Deep Neural Networks (5 ECTS)\n\n* Software Engineering: \n  • CE 345 - Introduction to Machine Learning (5 ECTS)\n  • CE 455 - Deep Neural Networks (5 ECTS)",
+    "quality": "GOOD (Detailed answer)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 9,
+      "answer_length": 623,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "topic_based",
+    "question": "Which courses cover signal processing topics?",
+    "answer": "Based on the provided context chunks, the following courses cover signal processing topics:\n\n* EEE 416: Radar, Sonar and Sismic Signal Processing (Electrical and Electronics Engineering)\n* EEE 413: Digital Signal Processing (Electrical and Electronics Engineering)\n* EEE 456: Signal Processing Applications with MATLAB (Electrical and Electronics Engineering)\n* EEE 453: Adaptive Filters (Electrical and Electronics Engineering)\n\nThese courses are all from the Electrical and Electronics Engineering department, specifically covering topics related to signal processing.",
+    "quality": "GOOD (Listed courses)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 4,
+      "answer_length": 570,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "topic_based",
+    "question": "List all courses related to database management across all departments.",
+    "answer": "• CE 223: Database Systems (Software Engineering)\n• SE 306: Database Management Systems (Computer Engineering and Software Engineering)\n• CE 370: Distributed Database Systems (Computer Engineering and Industrial Engineering)\n\nNote that these courses are related to database management across all departments.",
+    "quality": "GOOD (Listed courses)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 3,
+      "answer_length": 308,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "topic_based",
+    "question": "Which courses teach web development?",
+    "answer": "Based on the provided context chunks, the following courses teach web development:\n\n* SE 480: Client Side Scripting Languages (Software Engineering and Computer Engineering departments)\n\t+ Description: This course introduces the students to the fundamental concepts of web programming using HTML, CSS, JavaScript, and jQuery.\n* SE 362: Server-Side Scripting Languages (Software Engineering and Computer Engineering departments)\n\t+ Description: This course introduces the students to the fundamental concepts of web programming using PHP.\n* SE 370: Programming Web Services (Software Engineering, Computer Engineering, and Industrial Engineering departments)\n\t+ Description: It is the research and discovery of new and emerging technologies used to provide services over N-partite and distributed networks. This course also covers transaction transaction processing, service and security contracts, business protocols and the web service development cycle.\n* SE 482: E-Business: Administration, Security and Marketing (Software Engineering and Industrial Engineering departments)\n\t+ Description: At the end of this course students will be able to develop and maintain e-commerce websites.\n\nHere is a side-by-side comparison of the courses that teach web development across the three departments:\n\n| Department | Course Code & Name |\n| --- | --- |\n| Software Engineering | SE 480, Client Side Scripting Languages; SE 362, Server-Side Scripting Languages; SE 370, Programming Web Services; SE 482, E-Business: Administration, Security and Marketing |\n| Computer Engineering | SE 480, Client Side Scripting Languages; SE 362, Server-Side Scripting Languages; SE 370, Programming Web Services; SE 204, Human-Computer Interaction |\n| Industrial Engineering | SE 370, Programming Web Services; SE 482, E-Business: Administration, Security and Marketing |\n\nNote that the course \"SE 204, Human-Computer Interaction\" in the Computer Engineering department also covers web development concepts.",
+    "quality": "GOOD (Listed courses)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 15,
+      "answer_length": 1983,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "topic_based",
+    "question": "What courses focus on artificial intelligence?",
+    "answer": "To answer this question, I will extract all relevant courses that focus on artificial intelligence from the provided context chunks.\n\n**Computer Engineering:**\n\n* SE 420: Artificial Intelligence and Expert Systems (metadata_summary)\n\t+ Description: This course provides an introduction to Artificial Intelligence. It examines the theories and algorithms that constitute the fundamental components of computational intelligence.\n* SE 354: Artificial Intelligence in Computer Games (metadata_summary)\n\t+ Description: In this course, students learn the theoretical aspects of the commonly used artificial intelligence algorithms in computer games and practically implement these algorithms in their own computer games.\n\n**Software Engineering:**\n\n* SE 420: Artificial Intelligence and Expert Systems (metadata_summary)\n\t+ Description: This course provides an introduction to Artificial Intelligence. It examines the theories and algorithms that constitute the fundamental components of computational intelligence.\n* SE 354: Artificial Intelligence in Computer Games (metadata_summary)\n\t+ Description: In this course, students learn the theoretical aspects of the commonly used artificial intelligence algorithms in computer games and practically implement these algorithms in their own computer games.\n\n**Industrial Engineering:**\n\n* SE 420: Artificial Intelligence and Expert Systems (metadata_summary)\n\t+ Description: This course provides an introduction to Artificial Intelligence. It examines the theories and algorithms that constitute the fundamental components of computational intelligence.\n* CE 455: Deep Neural Networks (metadata_summary)\n\t+ Description: The course content includes feedforward neural networks, backpropagation, convolutional neural networks, recurrent neural networks, reversible neural networks, regularization, and optimization.\n\n**Counting Relevant Courses:**\n\nThere are a total of **6** courses that focus on artificial intelligence:\n\n* SE 420 (Computer Engineering, Software Engineering, Industrial Engineering)\n\t+ Artificial Intelligence and Expert Systems\n* SE 354 (Computer Engineering, Software Engineering)\n\t+ Artificial Intelligence in Computer Games\n* CE 455 (Industrial Engineering)\n\t+ Deep Neural Networks\n\nNote: The course \"Decision Theory\" from the Industrial Engineering department also touches on artificial intelligence concepts, but it is not exclusively focused on AI.",
+    "quality": "GOOD (Listed courses)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 9,
+      "answer_length": 2414,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "topic_based",
+    "question": "Which departments offer courses on optimization?",
+    "answer": "Based on the provided context chunks, I found that the following departments offer courses on optimization:\n\n* Industrial Engineering (IE) department offers several courses on optimization:\n\t+ IE 251: Optimization I\n\t+ IE 252: Optimization II\n\t+ IE 357: Special Topics in Optimization\n\t+ IE 358: Heuristics in Optimization\n\t+ IE 359: Network Optimization\n\nThese courses are listed under the curriculum_summary chunks for the Industrial Engineering department.\n\nThe Computer Engineering (CE) and Software Engineering departments do not have any explicit optimization courses mentioned in their curriculum_summary chunks. However, there is a course \"Analysis of Algorithms\" (CE 390) offered by both departments, which may touch on optimization techniques, but it's not explicitly stated as an optimization course.\n\nTherefore, the Industrial Engineering department is the only one that offers dedicated optimization courses.",
+    "quality": "GOOD (Detailed answer)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 6,
+      "answer_length": 921,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "topic_based",
+    "question": "List all courses related to computer networks.",
+    "answer": "• CE 326 - Computer Networks (Code: CE 326)\n• CE 360 - Wireless Communication (Code: CE 360)\n• SE 352 - Network Programming in Computer Games (Code: SE 352)\n• CE 340 - Cryptography and Network Security (Code: CE 340)\n• IE 359 - Network Optimization (Code: IE 359)\n\nNote that these courses are related to computer networks, but the context does not provide a comprehensive list of all relevant courses.",
+    "quality": "GOOD (Listed courses)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 10,
+      "answer_length": 401,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "topic_based",
+    "question": "Which courses cover mobile application development?",
+    "answer": "To answer this question, I will extract all relevant courses that cover mobile application development from the provided context chunks.\n\n**Software Engineering Department:**\n\n* SE 380: Mobile Application Development (metadata_summary)\n\t+ Description: Mobile devices, mobile applications and requirements, mobile application development, using web services and databases in mobile applications\n* SE 390: Software Engineering for Mobile Devices (metadata_summary)\n\t+ Description: This course investigates how mobile applications and content not only differ from their desktop brethern, but also how mobile computing is changing web design and programming in general.\n* SE 380: Mobile Application Development (course_overview)\n\t+ Description: Mobile devices, mobile applications and requirements, mobile application development, using web services and databases in mobile applications\n* SE 390: Software Engineering for Mobile Devices (course_overview)\n\t+ Description: This course investigates how mobile applications and content not only differ from their desktop brethern, but also how mobile computing is changing web design and programming in general.\n\n**Computer Engineering Department:**\n\n* SE 380: Mobile Application Development (metadata_summary)\n\t+ Description: Mobile devices, mobile applications and requirements, mobile application development, using web services and databases in mobile applications\n* SE 390: Software Engineering for Mobile Devices (metadata_summary)\n\t+ Description: This course investigates how mobile applications and content not only differ from their desktop brethern, but also how mobile computing is changing web design and programming in general.\n* SE 380: Mobile Application Development (course_overview)\n\t+ Description: Mobile devices, mobile applications and requirements, mobile application development, using web services and databases in mobile applications\n* SE 390: Software Engineering for Mobile Devices (course_overview)\n\t+ Description: This course investigates how mobile applications and content not only differ from their desktop brethern, but also how mobile computing is changing web design and programming in general.\n\n**Electrical and Electronics Engineering Department:**\n\n* EEE 335: Application Development for Internet of Things Systems (metadata_summary)\n\t+ Description: This course is an introduction to mobile application development using the Android SDK, giving particular attention to the interaction with other devices with protocols such as Bluetooth. Basic Androi.\n\n**Industrial Engineering Department:**\n\nNo relevant courses found.\n\n**Counting Relevant Courses:**\n\n* Software Engineering Department: 4 courses\n* Computer Engineering Department: 4 courses\n* Electrical and Electronics Engineering Department: 1 course\n\nTherefore, there are **9 courses** that cover mobile application development across the three departments.",
+    "quality": "POOR (Missing data)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 9,
+      "answer_length": 2891,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "topic_based",
+    "question": "What courses teach data analysis techniques?",
+    "answer": "Based on the provided context chunks, the following courses teach data analysis techniques:\n\n* CE 477: Data Science (Software Engineering, Computer Engineering, Industrial Engineering, Electrical and Electronics Engineering)\n\t+ Course Overview: getting and cleaning data, exploring data, statistical models of data, statistical inference, main machine learning methods in data science including linear regression, SVM, k-nearest neighbors, Naïve Bayes, logistic regression, decision trees, random forests, clustering, and dimensionality reduction, over-fitting, cross-validation, feature engineering.\n* MATH 236: Engineering Statistics (Software Engineering, Computer Engineering, Industrial Engineering)\n\t+ Course Objectives: This course aims to provide students with the skills to collect, analyze and interpret statistical data.\n* IE 343: Data Mining (Industrial Engineering)\n\t+ Course Overview: The course topics include methods and principles of machine learning and data mining.\n\t+ Course Objectives: The main objective of this course is to provide fundamental knowledge about data mining methods and to enable students to use these methods with the help of data mining software tools.\n\nNote that there are no other courses mentioned in the context chunks that specifically teach data analysis techniques.",
+    "quality": "GOOD (Listed courses)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 3,
+      "answer_length": 1311,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "topic_based",
+    "question": "Which courses focus on software architecture?",
+    "answer": "• SE 311: Software Architecture (Computer Engineering and Software Engineering)\n• SE 311: Software Architecture (Software Engineering) \n• SE 311 objectives: The goal of this course to arm the students with the knowledge needed in architecting effective and maintainable complex software systems of high quality by applying design patterns. Each pattern represents a best practice solution to a software problem in some context. The course will sensitize the student that there is rarely one \"right\" design and an engineer is faced with a spectrum of possibilities representing tradeoffs. The course will cover the rationale and benefits of design patterns in architecting software systems. The course includes a brief review of object-oriented design principles and UML. Programming assignments and a project in the Java language will provide experience in the use of these patterns.\n\nNote: There is no information about courses focusing on software architecture in the Industrial Engineering department.",
+    "quality": "POOR (Missing data)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 3,
+      "answer_length": 1004,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "cross_department",
+    "question": "List programming-focused courses in Software Engineering and Computer Engineering.",
+    "answer": "• SE 115 - Introduction to Programming I (Software Engineering)\n• MATH 153 - Calculus I (Computer Engineering)\n• CE 216 - Fundamental Topics in Programming (Computer Engineering)\n• CE 316 - Programming Paradigms (Computer Engineering)\n• SE 226 - Advanced Programming (Software Engineering)\n• SE 307 - Concepts of Object-Oriented Programming (Software Engineering and Computer Engineering)\n• SE 323 - Concepts of Programming Languages (Software Engineering)\n• SE 104 - Foundations of Software Engineering (Software Engineering)\n• SE 115 - Introduction to Programming I (Computer Engineering)\n• ELEC 001 - Elective Course I (both departments, but type is mandatory in both)\n\nNote: Some courses are listed multiple times due to being offered in different semesters or years.",
+    "quality": "GOOD (Listed courses)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 10,
+      "answer_length": 771,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "cross_department",
+    "question": "Which department emphasizes data analysis more strongly?",
+    "answer": "Based on the provided context chunks, it appears that all four departments (Software Engineering, Industrial Engineering, Computer Engineering, and Electrical and Electronics Engineering) offer a course called \"Data Science\" with code CE 477 in their curriculum. This course covers various topics related to data analysis, including getting and cleaning data, exploring data, statistical models of data, statistical inference, and main machine learning methods.\n\nTo determine which department emphasizes data analysis more strongly, let's count the number of courses related to data analysis in each department:\n\n* Software Engineering:\n\t+ CE 477: Data Science (elective)\n\t+ MATH 236: Engineering Statistics (mandatory)\n\tTotal: 2 courses\n* Industrial Engineering:\n\t+ CE 477: Data Science (elective)\n\t+ IE 343: Data Preprocessing, Data Types, Data Preparation (elective)\n\t+ IE 334: Statistical Models for Data Characterization (mandatory)\n\tTotal: 3 courses\n* Computer Engineering:\n\t+ CE 477: Data Science (elective)\n\t+ MATH 236: Engineering Statistics (mandatory)\n\tTotal: 2 courses\n* Electrical and Electronics Engineering:\n\t+ CE 477: Data Science (elective)\n\tTotal: 1 course\n\nBased on the count, Industrial Engineering department has the most courses related to data analysis with a total of 3 courses.\n\nHere is the side-by-side comparison:\n\n| Department | Total Courses |\n| --- | --- |\n| Software Engineering | 2 |\n| Industrial Engineering | 3 |\n| Computer Engineering | 2 |\n| Electrical and Electronics Engineering | 1 |\n\nTherefore, the answer is that the Industrial Engineering department emphasizes data analysis more strongly.",
+    "quality": "GOOD (Detailed answer)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 9,
+      "answer_length": 1631,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "cross_department",
+    "question": "Compare machine learning courses in Computer and Industrial Engineering.",
+    "answer": "**Machine Learning Courses in Computer and Industrial Engineering**\n\n**Computer Engineering:**\n• CE 345 - Introduction to Machine Learning (5 ECTS)\n• CE 344 - Advanced Automatic Learning (5 ECTS)\n• CE 475 - Fundamentals and Applications of Machine Learning (7 ECTS)\n\n**Industrial Engineering:**\n• CE 345 - Introduction to Machine Learning (5 ECTS)\n• CE 344 - Advanced Automatic Learning (5 ECTS)\n• IE 343 - Data Mining (5 ECTS)\n• CE 455 - Deep Neural Networks (5 ECTS)\n• SE 420 - Artificial Intelligence and Expert Systems (5 ECTS)\n\n**Comparison:**\n\n| Department | Introduction to Machine Learning | Advanced Automatic Learning | Fundamentals and Applications of Machine Learning | Data Mining | Deep Neural Networks | Artificial Intelligence and Expert Systems |\n| --- | --- | --- | --- | --- | --- | --- |\n| Computer Engineering | CE 345 (5 ECTS) | CE 344 (5 ECTS) | CE 475 (7 ECTS) | - | - | - |\n| Industrial Engineering | CE 345 (5 ECTS) | CE 344 (5 ECTS) | - | IE 343 (5 ECTS) | CE 455 (5 ECTS) | SE 420 (5 ECTS) |\n\n**Counting:**\n\n* Computer Engineering has 3 machine learning courses.\n* Industrial Engineering has 6 machine learning courses.\n\nNote: The curriculum data does not provide information on the specific topics covered in each course, only a brief description.",
+    "quality": "GOOD (Detailed answer)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 16,
+      "answer_length": 1276,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "cross_department",
+    "question": "Which department has more elective courses: Software or Computer Engineering?",
+    "answer": "To determine which department has more elective courses, we need to count the number of elective courses in both Software Engineering and Computer Engineering departments.\n\n**Software Engineering Department:**\n\nFrom the provided context chunks, there are 5 elective courses:\n\n• SE 390: Software Engineering for Mobile Devices\n• SE 311: Software Architecture\n• SE 313: Computer Graphics\n• SE 482: E-Business: Administration, Security and Marketing\n• SE 360: Advances in Software Development\n\n**Computer Engineering Department:**\n\nFrom the provided context chunks, there are also 5 elective courses:\n\n• IE 373: Software Applications in Industry\n• SE 390: Software Engineering for Mobile Devices (Note: This course is listed twice, but it's only counted once)\n• SE 311: Software Architecture\n• SE 313: Computer Graphics\n• SE 482: E-Business: Administration, Security and Marketing\n\nSince both departments have the same number of elective courses (5), we cannot say that one department has more than the other.\n\nHowever, if we look closely at the context chunks, we can see that there are actually two additional elective courses in the Computer Engineering department:\n\n• SE 390 is listed twice, but it's only counted once\n• There is no duplicate course for IE 373\n\nSo, to correct our count, the Computer Engineering department has a total of 6 elective courses:\n\n• IE 373: Software Applications in Industry\n• SE 390: Software Engineering for Mobile Devices\n• SE 311: Software Architecture\n• SE 313: Computer Graphics\n• SE 482: E-Business: Administration, Security and Marketing\n• (Note: There is no additional course listed for the Computer Engineering department)\n\nThe correct count for both departments is:\n\n**Software Engineering Department:** 5 elective courses\n\n• SE 390: Software Engineering for Mobile Devices\n• SE 311: Software Architecture\n• SE 313: Computer Graphics\n• SE 482: E-Business: Administration, Security and Marketing\n• SE 360: Advances in Software Development\n\n**Computer Engineering Department:** 6 elective courses\n\n• IE 373: Software Applications in Industry\n• SE 390: Software Engineering for Mobile Devices\n• SE 311: Software Architecture\n• SE 313: Computer Graphics\n• SE 482: E-Business: Administration, Security and Marketing",
+    "quality": "GOOD (Detailed answer)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 27,
+      "answer_length": 2251,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "cross_department",
+    "question": "What are the differences in signal processing education between Electrical and Computer Engineering?",
+    "answer": "There are no direct comparisons between the signal processing education in Electrical and Computer Engineering departments in the provided context chunks. However, we can infer some differences based on the available data:\n\n**Electrical and Electronics Engineering:**\n\n* Signal Processing Applications with MATLAB (EE 456) - ECTS: 6\n* Digital Signal Processing (EE 413) - ECTS: 6\n\n**Computer Engineering:**\n\n* There is no explicit mention of signal processing courses in the Computer Engineering department. However, we can see that there are some related courses:\n\t+ Introduction to Electrical Circuits and Electronics for Computer Engineers (EEE 215) - ECTS: 7\n\t+ Fundamentals of Microprocessors (CE 342) - ECTS: 6\n\nIt's worth noting that the context chunks do not provide a comprehensive overview of the signal processing education in either department. The curriculum_summary chunks only list mandatory courses, and there may be additional elective or optional courses that are not included.\n\nTo answer the question more accurately, we would need more information about the specific courses offered in each department, including their descriptions and ECTS values.",
+    "quality": "GOOD (Detailed answer)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 4,
+      "answer_length": 1168,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "cross_department",
+    "question": "Compare the database courses offered in Software and Computer Engineering.",
+    "answer": "**Database Courses in Software and Computer Engineering**\n\n**Software Engineering:**\n• CE 223 - Database Systems (Year 2, Spring)\n• SE 306 - Database Management Systems (Year 4, Spring)\n\n**Computer Engineering:**\n• CE 223 - Database Systems (Year 2, Spring)\n• ELEC 002 - Elective Course II (Year 4, Fall) (Note: This is a mandatory elective course slot, not an actual database course. However, students can choose from various elective options to fill this slot.)\n\n**Comparison:**\n\n| Department | CE 223 - Database Systems | SE 306 - Database Management Systems |\n| --- | --- | --- |\n| Software Engineering | Mandatory (Year 2, Spring) | Elective (Year 4, Spring) |\n| Computer Engineering | Mandatory (Year 2, Spring) | Not listed |\n\n**Note:** The curriculum data does not provide information on the specific database courses offered in Industrial Engineering.",
+    "quality": "GOOD (Detailed answer)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 6,
+      "answer_length": 860,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "cross_department",
+    "question": "Which department requires more mathematics courses in year 1?",
+    "answer": "To determine which department requires more mathematics courses in year 1, let's analyze the curriculum_summary chunks for each department:\n\n**Software Engineering:**\n• SPRING semester: MATH 154 - Calculus II (1 course)\n• FALL semester: MATH 153 - Calculus I (1 course)\n\nTotal math courses: 2\n\n**Industrial Engineering:**\n• SPRING semester: MATH 154 - Calculus II, MATH 250 - Linear Algebra for Engineers (2 courses)\n• FALL semester: No math courses found in the provided context chunks.\n\nTotal math courses: 2\n\n**Computer Engineering:**\n• SPRING semester: MATH 154 - Calculus II (1 course)\n• FALL semester: MATH 153 - Calculus I (1 course)\n\nTotal math courses: 2\n\n**Electrical and Electronics Engineering:**\n• SPRING semester: MATH 154 - Calculus II (1 course)\n• FALL semester: No math courses found in the provided context chunks.\n\nTotal math courses: 1\n\nComparing the departments, we can see that:\n\n| Department | Total Math Courses |\n| --- | --- |\n| Industrial Engineering | 2 |\n| Software Engineering | 2 |\n| Computer Engineering | 2 |\n| Electrical and Electronics Engineering | 1 |\n\nBased on the provided context chunks, all three departments (Industrial Engineering, Software Engineering, and Computer Engineering) require an equal number of mathematics courses in year 1.",
+    "quality": "GOOD (Detailed answer)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 7,
+      "answer_length": 1279,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "cross_department",
+    "question": "List optimization courses in Industrial versus Computer Engineering.",
+    "answer": "**Optimization Courses in Industrial vs Computer Engineering**\n\n**Industrial Engineering:**\nThe curriculum data does not support this information.\n\n**Computer Engineering:**\n• CE 485: Optimization Problems (Linear and Integer Linear Programming)\n\nNote: There is only one optimization course mentioned in the context for Computer Engineering.",
+    "quality": "POOR (Missing data)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 1,
+      "answer_length": 341,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "cross_department",
+    "question": "Which department offers more embedded systems courses?",
+    "answer": "To determine which department offers more embedded systems courses, I will extract relevant courses from the curriculum_summary chunks and count them.\n\n**Electrical and Electronics Engineering (EEE) Department:**\n\n* EEE 461 - Embedded Systems Design\n* AE 308 - Introduction to Wireless Communication (Note: This course is not specifically about embedded systems, but it's related)\n* EEE 335 - Application Development for Internet of Things Systems\n\nTotal ECTS: 18 (6 + 6 + 6)\n\n**Computer Engineering Department:**\n\n* EEE 461 - Embedded Systems Design\n* CE 407 - Introduction to Cloud Computing (Note: This course is not specifically about embedded systems, but it's related)\n* No other relevant courses found in the curriculum_summary chunk for Computer Engineering\n\nTotal ECTS: 12 (6 + 6)\n\n**Industrial Engineering Department:**\n\nNo relevant courses found in the curriculum_summary chunk for Industrial Engineering\n\nSince we are comparing departments, I will provide side-by-side data:\n\n| Department | Relevant Courses | Total ECTS |\n| --- | --- | --- |\n| Electrical and Electronics Engineering (EEE) | EEE 461, AE 308, EEE 335 | 18 |\n| Computer Engineering | EEE 461, CE 407 | 12 |\n\nBased on the extracted data, the **Electrical and Electronics Engineering (EEE) Department** offers more embedded systems courses.",
+    "quality": "POOR (Missing data)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 10,
+      "answer_length": 1315,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "cross_department",
+    "question": "Compare the total ECTS load in year 3 across all engineering departments.",
+    "answer": "To compare the total ECTS load in year 3 across all engineering departments, we need to extract the relevant information from the curriculum_summary chunks for each department.\n\nHere are the extracted data:\n\n**Computer Engineering**\n\n* FALL: EEE 242 - Digital Design (6 ECTS), SE 302 - Principles of Software Engineering (7.5 ECTS), CE 323 - Operating System Concepts (7.5 ECTS), CE 315 - Automata Theory and Formal Languages (7.5 ECTS), MATH 250 - Linear Algebra for Engineers (7.5 ECTS) = 30 ECTS\n* SPRING: CE 326 - Computer Networks (6 ECTS), CE 316 - Programming Paradigms (7.5 ECTS), MATH 236 - Engineering Statistics (7.5 ECTS), FENG 345 - Numerical Methods for Engineers I (7.5 ECTS) = 24 ECTS\n\n**Electrical and Electronics Engineering**\n\n* FALL: EEE 309 - Signals and Systems (6 ECTS), EEE 333 - Analog Electronic Circuits (6 ECTS), CE 342 - Fundamentals of Microprocessors (6 ECTS), MATH 236 - Engineering Statistics (7.5 ECTS), EEE 322 - Engineering Electromagnetics (7.5 ECTS) = 30 ECTS\n* SPRING: EEE 302 - Principles of Communication (6 ECTS), EEE 346 - Fundamentals of Control Systems (6 ECTS), EEE 334 - Digital Electronic Circuits (6 ECTS), EEE 307 - Electrical Energy Conversion (6 ECTS), TMD 001 - Complementary Engineering Courses (7.5 ECTS) = 30 ECTS\n\n**Industrial Engineering**\n\n* FALL: IE 323 - Production Planning Design and Control (7.5 ECTS), IE 322 - Work System Analysis and Design (7.5 ECTS), IE 321 - Dynamic and Nonlinear Programming (7.5 ECTS), IE 261 - Industrial Information Systems (6 ECTS), IE 334 - Statistical Quality Control (6 ECTS) = 30 ECTS\n* SPRING: IE 335 - Simulation (7.5 ECTS), IE 316 - Manufacturing Systems (7.5 ECTS), TMD 001 - Complementary Engineering Courses (7.5 ECTS), FENG 345 - Numerical Methods",
+    "quality": "GOOD (Detailed answer)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 28,
+      "answer_length": 1750,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "quantitative",
+    "question": "How many elective courses are offered in the final year of Software Engineering?",
+    "answer": "To determine the number of elective courses offered in the final year of Software Engineering, we need to look at the curriculum_summary chunk for Year 4, SPRING semester.\n\nFrom the context:\n\nSoftware Engineering Year 4 SPRING Elective Courses: \nCE 304 - Operating Systems Security, CE 315 - Automata Theory and Formal Languages, CE 322 - Pattern Recognition, CE 326 - Computer Networks, CE 340 - Cryptography and Network Security, CE 342 - Fundamentals of Microprocessors, CE 345 - Introduction to Machine Learning, CE 350 - Linux Utilities and Shell Scripting, CE 360 - Wireless Communication, CE 370 - Distributed Database Systems, CE 380 - Computational Geometry, CE 390 - Analysis of Algorithms, CE 395 - Special Topics in Machine Learning, CE 401 - Algorithms Design, CE 403 - Computer Architecture and Organization, and 38 more courses.\n\nTotal ECTS: 275. Course count: 53.\n\nHowever, this chunk lists all elective courses for the year, not just those offered in the final semester. To find the number of elective courses offered in the final year, we need to look at the metadata_summary chunks for Year 4, SPRING semester.\n\nFrom the context:\n\n* SE 460 - Software Measurement (5 ECTS)\n* SE 360 - Advances in Software Development (5 ECTS)\n* IE 372 - Project Management (5 ECTS)\n* SE 350 - Game Design (5 ECTS)\n* SE 313 - Computer Graphics (5 ECTS)\n* CE 403 - Computer Architecture and Organization (5 ECTS)\n* SE 380 - Mobile Application Development (5 ECTS)\n* SE 330 - Advanced Game Development (5 ECTS)\n\nThere are 8 elective courses offered in the final year of Software Engineering.",
+    "quality": "GOOD (Provided count)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 23,
+      "answer_length": 1589,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "quantitative",
+    "question": "Which academic year has the highest total ECTS load?",
+    "answer": "To determine which academic year has the highest total ECTS load, I will carefully read all context chunks and extract relevant information.\n\nFrom the curriculum_summary chunks, I found that each department has a mandatory course in their 4th year with an ECTS value of 5. These courses are:\n\n* FENG 497 - Multidisciplinary Engineering Projects (5 ECTS)\n* EEEST 400 - Engineering Summer Training (4 weeks) (5 ECTS)\n* IEST 400 - Engineering Summer Training (4 weeks) (5 ECTS)\n\nThese mandatory courses contribute to the total ECTS load of each department in their 4th year.\n\nNow, let's compare the total ECTS loads for each academic year across all departments:\n\n| Department | Year 1 | Year 2 | Year 3 | Year 4 |\n| --- | --- | --- | --- | --- |\n| Electrical and Electronics Engineering (EEE) | 60 | 60 | 60 | 262 + 30 = 292 |\n| Industrial Engineering (IE) | 60 | 60 | 60 | 269 + 30 = 299 |\n| Computer Science/Engineering (CSE) | Not available | Not available | Not available | Not available |\n\nFrom the statistics_summary chunks, I found that:\n\n* Electrical and Electronics Engineering (EEE) has a total of 83 courses with 442 ECTS in all years.\n* Industrial Engineering (IE) has a total of 87 courses with 449 ECTS in all years.\n\nHowever, when looking at the curriculum_summary chunks for each department's 4th year, I found that:\n\n* Electrical and Electronics Engineering (EEE) has a total of 49 courses with 262 ECTS in their 4th year.\n* Industrial Engineering (IE) has a total of 52 courses with 269 ECTS in their 4th year.\n\nBut when adding the mandatory course in their 4th year, the total ECTS load for each department is:\n\n* Electrical and Electronics Engineering (EEE): 262 + 30 = 292\n* Industrial Engineering (IE): 269 + 30 = 299\n\nTherefore, the academic year with the highest total ECTS load is **Year 4 of Industrial Engineering** with a total of **299 ECTS**.\n\nHere's a side-by-side comparison of the total ECTS loads for each department in their 4th year:\n\n| Department | Year 4 Total",
+    "quality": "EXCELLENT (Detailed calculation)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 2,
+      "answer_length": 1996,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "quantitative",
+    "question": "How many mandatory courses are in year 2 of Computer Engineering?",
+    "answer": "To find the total number of mandatory courses in year 2 of Computer Engineering, we need to extract all relevant courses from both Fall and Spring semester curriculum_summary chunks.\n\nFall Semester: \n• CE 221 - Data Structures and Algorithms I\n• CE 215 - Discrete Mathematics for Computer Science\n• SFL 201 - Second Foreign Languages III\n• EEE 215 - Introduction to Electrical Circuits and Electronics for Computer Engineers\n• MATH 240 - Probability for Engineers\n\nSpring Semester: \n• SFL 202 - Second Foreign Languages IV\n• CE 223 - Database Systems\n• CE 216 - Fundamental Topics in Programming\n• MATH 207 - Introduction to Differential Equations I\n• TURK 100 - Turkish\n• ENG 210 - Technical English for Engineers\n\nTotal number of mandatory courses: \nFall Semester: 5 courses + Spring Semester: 6 courses = Total: 11 courses",
+    "quality": "EXCELLENT (Detailed calculation)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 11,
+      "answer_length": 825,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "quantitative",
+    "question": "What is the total ECTS of elective courses in Industrial Engineering?",
+    "answer": "To find the total ECTS of elective courses in Industrial Engineering, we need to extract relevant information from both curriculum_summary and metadata_summary chunks.\n\nFrom the curriculum_summary chunk:\n\n* Total ECTS: 209\n* Course count: 40\n\nHowever, this includes all courses, not just electives. We need to focus on elective courses only.\n\nFrom the metadata_summary chunks, we can see that there are several elective courses with their respective ECTS values:\n\n• IE 373 - Software Applications in Industry (5 ECTS)\n• IE 328 - Production and Service Systems Management (5 ECTS)\n• ME 313 - Measurement Systems (5 ECTS)\n• IE 342 - Decision Theory (5 ECTS)\n• IE 329 - Lean Production (5 ECTS)\n• CE 403 - Computer Architecture and Organization (5 ECTS)\n• SE 482 - E-Business: Administration, Security and Marketing (5 ECTS)\n• IE 326 - Inventory Planning (6 ECTS)\n\nLet's calculate the total ECTS of these elective courses:\n\n5 + 5 + 5 + 5 + 5 + 5 + 5 + 6 = 40\n\nHowever, we need to note that this is not the only source of electives. The curriculum_summary chunk mentions \"IE 313 - Human Factors Engineering\" and \"IE 314 - Facility Planning\" as elective courses, but their ECTS values are not provided in the metadata_summary chunks.\n\nTo get an accurate total, we should also consider these two courses. Unfortunately, their ECTS values are missing from the metadata_summary chunks.\n\nSince we cannot determine the exact ECTS of these two courses, we will exclude them from our calculation for now.\n\nThe total ECTS of elective courses in Industrial Engineering is: 40",
+    "quality": "EXCELLENT (Detailed calculation)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 10,
+      "answer_length": 1561,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "quantitative",
+    "question": "How many courses focus on programming in Software Engineering?",
+    "answer": "To answer the question, I will extract all relevant courses that focus on programming from the curriculum_summary chunks:\n\n* Software Engineering Year 1 SPRING Mandatory Courses: \n\t+ SE 116 - Introduction to Programming II\n\t+ SE 104 - Foundations of Software Engineering\n* Software Engineering Year 2 FALL Mandatory Courses:\n\t+ CE 221 - Data Structures and Algorithms I (Note: This course is not exclusively focused on programming, but it does cover data structures and algorithms)\n* Software Engineering Year 3 FALL Mandatory Courses:\n\t+ SE 323 - Concepts of Programming Languages\n* Software Engineering Year 4 SPRING Elective Course:\n\t+ SE 360 - Advances in Software Development\n\nNow, let's count the courses that focus on programming:\n\n1. Introduction to Programming II (SE 116) = 1 course\n2. Foundations of Software Engineering (SE 104) = 1 course\n3. Data Structures and Algorithms I (CE 221) = 1 course\n4. Concepts of Programming Languages (SE 323) = 1 course\n5. Advances in Software Development (SE 360) = 1 course\n\nTotal courses that focus on programming: 5",
+    "quality": "EXCELLENT (Detailed calculation)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 10,
+      "answer_length": 1064,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "quantitative",
+    "question": "Which year has the most courses in Electrical Engineering?",
+    "answer": "To determine which year has the most courses in Electrical Engineering, we need to count the total number of courses for each year.\n\nFrom the statistics_summary chunks:\n\n* Year 1: 13 courses (Year 1 Statistics)\n* Year 2: 11 courses (Year 2 Statistics)\n* Year 3: 10 courses (Year 3 Statistics)\n* Year 4: 49 courses (Electrical and Electronics Engineering Year 4 Statistics)\n\nFrom the curriculum_summary chunks:\n\n* Year 1 FALL: 7 courses (Electrical and Electronics Engineering Year 1 FALL Mandatory Courses)\n* Year 1 SPRING: 6 courses (Electrical and Electronics Engineering Year 1 SPRING Mandatory Courses)\n* Year 4 FALL: 6 courses (Electrical and Electronics Engineering Year 4 FALL Mandatory Courses)\n\nComparing the total number of courses for each year:\n\nYear 1: 13 + 7 = 20 courses\nYear 2: 11 + 5 = 16 courses\nYear 3: 10 + 5 = 15 courses\nYear 4: 49 (already counted as 49)\n\nHowever, we also need to consider the elective course slots. From the metadata_summary chunks:\n\n* ELEC 001, ELEC 002, ELEC 003, ELEC 004, ELEC 005, and ELEC 006 are mandatory elective courses in Year 4.\n\nSince these courses are already counted as part of the total number of courses for Year 4 (49), we don't need to add them separately. But we should note that there are no other elective course slots available in the curriculum.\n\nTherefore, based on the provided context chunks, **Year 4 has the most courses in Electrical Engineering with a total of 49 courses**.",
+    "quality": "GOOD (Comparative analysis)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 6,
+      "answer_length": 1445,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "quantitative",
+    "question": "How many 6-ECTS courses are there in Computer Engineering?",
+    "answer": "To find the number of 6-ECTS courses in Computer Engineering, I will review all relevant chunks:\n\n1. statistics_summary chunks for each year:\n   - Year 1: No 6-ECTS courses\n   - Year 2: No 6-ECTS courses\n   - Year 3: No 6-ECTS courses\n   - Year 4: No direct mention of 6-ECTS courses in statistics_summary chunks\n\n2. curriculum_summary chunks for each year:\n   - Year 1: No 6-ECTS courses\n   - Year 2: FALL Mandatory Courses (30 ECTS) and SPRING Mandatory Courses (30 ECTS)\n   - Year 3: FALL Mandatory Courses (30 ECTS) and SPRING Mandatory Courses (24 ECTS)\n   - Year 4: No direct mention of 6-ECTS courses in curriculum_summary chunks\n\n3. metadata_summary chunks for each year:\n   - Year 4: \n     • ELEC 002 (Elective Course II, 5 ECTS)\n     • ELEC 003 (Elective Course III, 5 ECTS)\n     • ELEC 006 (Elective Course VI, 5 ECTS)\n     • ELEC 001 (Elective Course I, 5 ECTS)\n     • ELEC 004 (Elective Course IV, 5 ECTS)\n     • ELEC 005 (Elective Course V, 5 ECTS)\n     • TMD 002 (Complementary Engineering Courses, 5 ECTS)\n     • TMD 001 (Complementary Engineering Courses, 4 ECTS)\n\nSince there are no direct mentions of 6-ECTS courses in the provided chunks, I will count the relevant metadata_summary chunk for Year 4:\n\n• No 6-ECTS courses found in curriculum_summary or statistics_summary chunks\n• In metadata_summary chunks for Year 4:\n  • There is no course with exactly 6 ECTS.",
+    "quality": "GOOD (Provided count)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 8,
+      "answer_length": 1382,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "quantitative",
+    "question": "What is the total number of elective slots in Software Engineering curriculum?",
+    "answer": "Fall: 0 courses + Spring: 53 courses = Total: 53 elective slots \n\n• CE 304 - Operating Systems Security \n• CE 315 - Automata Theory and Formal Languages \n• CE 322 - Pattern Recognition \n• CE 326 - Computer Networks \n• CE 340 - Cryptography and Network Security \n• CE 342 - Fundamentals of Microprocessors \n• CE 345 - Introduction to Machine Learning \n• CE 350 - Linux Utilities and Shell Scripting \n• CE 360 - Wireless Communication \n• CE 370 - Distributed Database Systems \n• CE 380 - Computational Geometry \n• CE 390 - Analysis of Algorithms \n• CE 395 - Special Topics in Machine Learning \n• CE 401 - Algorithms Design \n• CE 403 - Computer Architecture and Organization \n• ... (38 more courses)",
+    "quality": "EXCELLENT (Detailed calculation)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 15,
+      "answer_length": 696,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "quantitative",
+    "question": "How many courses are offered in Fall semester of year 3 for Industrial Engineering?",
+    "answer": "Fall: 5 courses + Spring: The curriculum data does not support this information.\n \nHowever, since the question specifically asks for Fall semester of year 3 for Industrial Engineering, we can focus on that part:\n\n• IE 323 - Production Planning Design and Control\n• IE 322 - Work System Analysis and Design\n• IE 321 - Dynamic and Nonlinear Programming\n• IE 261 - Industrial Information Systems\n• IE 334 - Statistical Quality Control\n\nTotal courses in Fall semester of year 3 for Industrial Engineering: 5",
+    "quality": "POOR (Missing data)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 5,
+      "answer_length": 503,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "quantitative",
+    "question": "Which department has the highest number of technical elective options?",
+    "answer": "To determine which department has the highest number of technical elective options, we need to count the total number of elective courses in each department.\n\n**Industrial Engineering:**\nFrom the curriculum_summary chunk for Industrial Engineering Year 4 SPRING Elective Courses, we have:\n\n* CE 322 - Pattern Recognition\n* CE 340 - Cryptography and Network Security\n* CE 344 - Advanced Automatic Learning\n* CE 345 - Introduction to Machine Learning\n* CE 370 - Distributed Database Systems\n* CE 390 - Analysis of Algorithms\n* CE 395 - Special Topics in Machine Learning\n* CE 401 - Algorithms Design\n* CE 403 - Computer Architecture and Organization\n* CE 455 - Deep Neural Networks\n* CE 470 - Introduction to Neural Networks\n* CE 477 - Data Science\n* CIVE 209 - Technical Drawing\n* IE 313 - Human Factors Engineering\n* IE 314 - Facility Planning and 25 more courses.\n\nTotal number of elective courses in Industrial Engineering: 40\n\n**Software Engineering:**\nFrom the curriculum_summary chunk for Software Engineering Year 4 SPRING Elective Courses, we have:\n\n* CE 304 - Operating Systems Security\n* CE 315 - Automata Theory and Formal Languages\n* CE 322 - Pattern Recognition\n* CE 326 - Computer Networks\n* CE 340 - Cryptography and Network Security\n* CE 342 - Fundamentals of Microprocessors\n* CE 345 - Introduction to Machine Learning\n* CE 350 - Linux Utilities and Shell Scripting\n* CE 360 - Wireless Communication\n* CE 370 - Distributed Database Systems\n* CE 380 - Computational Geometry\n* CE 390 - Analysis of Algorithms\n* CE 395 - Special Topics in Machine Learning\n* CE 401 - Algorithms Design\n* CE 403 - Computer Architecture and Organization and 38 more courses.\n\nTotal number of elective courses in Software Engineering: 53\n\n**Computer Engineering:**\nFrom the metadata_summary chunks for Computer Engineering, we have:\n\n* IE 342 - Decision Theory (5 ECTS)\n* IE 373 - Software Applications in Industry (5 ECTS)\n* SE 482 - E-Business: Administration, Security and Marketing (5 ECTS)\n\nTotal number of elective courses in Computer Engineering: 3\n\n**Electrical and Electronics Engineering:**\nFrom the metadata_summary chunk for Electrical and Electronics Engineering, we have:\n\n* CE 403 - Computer Architecture and Organization (5 ECTS)\n\nTotal number of elective courses in Electrical and Electronics Engineering: 1\n\nComparing the total number of elective courses in each department, we can see that:\n\n| Department | Total Number of Elective Courses |\n| --- | --- |\n| Industrial Engineering | 40 |\n| Software Engineering | 53 |\n| Computer Engineering | 3 |\n| Electrical and Electronics Engineering | 1 |\n\nTherefore, **Software Engineering** has the highest number of technical elective options with a total of 53 courses.",
+    "quality": "GOOD (Provided count)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 34,
+      "answer_length": 2724,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Does the Software Engineering department offer a course on Quantum Thermodynamics?",
+    "answer": "The curriculum data does not support this information.",
+    "quality": "CORRECT (Properly rejected)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 0,
+      "answer_length": 54,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Is there a compulsory course on Astrophysics in Computer Engineering?",
+    "answer": "No, there is no compulsory course on Astrophysics in Computer Engineering.\n\nThe curriculum_summary chunks do not mention any course related to Astrophysics. The metadata_summary chunks also do not provide any information about a mandatory course on Astrophysics.\n\nHowever, the following courses are mentioned:\n\n* No relevant courses found in curriculum_summary chunks\n* Metadata_summary chunks:\n\t+ ELEC 001: Elective Course I (mandatory)\n\t+ ELEC 002: Elective Course II (mandatory)\n\t+ ELEC 003: Elective Course III (mandatory)\n\t+ ELEC 004: Elective Course IV (mandatory)\n\t+ ELEC 005: Elective Course V (mandatory)\n\t+ ELEC 006: Elective Course VI (mandatory)\n\nNo course related to Astrophysics is mentioned in the provided context.",
+    "quality": "CORRECT (Properly rejected)",
+    "metrics": {
+      "has_numbers": true,
+      "course_count": 6,
+      "answer_length": 730,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Does Industrial Engineering teach a course on Ancient Greek Philosophy?",
+    "answer": "The curriculum data does not support this information.",
+    "quality": "CORRECT (Properly rejected)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 0,
+      "answer_length": 54,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Is there a course on Marine Biology in Electrical Engineering?",
+    "answer": "The curriculum data does not support this information.",
+    "quality": "CORRECT (Properly rejected)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 0,
+      "answer_length": 54,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Does Computer Engineering offer a course on Medieval History?",
+    "answer": "No, the curriculum data does not support this information.",
+    "quality": "CORRECT (Properly rejected)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 0,
+      "answer_length": 58,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Is Organic Chemistry a mandatory course in Software Engineering?",
+    "answer": "The curriculum data does not support this information.",
+    "quality": "CORRECT (Properly rejected)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 0,
+      "answer_length": 54,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Does the Industrial Engineering curriculum include a course on Archaeology?",
+    "answer": "The curriculum data does not support this information.",
+    "quality": "CORRECT (Properly rejected)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 0,
+      "answer_length": 54,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Is there a course on Constitutional Law in Computer Engineering?",
+    "answer": "The curriculum data does not support this information.",
+    "quality": "CORRECT (Properly rejected)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 0,
+      "answer_length": 54,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Does Electrical Engineering offer a course on Paleontology?",
+    "answer": "The curriculum data does not support this information.",
+    "quality": "CORRECT (Properly rejected)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 0,
+      "answer_length": 54,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Is there a mandatory course on Zoology in Software Engineering?",
+    "answer": "No, there is no mandatory course on Zoology in Software Engineering.\n\nThe curriculum_summary chunks do not mention any course related to Zoology.",
+    "quality": "HALLUCINATION (False positive)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 0,
+      "answer_length": 145,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Does Computer Engineering teach a course called 'Quantum Entanglement Theory'?",
+    "answer": "The curriculum data does not support this information.",
+    "quality": "CORRECT (Properly rejected)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 0,
+      "answer_length": 54,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Is 'Advanced Alchemy' an elective in Industrial Engineering?",
+    "answer": "The curriculum data does not support this information.",
+    "quality": "CORRECT (Properly rejected)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 0,
+      "answer_length": 54,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Does Software Engineering offer 'Introduction to Telepathy'?",
+    "answer": "The curriculum data does not support the existence of 'Introduction to Telepathy' in Software Engineering.",
+    "quality": "CORRECT (Properly rejected)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 0,
+      "answer_length": 106,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Is there a course on 'Interstellar Navigation' in Electrical Engineering?",
+    "answer": "The curriculum data does not support this information.",
+    "quality": "CORRECT (Properly rejected)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 0,
+      "answer_length": 54,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Does Industrial Engineering have a course called 'Time Travel Engineering'?",
+    "answer": "The curriculum data does not support this information.",
+    "quality": "CORRECT (Properly rejected)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 0,
+      "answer_length": 54,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Is 'Mythological Creatures Studies' offered in Computer Engineering?",
+    "answer": "The curriculum data does not support this information.",
+    "quality": "CORRECT (Properly rejected)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 0,
+      "answer_length": 54,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Does Software Engineering teach 'Advanced Potion Making'?",
+    "answer": "The curriculum data does not support this information.",
+    "quality": "CORRECT (Properly rejected)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 0,
+      "answer_length": 54,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Is there a course on 'Underwater Basket Weaving' in any department?",
+    "answer": "There is no course on 'Underwater Basket Weaving' in any department.",
+    "quality": "HALLUCINATION (False positive)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 0,
+      "answer_length": 68,
+      "is_negative": false
+    }
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Does Electrical Engineering offer 'Introduction to Dragon Taming'?",
+    "answer": "The curriculum data does not support this information.",
+    "quality": "CORRECT (Properly rejected)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 0,
+      "answer_length": 54,
+      "is_negative": true
+    }
+  },
+  {
+    "category": "hallucination_trap",
+    "question": "Is 'Medieval Sword Fighting' a technical elective in Software Engineering?",
+    "answer": "The curriculum data does not support this information.",
+    "quality": "CORRECT (Properly rejected)",
+    "metrics": {
+      "has_numbers": false,
+      "course_count": 0,
+      "answer_length": 54,
+      "is_negative": true
+    }
+  }
+]

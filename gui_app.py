@@ -249,9 +249,10 @@ class MessageBubble(QFrame):
         header_layout.addWidget(self.role_label)
 
         # Timestamp
+        color = 'white' if not self.is_user else self.theme.text_secondary
         self.time_label = QLabel(self.timestamp.strftime("%H:%M"))
         self.time_label.setStyleSheet(f"""
-            color: {self.theme.text_secondary};
+            color: {color};
             font-size: 9px;
             font-weight: 500;
         """)
