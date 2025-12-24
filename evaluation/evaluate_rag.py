@@ -20,31 +20,78 @@ from rag import rag_app
 TEST_QUESTIONS = {
     "single_department": [
         "What are the core courses in the second year of Software Engineering?",
-        "Which mandatory courses are offered in the fifth year of Computer Engineering?",
+        "Which mandatory courses are offered in the third year of Computer Engineering?",
         "Which courses focus on optimization techniques in Industrial Engineering?",
-        "List all first year mandatory courses in Electrical Engineering",
+        "List all database-related courses in Computer Engineering.",
+        "What programming courses are taught in year 1 of Software Engineering?",
+        "Which courses in Electrical Engineering cover power systems?",
+        "What are the elective options for Industrial Engineering students?",
+        "Which Software Engineering courses have 6 ECTS credit?",
+        "List the mandatory courses in the final year of Computer Engineering.",
+        "What courses in Industrial Engineering focus on quality control?"
+
     ],
     "topic_based": [
         "Which engineering departments offer machine-learning-related courses?",
         "Which courses cover signal processing topics?",
-        "Which departments have courses on data structures?",
-        "Find courses related to artificial intelligence",
+        "List all courses related to database management across all departments.",
+        "Which courses teach web development?",
+        "What courses focus on artificial intelligence?",
+        "Which departments offer courses on optimization?",
+        "List all courses related to computer networks.",
+        "Which courses cover mobile application development?",
+        "What courses teach data analysis techniques?",
+        "Which courses focus on software architecture?"
+
     ],
     "cross_department": [
         "List programming-focused courses in Software Engineering and Computer Engineering.",
         "Which department emphasizes data analysis more strongly?",
-        "Compare database courses across all departments",
+        "Compare machine learning courses in Computer and Industrial Engineering.",
+        "Which department has more elective courses: Software or Computer Engineering?",
+        "What are the differences in signal processing education between Electrical and Computer Engineering?",
+        "Compare the database courses offered in Software and Computer Engineering.",
+        "Which department requires more mathematics courses in year 1?",
+        "List optimization courses in Industrial versus Computer Engineering.",
+        "Which department offers more embedded systems courses?",
+        "Compare the total ECTS load in year 3 across all engineering departments."
+
     ],
     "quantitative": [
         "How many elective courses are offered in the final year of Software Engineering?",
-        "Which academic year has the highest total ECTS load in Computer Engineering?",
-        "Count mandatory courses in third year of Industrial Engineering",
+        "Which academic year has the highest total ECTS load?",
+        "How many mandatory courses are in year 2 of Computer Engineering?",
+        "What is the total ECTS of elective courses in Industrial Engineering?",
+        "How many courses focus on programming in Software Engineering?",
+        "Which year has the most courses in Electrical Engineering?",
+        "How many 6-ECTS courses are there in Computer Engineering?",
+        "What is the total number of elective slots in Software Engineering curriculum?",
+        "How many courses are offered in Fall semester of year 3 for Industrial Engineering?",
+        "Which department has the highest number of technical elective options?"
+
     ],
     "hallucination_trap": [
         "Does the Software Engineering department offer a course on Quantum Thermodynamics?",
         "Is there a compulsory course on Astrophysics in Computer Engineering?",
-        "Does Industrial Engineering have a course on Underwater Basket Weaving?",
-        "Is Quantum Computing mandatory in first year of Electrical Engineering?",
+        "Does Industrial Engineering teach a course on Ancient Greek Philosophy?",
+        "Is there a course on Marine Biology in Electrical Engineering?",
+        "Does Computer Engineering offer a course on Medieval History?",
+        "Is Organic Chemistry a mandatory course in Software Engineering?",
+        "Does the Industrial Engineering curriculum include a course on Archaeology?",
+        "Is there a course on Constitutional Law in Computer Engineering?",
+        "Does Electrical Engineering offer a course on Paleontology?",
+        "Is there a mandatory course on Zoology in Software Engineering?",
+        "Does Computer Engineering teach a course called 'Quantum Entanglement Theory'?",
+        "Is 'Advanced Alchemy' an elective in Industrial Engineering?",
+        "Does Software Engineering offer 'Introduction to Telepathy'?",
+        "Is there a course on 'Interstellar Navigation' in Electrical Engineering?",
+        "Does Industrial Engineering have a course called 'Time Travel Engineering'?",
+        "Is 'Mythological Creatures Studies' offered in Computer Engineering?",
+        "Does Software Engineering teach 'Advanced Potion Making'?",
+        "Is there a course on 'Underwater Basket Weaving' in any department?",
+        "Does Electrical Engineering offer 'Introduction to Dragon Taming'?",
+        "Is 'Medieval Sword Fighting' a technical elective in Software Engineering?"
+
     ]
 }
 
