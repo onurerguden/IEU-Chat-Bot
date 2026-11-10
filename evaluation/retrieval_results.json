@@ -1,0 +1,6511 @@
+{
+  "snapshot_sha256": "ed99b97459aa20635e93912f66a2592c9479371351065fb95b049704672af21e",
+  "hardware": "macOS-27.0.1-arm64-arm-64bit",
+  "python": "3.11.9",
+  "device": "mps",
+  "model_revisions": {
+    "Qwen/Qwen3-Embedding-0.6B": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+    "Qwen/Qwen3-Reranker-0.6B": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+    "sentence-transformers/all-MiniLM-L6-v2": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+  },
+  "generator": "qwen3:4b-instruct-2507-q4_K_M",
+  "startup_seconds": 134.35372499999357,
+  "peak_process_mib": 1639.953125,
+  "modes": {
+    "bm25": {
+      "dev": {
+        "n": 16,
+        "recall_at_10": 0.75,
+        "ndcg_at_10": 0.621778694929962,
+        "p50_ms": 10.06674999371171,
+        "p95_ms": 15.218708023894578
+      },
+      "test": {
+        "n": 32,
+        "recall_at_10": 0.75,
+        "ndcg_at_10": 0.658730902264089,
+        "p50_ms": 12.170250032795593,
+        "p95_ms": 13.69225000962615
+      },
+      "test_slices": {
+        "en": {
+          "n": 16,
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.9226162191964322,
+          "p50_ms": 12.327728531090543,
+          "p95_ms": 55.02466601319611
+        },
+        "tr": {
+          "n": 16,
+          "recall_at_10": 0.5,
+          "ndcg_at_10": 0.3948455853317459,
+          "p50_ms": 11.073083500377834,
+          "p95_ms": 13.69225000962615
+        },
+        "code": {
+          "n": 16,
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.871778694929962,
+          "p50_ms": 11.290604510577396,
+          "p95_ms": 13.69225000962615
+        },
+        "semantic": {
+          "n": 16,
+          "recall_at_10": 0.5,
+          "ndcg_at_10": 0.4456831095982161,
+          "p50_ms": 12.799020507372916,
+          "p95_ms": 55.02466601319611
+        }
+      },
+      "queries": [
+        {
+          "id": "search-01-en",
+          "group": "search-01",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "operating system kernel and scheduling",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "e18f6776aae10753"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "e18f6776aae10753",
+            "306d0c69305a55e6",
+            "e62d0c92bfb9e796",
+            "301d5573e27e077a",
+            "14cd4e9317436fec",
+            "6dff5a5cdbf23e94",
+            "1440e62e4a3baea2",
+            "c097eb8c306e589f",
+            "06a717751d929158",
+            "8151a71f7c8a85b6"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 55.02466601319611
+        },
+        {
+          "id": "search-01-tr",
+          "group": "search-01",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "işletim sistemi çekirdeği ve süreç zamanlama",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "e18f6776aae10753"
+          ],
+          "slice": "semantic",
+          "hits": [],
+          "recall": 0.0,
+          "ndcg": 0.0,
+          "ms": 13.255458965431899
+        },
+        {
+          "id": "search-02-en",
+          "group": "search-02",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "computer networks and transport protocols",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "b7030c68065d6332"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "b7030c68065d6332",
+            "7712043fe6a0c73e",
+            "6e4f39920bcef1e9",
+            "d70e5ba94b1a9a16",
+            "cb30815db889f669",
+            "f45b81de5aae6b1e",
+            "1ebe0d6429102b5c",
+            "00e11f1868951b84",
+            "f628712f2210132d",
+            "5148ce4e2e08e4e5"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 13.612082984764129
+        },
+        {
+          "id": "search-02-tr",
+          "group": "search-02",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "bilgisayar ağları ve taşıma katmanı protokolleri",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "b7030c68065d6332"
+          ],
+          "slice": "semantic",
+          "hits": [],
+          "recall": 0.0,
+          "ndcg": 0.0,
+          "ms": 12.91187503375113
+        },
+        {
+          "id": "search-03-en",
+          "group": "search-03",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "verification and validation of software",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "3c58ac8fc4ffd6bf"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "3c58ac8fc4ffd6bf",
+            "4e35ca5649ae10cf",
+            "f1e7e8b0b04694cc",
+            "9bb41a1c4fe1cf50",
+            "22d284fa181feff7",
+            "f2bf533d0ebf66ce",
+            "eb46a0496e816efe",
+            "1c83b77a243e5f83",
+            "8322b85852ec17d7",
+            "434599137e9e06c3"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 13.076040952000767
+        },
+        {
+          "id": "search-03-tr",
+          "group": "search-03",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "yazılım doğrulama ve geçerleme",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "3c58ac8fc4ffd6bf"
+          ],
+          "slice": "semantic",
+          "hits": [],
+          "recall": 0.0,
+          "ndcg": 0.0,
+          "ms": 13.440374983474612
+        },
+        {
+          "id": "search-04-en",
+          "group": "search-04",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "architectural design of software systems",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "8322b85852ec17d7"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "8322b85852ec17d7",
+            "d9d673a19688a040",
+            "f13c9cbe35c25737",
+            "02c52dded7493138",
+            "b4dd814e1855dfb3",
+            "efaacf63f4c4a541",
+            "481a14c4a38e10aa",
+            "739056540541a8c8",
+            "f023656b74d16ead",
+            "9eb091b0c0a65872"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 12.887458025943488
+        },
+        {
+          "id": "search-04-tr",
+          "group": "search-04",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "yazılım sistemlerinin mimari tasarımı",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "8322b85852ec17d7"
+          ],
+          "slice": "semantic",
+          "hits": [],
+          "recall": 0.0,
+          "ndcg": 0.0,
+          "ms": 0.03362499410286546
+        },
+        {
+          "id": "search-05-en",
+          "group": "search-05",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "signals and systems frequency analysis",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "b78e17b6a95d4047"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "236643457fa714b0",
+            "e257eb47b6c15399",
+            "b78e17b6a95d4047",
+            "1e7917e0161ff6af",
+            "5707450760059d21",
+            "8738913db5166c56",
+            "bd45f2009e7c601e",
+            "f1eeeb8e47630ef7",
+            "a43d9acf48a685ec",
+            "6d73a5c40a086a0a"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.5,
+          "ms": 12.571582978125662
+        },
+        {
+          "id": "search-05-tr",
+          "group": "search-05",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "sinyaller ve sistemlerin frekans analizi",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "b78e17b6a95d4047"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "4d2e17306451cb56"
+          ],
+          "recall": 0.0,
+          "ndcg": 0.0,
+          "ms": 12.710582988802344
+        },
+        {
+          "id": "search-06-en",
+          "group": "search-06",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "feedback and control system fundamentals",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "1e7917e0161ff6af"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "1e7917e0161ff6af",
+            "f1eeeb8e47630ef7",
+            "b684526c54d784a8",
+            "741a7606fa3d5db2",
+            "23b8eae3353668e1",
+            "9e87b01dacd77f58",
+            "ab8068bbf16dbe5a",
+            "3689a03df721d83c",
+            "e07b67fc723cc1cf",
+            "4072183e4222410a"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 12.48249999480322
+        },
+        {
+          "id": "search-06-tr",
+          "group": "search-06",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "geri besleme ve kontrol sistemlerinin temelleri",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "1e7917e0161ff6af"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "4d2e17306451cb56"
+          ],
+          "recall": 0.0,
+          "ndcg": 0.0,
+          "ms": 13.007332978304476
+        },
+        {
+          "id": "search-07-en",
+          "group": "search-07",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "optimization I",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "2ef63e9888fc92e3"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "2ef63e9888fc92e3",
+            "7024134adead76cb",
+            "d7c79efa8812c4aa",
+            "26051bbdc8b943ed",
+            "ef3428dc8916384c",
+            "c4426e641ca75046",
+            "8ffd6d09c7b30a08",
+            "28403a4f1c8cb2b7",
+            "3e01e79eada8cb43",
+            "aed0a39756c45abc"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 10.42745797894895
+        },
+        {
+          "id": "search-07-tr",
+          "group": "search-07",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "optimizasyon I",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "2ef63e9888fc92e3"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "4867ba8a314801dd",
+            "ee02653d915ab8b8",
+            "4c5876349893c2ee",
+            "71788381f5a09e3f",
+            "4db11b24ccc3604f",
+            "886190f713ed5a02",
+            "b9e73d1090da5937",
+            "9270de8b5983c771",
+            "3017df57240894d0",
+            "78eb90cc717af326"
+          ],
+          "recall": 0.0,
+          "ndcg": 0.0,
+          "ms": 9.15275001898408
+        },
+        {
+          "id": "search-08-en",
+          "group": "search-08",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "simulation in industrial engineering",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "3fbc7a4b27624dd8"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "aed0a39756c45abc",
+            "3fbc7a4b27624dd8",
+            "8ffd6d09c7b30a08",
+            "d90349ad9d154c64",
+            "58ee7455fa36e6ea",
+            "c51a24f957199594",
+            "f3459dd0fd9f211f",
+            "deb02232ac6af64e",
+            "49813f30ba33f159",
+            "8189ea37b6ce8a27"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 11.988499958533794
+        },
+        {
+          "id": "search-08-tr",
+          "group": "search-08",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "endüstri mühendisliği simülasyonu",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "3fbc7a4b27624dd8"
+          ],
+          "slice": "semantic",
+          "hits": [],
+          "recall": 0.0,
+          "ndcg": 0.0,
+          "ms": 0.02604199107736349
+        },
+        {
+          "id": "search-09-en",
+          "group": "search-09",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "CE 223 database systems",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "02c52dded7493138"
+          ],
+          "slice": "code",
+          "hits": [
+            "b4dd814e1855dfb3",
+            "02c52dded7493138",
+            "efaacf63f4c4a541",
+            "687f6ccd1a69aad6",
+            "ad384a11b082bf8b",
+            "0f2c95076e326110",
+            "d3569e85190fddb6",
+            "ea6831b34c6b1ee6",
+            "0037e86186d75751",
+            "38ee7cc8cd192381"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 12.424416025169194
+        },
+        {
+          "id": "search-09-tr",
+          "group": "search-09",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "CE 223 veritabanı sistemleri",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "02c52dded7493138"
+          ],
+          "slice": "code",
+          "hits": [
+            "efaacf63f4c4a541",
+            "687f6ccd1a69aad6",
+            "b4dd814e1855dfb3",
+            "02c52dded7493138",
+            "d3569e85190fddb6",
+            "be11adc0617716e7",
+            "ad1e43dad25e935e",
+            "2390c74201501ea7",
+            "4b28eec602f666f7",
+            "0037e86186d75751"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.43067655807339306,
+          "ms": 7.57754105143249
+        },
+        {
+          "id": "search-10-en",
+          "group": "search-10",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "CE 315 automata and formal languages",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "7a29ce1721e9a45e"
+          ],
+          "slice": "code",
+          "hits": [
+            "7a29ce1721e9a45e",
+            "6c3cace561e14113",
+            "447931d800ee73aa",
+            "ce231d5569d8f7eb",
+            "f80f9fe95c9cf4bc",
+            "6111a7f2ac680fd6",
+            "28950acc9d47140c",
+            "8aeda0e68addc45a",
+            "7b3b3532eaadf8b0",
+            "74319fc7dffb3990"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 9.99220903031528
+        },
+        {
+          "id": "search-10-tr",
+          "group": "search-10",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "CE 315 otomatlar ve biçimsel diller",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "7a29ce1721e9a45e"
+          ],
+          "slice": "code",
+          "hits": [
+            "7a29ce1721e9a45e",
+            "1440e62e4a3baea2",
+            "e62d0c92bfb9e796",
+            "e18f6776aae10753",
+            "24616e70123dd109",
+            "14cd4e9317436fec",
+            "f80f9fe95c9cf4bc",
+            "e78acacadd571098",
+            "e365468c92856643",
+            "6dff5a5cdbf23e94"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 13.69225000962615
+        },
+        {
+          "id": "search-11-en",
+          "group": "search-11",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "SE 226 advanced programming",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "739056540541a8c8"
+          ],
+          "slice": "code",
+          "hits": [
+            "739056540541a8c8",
+            "0f2c95076e326110",
+            "098786e69924b430",
+            "757ec0eb81ef7871",
+            "cd1a36f08b0024af",
+            "811198254c1fb246",
+            "6da8bd340b81fff9",
+            "8f332bd65ff3cb86",
+            "5c5e26932b128c8f",
+            "90bff5ed059b2f79"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 11.769707954954356
+        },
+        {
+          "id": "search-11-tr",
+          "group": "search-11",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "SE 226 ileri programlama",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "739056540541a8c8"
+          ],
+          "slice": "code",
+          "hits": [
+            "739056540541a8c8",
+            "22d284fa181feff7",
+            "f13c9cbe35c25737",
+            "eb46a0496e816efe",
+            "3c58ac8fc4ffd6bf",
+            "0387c75b8ccbe7c3",
+            "811198254c1fb246",
+            "4f6523b25470ea32",
+            "8322b85852ec17d7",
+            "6da8bd340b81fff9"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 12.109459028579295
+        },
+        {
+          "id": "search-12-en",
+          "group": "search-12",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "EEE 232 microelectronic devices",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "5df1ebdbced304ae"
+          ],
+          "slice": "code",
+          "hits": [
+            "5df1ebdbced304ae",
+            "e227cf4967360aa4",
+            "f1eeeb8e47630ef7",
+            "1599c6481c163b11",
+            "ef04fee7dffede54",
+            "34df12d5b4233e3e",
+            "1ec9a7406a0a8245",
+            "a2a4ac6cc1c91fd4",
+            "8d0cc1d725bb72d3",
+            "6d73a5c40a086a0a"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 10.818542039487511
+        },
+        {
+          "id": "search-12-tr",
+          "group": "search-12",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "EEE 232 mikroelektronik aygıtlar",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "5df1ebdbced304ae"
+          ],
+          "slice": "code",
+          "hits": [
+            "f1eeeb8e47630ef7",
+            "1599c6481c163b11",
+            "5df1ebdbced304ae",
+            "8d0cc1d725bb72d3",
+            "6d73a5c40a086a0a",
+            "8738913db5166c56",
+            "236643457fa714b0",
+            "e227cf4967360aa4",
+            "08e5ae8a7de13f1a",
+            "a43d9acf48a685ec"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.5,
+          "ms": 9.196207975037396
+        },
+        {
+          "id": "search-13-en",
+          "group": "search-13",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "IE 334 statistical quality control",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "88f5435d1d1178e0"
+          ],
+          "slice": "code",
+          "hits": [
+            "88f5435d1d1178e0",
+            "b3ece0f841664aa0",
+            "d639386361ae6184",
+            "deb02232ac6af64e",
+            "f3459dd0fd9f211f",
+            "ef3428dc8916384c",
+            "c51a24f957199594",
+            "9314b2a44b9b7a88",
+            "6e3e8c6aed3c7290",
+            "26051bbdc8b943ed"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 12.565625016577542
+        },
+        {
+          "id": "search-13-tr",
+          "group": "search-13",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "IE 334 istatistiksel kalite kontrol",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "88f5435d1d1178e0"
+          ],
+          "slice": "code",
+          "hits": [
+            "88f5435d1d1178e0",
+            "800c627b96c23498",
+            "295595f270f031f7",
+            "3fbc7a4b27624dd8",
+            "aed0a39756c45abc",
+            "d7c79efa8812c4aa",
+            "a09793a685560f17",
+            "4867ba8a314801dd",
+            "7024134adead76cb",
+            "fe8e4ee9b637f432"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 10.036707972176373
+        },
+        {
+          "id": "search-14-en",
+          "group": "search-14",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "CE 221 data structures and algorithms",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "28950acc9d47140c"
+          ],
+          "slice": "code",
+          "hits": [
+            "28950acc9d47140c",
+            "e78acacadd571098",
+            "e18f6776aae10753",
+            "14cd4e9317436fec",
+            "d70e5ba94b1a9a16",
+            "b7030c68065d6332",
+            "00e11f1868951b84",
+            "20f0517399da4f9c",
+            "cb30815db889f669",
+            "1ebe0d6429102b5c"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 12.231041037011892
+        },
+        {
+          "id": "search-14-tr",
+          "group": "search-14",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "CE 221 veri yapıları ve algoritmalar",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "28950acc9d47140c"
+          ],
+          "slice": "code",
+          "hits": [
+            "e18f6776aae10753",
+            "14cd4e9317436fec",
+            "e78acacadd571098",
+            "02755b94276ac47b",
+            "28950acc9d47140c",
+            "1440e62e4a3baea2",
+            "e62d0c92bfb9e796",
+            "24616e70123dd109",
+            "7a29ce1721e9a45e",
+            "f80f9fe95c9cf4bc"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.38685280723454163,
+          "ms": 13.081374985631555
+        },
+        {
+          "id": "search-15-en",
+          "group": "search-15",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "EEE 307 energy conversion",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "8d0cc1d725bb72d3"
+          ],
+          "slice": "code",
+          "hits": [
+            "8d0cc1d725bb72d3",
+            "b3c1524c87a8d8b9",
+            "1ec9a7406a0a8245",
+            "08e5ae8a7de13f1a",
+            "ef04fee7dffede54",
+            "0be9147eb3f69ce6",
+            "a2a4ac6cc1c91fd4",
+            "6d73a5c40a086a0a",
+            "8738913db5166c56",
+            "236643457fa714b0"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 9.290957998018712
+        },
+        {
+          "id": "search-15-tr",
+          "group": "search-15",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "EEE 307 enerji dönüşümü",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "8d0cc1d725bb72d3"
+          ],
+          "slice": "code",
+          "hits": [
+            "8d0cc1d725bb72d3",
+            "6d73a5c40a086a0a",
+            "8738913db5166c56",
+            "236643457fa714b0",
+            "e227cf4967360aa4",
+            "08e5ae8a7de13f1a",
+            "a43d9acf48a685ec",
+            "e4b9b6da7e2fb087",
+            "5df1ebdbced304ae",
+            "9e87b01dacd77f58"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 8.39045800967142
+        },
+        {
+          "id": "search-16-en",
+          "group": "search-16",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "IE 323 production planning design",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "d639386361ae6184"
+          ],
+          "slice": "code",
+          "hits": [
+            "d639386361ae6184",
+            "f58ee326b37922df",
+            "4867ba8a314801dd",
+            "3e01e79eada8cb43",
+            "deb02232ac6af64e",
+            "9fc5ab240fc86f40",
+            "e8d2f962206cf9b7",
+            "52c8522f0945dcd1",
+            "dc767ae385794e2d",
+            "c51a24f957199594"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 11.76266698166728
+        },
+        {
+          "id": "search-16-tr",
+          "group": "search-16",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "IE 323 üretim planlama tasarımı",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "d639386361ae6184"
+          ],
+          "slice": "code",
+          "hits": [
+            "d639386361ae6184",
+            "800c627b96c23498",
+            "295595f270f031f7",
+            "3fbc7a4b27624dd8",
+            "88f5435d1d1178e0",
+            "aed0a39756c45abc",
+            "d7c79efa8812c4aa",
+            "a09793a685560f17",
+            "7024134adead76cb",
+            "4867ba8a314801dd"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 9.587750013452023
+        },
+        {
+          "id": "search-17-en",
+          "group": "search-17",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "paradigms of programming languages",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "447931d800ee73aa"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "447931d800ee73aa",
+            "02755b94276ac47b",
+            "6111a7f2ac680fd6",
+            "7a29ce1721e9a45e",
+            "7d46d8035b0c6ef9",
+            "7b3b3532eaadf8b0",
+            "74319fc7dffb3990",
+            "f80f9fe95c9cf4bc",
+            "28950acc9d47140c",
+            "1440e62e4a3baea2"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 15.218708023894578
+        },
+        {
+          "id": "search-17-tr",
+          "group": "search-17",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "programlama paradigmaları",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "447931d800ee73aa"
+          ],
+          "slice": "semantic",
+          "hits": [],
+          "recall": 0.0,
+          "ndcg": 0.0,
+          "ms": 0.03466702764853835
+        },
+        {
+          "id": "search-18-en",
+          "group": "search-18",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "work system design and analysis",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "b1817e6f01a17194"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "b1817e6f01a17194",
+            "f58ee326b37922df",
+            "c0525e74423fca37",
+            "88f5435d1d1178e0",
+            "deb02232ac6af64e",
+            "e8d2f962206cf9b7",
+            "b3ece0f841664aa0",
+            "aed0a39756c45abc",
+            "fd31088ad543d8e3",
+            "5a694b316ba23752"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 13.776416017208248
+        },
+        {
+          "id": "search-18-tr",
+          "group": "search-18",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "iş sistemi analizi ve tasarımı",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "b1817e6f01a17194"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "d90349ad9d154c64"
+          ],
+          "recall": 0.0,
+          "ndcg": 0.0,
+          "ms": 13.029374997131526
+        },
+        {
+          "id": "search-19-en",
+          "group": "search-19",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "engineering electromagnetics",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "4387d904d1c32e1c"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "508f878c6a296629",
+            "4387d904d1c32e1c",
+            "73a9212b52b88898",
+            "9d2d0f8e962a3004",
+            "749a2f3656509d7a",
+            "9344043ce18401a4",
+            "dffa33032003825b",
+            "866cbbe2be54ba9c",
+            "34df12d5b4233e3e",
+            "f18fa06d5c23f292"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 8.837207977194339
+        },
+        {
+          "id": "search-19-tr",
+          "group": "search-19",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "mühendislik elektromanyetiği",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "4387d904d1c32e1c"
+          ],
+          "slice": "semantic",
+          "hits": [],
+          "recall": 0.0,
+          "ndcg": 0.0,
+          "ms": 0.02179195871576667
+        },
+        {
+          "id": "search-20-en",
+          "group": "search-20",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "software project management",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "434599137e9e06c3"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "434599137e9e06c3",
+            "a7e5f71dbe62c77d",
+            "f13c9cbe35c25737",
+            "efaacf63f4c4a541",
+            "739056540541a8c8",
+            "8b7cc969ba262ff8",
+            "3c58ac8fc4ffd6bf",
+            "687f6ccd1a69aad6",
+            "1c83b77a243e5f83",
+            "cef5288e0338fe2f"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 12.075375008862466
+        },
+        {
+          "id": "search-20-tr",
+          "group": "search-20",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "yazılım proje yönetimi",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "434599137e9e06c3"
+          ],
+          "slice": "semantic",
+          "hits": [],
+          "recall": 0.0,
+          "ndcg": 0.0,
+          "ms": 0.03566703526303172
+        },
+        {
+          "id": "search-21-en",
+          "group": "search-21",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "SE 321 software specification",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "f13c9cbe35c25737"
+          ],
+          "slice": "code",
+          "hits": [
+            "f13c9cbe35c25737",
+            "22d284fa181feff7",
+            "eb46a0496e816efe",
+            "3c58ac8fc4ffd6bf",
+            "8322b85852ec17d7",
+            "434599137e9e06c3",
+            "f2bf533d0ebf66ce",
+            "1c83b77a243e5f83",
+            "765284198251e94d",
+            "0387c75b8ccbe7c3"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 14.117417042143643
+        },
+        {
+          "id": "search-21-tr",
+          "group": "search-21",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "SE 321 yazılım belirtimi",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "f13c9cbe35c25737"
+          ],
+          "slice": "code",
+          "hits": [
+            "f13c9cbe35c25737",
+            "22d284fa181feff7",
+            "eb46a0496e816efe",
+            "3c58ac8fc4ffd6bf",
+            "0387c75b8ccbe7c3",
+            "811198254c1fb246",
+            "4f6523b25470ea32",
+            "739056540541a8c8",
+            "8322b85852ec17d7",
+            "6da8bd340b81fff9"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 11.83133403537795
+        },
+        {
+          "id": "search-22-en",
+          "group": "search-22",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "EEE 207 circuit analysis",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "a2a4ac6cc1c91fd4"
+          ],
+          "slice": "code",
+          "hits": [
+            "5df1ebdbced304ae",
+            "8d0cc1d725bb72d3",
+            "bd45f2009e7c601e",
+            "a2a4ac6cc1c91fd4",
+            "fbf2842684587ebe",
+            "9d2d0f8e962a3004",
+            "34df12d5b4233e3e",
+            "f1eeeb8e47630ef7",
+            "8738913db5166c56",
+            "0e8ae83fa7a66f78"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.43067655807339306,
+          "ms": 8.55125003727153
+        },
+        {
+          "id": "search-22-tr",
+          "group": "search-22",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "EEE 207 devre analizi",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "a2a4ac6cc1c91fd4"
+          ],
+          "slice": "code",
+          "hits": [
+            "8d0cc1d725bb72d3",
+            "08e5ae8a7de13f1a",
+            "bd45f2009e7c601e",
+            "5df1ebdbced304ae",
+            "a2a4ac6cc1c91fd4",
+            "6d73a5c40a086a0a",
+            "8738913db5166c56",
+            "236643457fa714b0",
+            "e227cf4967360aa4",
+            "a43d9acf48a685ec"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.38685280723454163,
+          "ms": 8.837000001221895
+        },
+        {
+          "id": "search-23-en",
+          "group": "search-23",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "IE 215 engineering economics",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "707d9fe3f4beeb8e"
+          ],
+          "slice": "code",
+          "hits": [
+            "707d9fe3f4beeb8e",
+            "800c627b96c23498",
+            "295595f270f031f7",
+            "3fbc7a4b27624dd8",
+            "88f5435d1d1178e0",
+            "aed0a39756c45abc",
+            "d7c79efa8812c4aa",
+            "a09793a685560f17",
+            "4867ba8a314801dd",
+            "7024134adead76cb"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 9.65774996438995
+        },
+        {
+          "id": "search-23-tr",
+          "group": "search-23",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "IE 215 mühendislik ekonomisi",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "707d9fe3f4beeb8e"
+          ],
+          "slice": "code",
+          "hits": [
+            "707d9fe3f4beeb8e",
+            "800c627b96c23498",
+            "295595f270f031f7",
+            "3fbc7a4b27624dd8",
+            "88f5435d1d1178e0",
+            "aed0a39756c45abc",
+            "d7c79efa8812c4aa",
+            "a09793a685560f17",
+            "7024134adead76cb",
+            "4867ba8a314801dd"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 9.176958992611617
+        },
+        {
+          "id": "search-24-en",
+          "group": "search-24",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "EEE 242 digital design",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "dc568ff915080690"
+          ],
+          "slice": "code",
+          "hits": [
+            "dc568ff915080690",
+            "301d5573e27e077a",
+            "20e5a594d8c3c5b1",
+            "ce231d5569d8f7eb",
+            "4fefe5fac947e98e",
+            "8aeda0e68addc45a",
+            "06a717751d929158",
+            "91af84a4b098ded7",
+            "e14379fd6d6833cd",
+            "6dff5a5cdbf23e94"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 10.47575002303347
+        },
+        {
+          "id": "search-24-tr",
+          "group": "search-24",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "EEE 242 sayısal tasarım",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "dc568ff915080690"
+          ],
+          "slice": "code",
+          "hits": [
+            "20e5a594d8c3c5b1",
+            "301d5573e27e077a",
+            "dc568ff915080690",
+            "5c219a89509428c5",
+            "f45b81de5aae6b1e",
+            "e14379fd6d6833cd"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.5,
+          "ms": 12.776791991200298
+        }
+      ]
+    },
+    "dense": {
+      "dev": {
+        "n": 16,
+        "recall_at_10": 1.0,
+        "ndcg_at_10": 0.9077324383928644,
+        "p50_ms": 51.265542017063126,
+        "p95_ms": 55.485791992396116
+      },
+      "test": {
+        "n": 32,
+        "recall_at_10": 1.0,
+        "ndcg_at_10": 0.8899410808326579,
+        "p50_ms": 53.728020982816815,
+        "p95_ms": 113.69829199975356
+      },
+      "test_slices": {
+        "en": {
+          "n": 16,
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.9307993287946483,
+          "p50_ms": 52.36445847549476,
+          "p95_ms": 769.3851250223815
+        },
+        "tr": {
+          "n": 16,
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.8490828328706675,
+          "p50_ms": 57.396416494157165,
+          "p95_ms": 113.69829199975356
+        },
+        "code": {
+          "n": 16,
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.9182835040760192,
+          "p50_ms": 53.54841650114395,
+          "p95_ms": 113.69829199975356
+        },
+        "semantic": {
+          "n": 16,
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.8615986575892965,
+          "p50_ms": 54.61591697530821,
+          "p95_ms": 769.3851250223815
+        }
+      },
+      "queries": [
+        {
+          "id": "search-01-en",
+          "group": "search-01",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "operating system kernel and scheduling",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "e18f6776aae10753"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "e18f6776aae10753",
+            "e62d0c92bfb9e796",
+            "306d0c69305a55e6",
+            "e78acacadd571098",
+            "14cd4e9317436fec",
+            "447931d800ee73aa",
+            "20f0517399da4f9c",
+            "d0e88e92f63a23ab",
+            "20e5a594d8c3c5b1",
+            "24616e70123dd109"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 769.3851250223815
+        },
+        {
+          "id": "search-01-tr",
+          "group": "search-01",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "işletim sistemi çekirdeği ve süreç zamanlama",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "e18f6776aae10753"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "24616e70123dd109",
+            "e18f6776aae10753",
+            "20f0517399da4f9c",
+            "14cd4e9317436fec",
+            "e78acacadd571098",
+            "06a717751d929158",
+            "0a9c17cce07a4559",
+            "8151a71f7c8a85b6",
+            "f80f9fe95c9cf4bc",
+            "6e4f39920bcef1e9"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 109.24187500495464
+        },
+        {
+          "id": "search-02-en",
+          "group": "search-02",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "computer networks and transport protocols",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "b7030c68065d6332"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "b7030c68065d6332",
+            "ad182f51d7a6128d",
+            "6dff5a5cdbf23e94",
+            "20f0517399da4f9c",
+            "cb30815db889f669",
+            "7712043fe6a0c73e",
+            "6e4f39920bcef1e9",
+            "28950acc9d47140c",
+            "447931d800ee73aa",
+            "488cae86d72b1925"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 52.08212498109788
+        },
+        {
+          "id": "search-02-tr",
+          "group": "search-02",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "bilgisayar ağları ve taşıma katmanı protokolleri",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "b7030c68065d6332"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "b7030c68065d6332",
+            "ad182f51d7a6128d",
+            "20f0517399da4f9c",
+            "6dff5a5cdbf23e94",
+            "cb30815db889f669",
+            "7712043fe6a0c73e",
+            "6e4f39920bcef1e9",
+            "e62d0c92bfb9e796",
+            "1440e62e4a3baea2",
+            "e18f6776aae10753"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 59.700499987229705
+        },
+        {
+          "id": "search-03-en",
+          "group": "search-03",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "verification and validation of software",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "3c58ac8fc4ffd6bf"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "3c58ac8fc4ffd6bf",
+            "22d284fa181feff7",
+            "1c83b77a243e5f83",
+            "f13c9cbe35c25737",
+            "99a34f64aacc3a8b",
+            "eb46a0496e816efe",
+            "ed3eb4e7ed6ddd15",
+            "600f15dc1ff50f43",
+            "225d338baf1360a3",
+            "9963cbe0d2fcc8aa"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 62.99991603009403
+        },
+        {
+          "id": "search-03-tr",
+          "group": "search-03",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "yazılım doğrulama ve geçerleme",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "3c58ac8fc4ffd6bf"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "3c58ac8fc4ffd6bf",
+            "22d284fa181feff7",
+            "d3569e85190fddb6",
+            "1c83b77a243e5f83",
+            "6da8bd340b81fff9",
+            "600f15dc1ff50f43",
+            "a62a3af280f9ccc3",
+            "99a34f64aacc3a8b",
+            "0b54d20deaf3f51e",
+            "9963cbe0d2fcc8aa"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 110.01504200976342
+        },
+        {
+          "id": "search-04-en",
+          "group": "search-04",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "architectural design of software systems",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "8322b85852ec17d7"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "8322b85852ec17d7",
+            "f13c9cbe35c25737",
+            "38ee7cc8cd192381",
+            "ea6831b34c6b1ee6",
+            "dcc98b0738ddd88b",
+            "33a258025ffc5806",
+            "eb46a0496e816efe",
+            "22d284fa181feff7",
+            "9f6f48dd217ba241",
+            "0b54d20deaf3f51e"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 55.76274998020381
+        },
+        {
+          "id": "search-04-tr",
+          "group": "search-04",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "yazılım sistemlerinin mimari tasarımı",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "8322b85852ec17d7"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "8322b85852ec17d7",
+            "38ee7cc8cd192381",
+            "ea6831b34c6b1ee6",
+            "481a14c4a38e10aa",
+            "f13c9cbe35c25737",
+            "33a258025ffc5806",
+            "d3569e85190fddb6",
+            "fe54770d80d981ea",
+            "687f6ccd1a69aad6",
+            "dcc98b0738ddd88b"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 60.5693330289796
+        },
+        {
+          "id": "search-05-en",
+          "group": "search-05",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "signals and systems frequency analysis",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "b78e17b6a95d4047"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "b78e17b6a95d4047",
+            "e257eb47b6c15399",
+            "236643457fa714b0",
+            "a43d9acf48a685ec",
+            "bd45f2009e7c601e",
+            "e4b9b6da7e2fb087",
+            "8738913db5166c56",
+            "1e7917e0161ff6af",
+            "dc9364f5cc205e55",
+            "6d73a5c40a086a0a"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 49.43654203088954
+        },
+        {
+          "id": "search-05-tr",
+          "group": "search-05",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "sinyaller ve sistemlerin frekans analizi",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "b78e17b6a95d4047"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "a43d9acf48a685ec",
+            "b78e17b6a95d4047",
+            "8738913db5166c56",
+            "e257eb47b6c15399",
+            "bd45f2009e7c601e",
+            "236643457fa714b0",
+            "e4b9b6da7e2fb087",
+            "e227cf4967360aa4",
+            "08e5ae8a7de13f1a",
+            "f1eeeb8e47630ef7"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 53.46908397041261
+        },
+        {
+          "id": "search-06-en",
+          "group": "search-06",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "feedback and control system fundamentals",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "1e7917e0161ff6af"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "1e7917e0161ff6af",
+            "741a7606fa3d5db2",
+            "f1eeeb8e47630ef7",
+            "a43d9acf48a685ec",
+            "ab8068bbf16dbe5a",
+            "8738913db5166c56",
+            "08e5ae8a7de13f1a",
+            "b78e17b6a95d4047",
+            "a864510209d2f438",
+            "e227cf4967360aa4"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 50.796792027540505
+        },
+        {
+          "id": "search-06-tr",
+          "group": "search-06",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "geri besleme ve kontrol sistemlerinin temelleri",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "1e7917e0161ff6af"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "1e7917e0161ff6af",
+            "741a7606fa3d5db2",
+            "b684526c54d784a8",
+            "e227cf4967360aa4",
+            "ab8068bbf16dbe5a",
+            "2d806b39fbffdec1",
+            "11b2f34139f41a6e",
+            "56758f5b456c3bec",
+            "08e5ae8a7de13f1a",
+            "dffa33032003825b"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 56.00245896494016
+        },
+        {
+          "id": "search-07-en",
+          "group": "search-07",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "optimization I",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "2ef63e9888fc92e3"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "7024134adead76cb",
+            "2ef63e9888fc92e3",
+            "3e01e79eada8cb43",
+            "d7c79efa8812c4aa",
+            "d90349ad9d154c64",
+            "800c627b96c23498",
+            "ef3428dc8916384c",
+            "8ffd6d09c7b30a08",
+            "a09793a685560f17",
+            "28403a4f1c8cb2b7"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 52.1772499778308
+        },
+        {
+          "id": "search-07-tr",
+          "group": "search-07",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "optimizasyon I",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "2ef63e9888fc92e3"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "7024134adead76cb",
+            "2ef63e9888fc92e3",
+            "3e01e79eada8cb43",
+            "d90349ad9d154c64",
+            "d7c79efa8812c4aa",
+            "800c627b96c23498",
+            "fa2c4284e0a37ad2",
+            "a09793a685560f17",
+            "4867ba8a314801dd",
+            "e4aa5eecf289deb5"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 50.6737080286257
+        },
+        {
+          "id": "search-08-en",
+          "group": "search-08",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "simulation in industrial engineering",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "3fbc7a4b27624dd8"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "aed0a39756c45abc",
+            "3fbc7a4b27624dd8",
+            "deb02232ac6af64e",
+            "af5a67463673a543",
+            "3e01e79eada8cb43",
+            "8b67ce23e8d108e6",
+            "e4aa5eecf289deb5",
+            "9f46e2878c0ae9a8",
+            "5007faed1f469fb3",
+            "4bd8489ec82e39cd"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 52.07945895381272
+        },
+        {
+          "id": "search-08-tr",
+          "group": "search-08",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "endüstri mühendisliği simülasyonu",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "3fbc7a4b27624dd8"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "aed0a39756c45abc",
+            "3fbc7a4b27624dd8",
+            "9f46e2878c0ae9a8",
+            "e4aa5eecf289deb5",
+            "c0525e74423fca37",
+            "deb02232ac6af64e",
+            "fa486fee863991d3",
+            "8189ea37b6ce8a27",
+            "4bd8489ec82e39cd",
+            "9f5c786f55fbd02d"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 52.9804170364514
+        },
+        {
+          "id": "search-09-en",
+          "group": "search-09",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "CE 223 database systems",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "02c52dded7493138"
+          ],
+          "slice": "code",
+          "hits": [
+            "b4dd814e1855dfb3",
+            "02c52dded7493138",
+            "efaacf63f4c4a541",
+            "ea6831b34c6b1ee6",
+            "739056540541a8c8",
+            "22cd7e54326dc06c",
+            "9f6f48dd217ba241",
+            "f13c9cbe35c25737",
+            "687f6ccd1a69aad6",
+            "225d338baf1360a3"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 53.109875007066876
+        },
+        {
+          "id": "search-09-tr",
+          "group": "search-09",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "CE 223 veritabanı sistemleri",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "02c52dded7493138"
+          ],
+          "slice": "code",
+          "hits": [
+            "02c52dded7493138",
+            "efaacf63f4c4a541",
+            "b4dd814e1855dfb3",
+            "9f6f48dd217ba241",
+            "ea6831b34c6b1ee6",
+            "3addc15035dfbd12",
+            "0b54d20deaf3f51e",
+            "225d338baf1360a3",
+            "22cd7e54326dc06c",
+            "6d0d84b3575226f6"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 59.104541956912726
+        },
+        {
+          "id": "search-10-en",
+          "group": "search-10",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "CE 315 automata and formal languages",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "7a29ce1721e9a45e"
+          ],
+          "slice": "code",
+          "hits": [
+            "7a29ce1721e9a45e",
+            "ab6512523961df3e",
+            "9df969601f29dd52",
+            "de3b16a4131448f2",
+            "488cae86d72b1925",
+            "447931d800ee73aa",
+            "a7b6463094011494",
+            "eadb0c9827460dae",
+            "9d0c0027a4398cff",
+            "256700f3ad4baf99"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 52.71462496602908
+        },
+        {
+          "id": "search-10-tr",
+          "group": "search-10",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "CE 315 otomatlar ve biçimsel diller",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "7a29ce1721e9a45e"
+          ],
+          "slice": "code",
+          "hits": [
+            "7a29ce1721e9a45e",
+            "256700f3ad4baf99",
+            "9df969601f29dd52",
+            "06a717751d929158",
+            "488cae86d72b1925",
+            "a7b6463094011494",
+            "c1b7678051414d72",
+            "a9e2ff14c07e5746",
+            "de3b16a4131448f2",
+            "6c3cace561e14113"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 59.58933295914903
+        },
+        {
+          "id": "search-11-en",
+          "group": "search-11",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "SE 226 advanced programming",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "739056540541a8c8"
+          ],
+          "slice": "code",
+          "hits": [
+            "739056540541a8c8",
+            "5e5356e17b699c2c",
+            "22cd7e54326dc06c",
+            "6d0d84b3575226f6",
+            "99a34f64aacc3a8b",
+            "0f2c95076e326110",
+            "3addc15035dfbd12",
+            "9f6f48dd217ba241",
+            "8f332bd65ff3cb86",
+            "0b54d20deaf3f51e"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 55.53954100469127
+        },
+        {
+          "id": "search-11-tr",
+          "group": "search-11",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "SE 226 ileri programlama",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "739056540541a8c8"
+          ],
+          "slice": "code",
+          "hits": [
+            "739056540541a8c8",
+            "5e5356e17b699c2c",
+            "3addc15035dfbd12",
+            "99a34f64aacc3a8b",
+            "6d0d84b3575226f6",
+            "22cd7e54326dc06c",
+            "9f6f48dd217ba241",
+            "8f332bd65ff3cb86",
+            "ba8e5ca8d517b88e",
+            "0b54d20deaf3f51e"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 113.69829199975356
+        },
+        {
+          "id": "search-12-en",
+          "group": "search-12",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "EEE 232 microelectronic devices",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "5df1ebdbced304ae"
+          ],
+          "slice": "code",
+          "hits": [
+            "5df1ebdbced304ae",
+            "647183c45f0aa6ed",
+            "f1eeeb8e47630ef7",
+            "b684526c54d784a8",
+            "e227cf4967360aa4",
+            "34df12d5b4233e3e",
+            "7aa181e23cbad9ce",
+            "cdeaaa670bc418d5",
+            "1599c6481c163b11",
+            "8738913db5166c56"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 52.55166697315872
+        },
+        {
+          "id": "search-12-tr",
+          "group": "search-12",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "EEE 232 mikroelektronik aygıtlar",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "5df1ebdbced304ae"
+          ],
+          "slice": "code",
+          "hits": [
+            "b684526c54d784a8",
+            "5df1ebdbced304ae",
+            "647183c45f0aa6ed",
+            "f1eeeb8e47630ef7",
+            "34df12d5b4233e3e",
+            "7aa181e23cbad9ce",
+            "e227cf4967360aa4",
+            "cdeaaa670bc418d5",
+            "8738913db5166c56",
+            "866cbbe2be54ba9c"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 57.83545796293765
+        },
+        {
+          "id": "search-13-en",
+          "group": "search-13",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "IE 334 statistical quality control",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "88f5435d1d1178e0"
+          ],
+          "slice": "code",
+          "hits": [
+            "88f5435d1d1178e0",
+            "f3459dd0fd9f211f",
+            "3fbc7a4b27624dd8",
+            "8189ea37b6ce8a27",
+            "2ee9c3e4ed86d0b3",
+            "49813f30ba33f159",
+            "b3ece0f841664aa0",
+            "4bd8489ec82e39cd",
+            "b1817e6f01a17194",
+            "9c35a7af3a961864"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 56.24483298743144
+        },
+        {
+          "id": "search-13-tr",
+          "group": "search-13",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "IE 334 istatistiksel kalite kontrol",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "88f5435d1d1178e0"
+          ],
+          "slice": "code",
+          "hits": [
+            "88f5435d1d1178e0",
+            "f3459dd0fd9f211f",
+            "2ee9c3e4ed86d0b3",
+            "8189ea37b6ce8a27",
+            "3fbc7a4b27624dd8",
+            "49813f30ba33f159",
+            "b3ece0f841664aa0",
+            "b1817e6f01a17194",
+            "9c35a7af3a961864",
+            "fd31088ad543d8e3"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 53.98695799522102
+        },
+        {
+          "id": "search-14-en",
+          "group": "search-14",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "CE 221 data structures and algorithms",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "28950acc9d47140c"
+          ],
+          "slice": "code",
+          "hits": [
+            "28950acc9d47140c",
+            "e78acacadd571098",
+            "14cd4e9317436fec",
+            "ab6512523961df3e",
+            "447931d800ee73aa",
+            "20f0517399da4f9c",
+            "95827bcba136056f",
+            "c1b7678051414d72",
+            "256700f3ad4baf99",
+            "d0e88e92f63a23ab"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 52.13554098736495
+        },
+        {
+          "id": "search-14-tr",
+          "group": "search-14",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "CE 221 veri yapıları ve algoritmalar",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "28950acc9d47140c"
+          ],
+          "slice": "code",
+          "hits": [
+            "14cd4e9317436fec",
+            "e78acacadd571098",
+            "ab6512523961df3e",
+            "28950acc9d47140c",
+            "256700f3ad4baf99",
+            "20f0517399da4f9c",
+            "24616e70123dd109",
+            "e365468c92856643",
+            "95827bcba136056f",
+            "c1b7678051414d72"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.43067655807339306,
+          "ms": 56.95737502537668
+        },
+        {
+          "id": "search-15-en",
+          "group": "search-15",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "EEE 307 energy conversion",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "8d0cc1d725bb72d3"
+          ],
+          "slice": "code",
+          "hits": [
+            "8d0cc1d725bb72d3",
+            "1ec9a7406a0a8245",
+            "7aa181e23cbad9ce",
+            "866cbbe2be54ba9c",
+            "08e5ae8a7de13f1a",
+            "a43d9acf48a685ec",
+            "bd45f2009e7c601e",
+            "647183c45f0aa6ed",
+            "4387d904d1c32e1c",
+            "1219e3f839befd0d"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 51.643332990352064
+        },
+        {
+          "id": "search-15-tr",
+          "group": "search-15",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "EEE 307 enerji dönüşümü",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "8d0cc1d725bb72d3"
+          ],
+          "slice": "code",
+          "hits": [
+            "8d0cc1d725bb72d3",
+            "1ec9a7406a0a8245",
+            "7aa181e23cbad9ce",
+            "08e5ae8a7de13f1a",
+            "bd45f2009e7c601e",
+            "dc9364f5cc205e55",
+            "647183c45f0aa6ed",
+            "866cbbe2be54ba9c",
+            "4387d904d1c32e1c",
+            "1219e3f839befd0d"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 53.08070802129805
+        },
+        {
+          "id": "search-16-en",
+          "group": "search-16",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "IE 323 production planning design",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "d639386361ae6184"
+          ],
+          "slice": "code",
+          "hits": [
+            "d639386361ae6184",
+            "f58ee326b37922df",
+            "aed0a39756c45abc",
+            "3e01e79eada8cb43",
+            "4867ba8a314801dd",
+            "dc767ae385794e2d",
+            "af5a67463673a543",
+            "a4c221c7ba9021b7",
+            "462dfdd9a72efbcc",
+            "2ee9c3e4ed86d0b3"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 51.40550003852695
+        },
+        {
+          "id": "search-16-tr",
+          "group": "search-16",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "IE 323 üretim planlama tasarımı",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "d639386361ae6184"
+          ],
+          "slice": "code",
+          "hits": [
+            "d639386361ae6184",
+            "aed0a39756c45abc",
+            "dc767ae385794e2d",
+            "3e01e79eada8cb43",
+            "f58ee326b37922df",
+            "4867ba8a314801dd",
+            "af5a67463673a543",
+            "a4c221c7ba9021b7",
+            "2ee9c3e4ed86d0b3",
+            "462dfdd9a72efbcc"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 52.28562495904043
+        },
+        {
+          "id": "search-17-en",
+          "group": "search-17",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "paradigms of programming languages",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "447931d800ee73aa"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "447931d800ee73aa",
+            "6111a7f2ac680fd6",
+            "02755b94276ac47b",
+            "7a29ce1721e9a45e",
+            "d0e88e92f63a23ab",
+            "47ce4e903d0aa2c1",
+            "26f4a5d8c82f42d6",
+            "29cd1fd28767c57d",
+            "1440e62e4a3baea2",
+            "20f0517399da4f9c"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 50.75641698203981
+        },
+        {
+          "id": "search-17-tr",
+          "group": "search-17",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "programlama paradigmaları",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "447931d800ee73aa"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "447931d800ee73aa",
+            "02755b94276ac47b",
+            "d0e88e92f63a23ab",
+            "47ce4e903d0aa2c1",
+            "6111a7f2ac680fd6",
+            "547b997c295f1f92",
+            "29cd1fd28767c57d",
+            "99dfca4697caac0a",
+            "26f4a5d8c82f42d6",
+            "7d46d8035b0c6ef9"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 53.48908301675692
+        },
+        {
+          "id": "search-18-en",
+          "group": "search-18",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "work system design and analysis",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "b1817e6f01a17194"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "b1817e6f01a17194",
+            "f58ee326b37922df",
+            "c0525e74423fca37",
+            "af5a67463673a543",
+            "8189ea37b6ce8a27",
+            "58ee7455fa36e6ea",
+            "5a694b316ba23752",
+            "d639386361ae6184",
+            "462dfdd9a72efbcc",
+            "4867ba8a314801dd"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 50.23399996571243
+        },
+        {
+          "id": "search-18-tr",
+          "group": "search-18",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "iş sistemi analizi ve tasarımı",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "b1817e6f01a17194"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "f58ee326b37922df",
+            "b1817e6f01a17194",
+            "462dfdd9a72efbcc",
+            "af5a67463673a543",
+            "d639386361ae6184",
+            "4867ba8a314801dd",
+            "58ee7455fa36e6ea",
+            "5a694b316ba23752",
+            "8189ea37b6ce8a27",
+            "a4c221c7ba9021b7"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 51.31808400619775
+        },
+        {
+          "id": "search-19-en",
+          "group": "search-19",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "engineering electromagnetics",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "4387d904d1c32e1c"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "4387d904d1c32e1c",
+            "34df12d5b4233e3e",
+            "73a9212b52b88898",
+            "3ef6389b65c7b16b",
+            "cdeaaa670bc418d5",
+            "749a2f3656509d7a",
+            "1219e3f839befd0d",
+            "508f878c6a296629",
+            "9d2d0f8e962a3004",
+            "306ecffca0b254b7"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 49.92629197658971
+        },
+        {
+          "id": "search-19-tr",
+          "group": "search-19",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "mühendislik elektromanyetiği",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "4387d904d1c32e1c"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "4387d904d1c32e1c",
+            "34df12d5b4233e3e",
+            "8d0cc1d725bb72d3",
+            "f5ea2d8f8c7f0f34",
+            "3ef6389b65c7b16b",
+            "73a9212b52b88898",
+            "508f878c6a296629",
+            "cdeaaa670bc418d5",
+            "f1eeeb8e47630ef7",
+            "e227cf4967360aa4"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 52.294792025350034
+        },
+        {
+          "id": "search-20-en",
+          "group": "search-20",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "software project management",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "434599137e9e06c3"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "434599137e9e06c3",
+            "a7e5f71dbe62c77d",
+            "8ae8f1f21f5ca004",
+            "22d284fa181feff7",
+            "f13c9cbe35c25737",
+            "3c58ac8fc4ffd6bf",
+            "8ecd6012f178949b",
+            "eb46a0496e816efe",
+            "9f6f48dd217ba241",
+            "0b54d20deaf3f51e"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 51.2130000279285
+        },
+        {
+          "id": "search-20-tr",
+          "group": "search-20",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "yazılım proje yönetimi",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "434599137e9e06c3"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "a7e5f71dbe62c77d",
+            "434599137e9e06c3",
+            "8ae8f1f21f5ca004",
+            "8ecd6012f178949b",
+            "f13c9cbe35c25737",
+            "481a14c4a38e10aa",
+            "9f6f48dd217ba241",
+            "0b54d20deaf3f51e",
+            "22d284fa181feff7",
+            "a5374a8d97e93040"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 51.06770800193772
+        },
+        {
+          "id": "search-21-en",
+          "group": "search-21",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "SE 321 software specification",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "f13c9cbe35c25737"
+          ],
+          "slice": "code",
+          "hits": [
+            "f13c9cbe35c25737",
+            "22cd7e54326dc06c",
+            "225d338baf1360a3",
+            "3c58ac8fc4ffd6bf",
+            "207900c0aef12d12",
+            "6d0d84b3575226f6",
+            "5e5356e17b699c2c",
+            "3addc15035dfbd12",
+            "600f15dc1ff50f43",
+            "ba8e5ca8d517b88e"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 51.01066699717194
+        },
+        {
+          "id": "search-21-tr",
+          "group": "search-21",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "SE 321 yazılım belirtimi",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "f13c9cbe35c25737"
+          ],
+          "slice": "code",
+          "hits": [
+            "22cd7e54326dc06c",
+            "f13c9cbe35c25737",
+            "207900c0aef12d12",
+            "6d0d84b3575226f6",
+            "5e5356e17b699c2c",
+            "225d338baf1360a3",
+            "8f332bd65ff3cb86",
+            "b301b74464276c71",
+            "ba8e5ca8d517b88e",
+            "3addc15035dfbd12"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 51.41725001158193
+        },
+        {
+          "id": "search-22-en",
+          "group": "search-22",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "EEE 207 circuit analysis",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "a2a4ac6cc1c91fd4"
+          ],
+          "slice": "code",
+          "hits": [
+            "a2a4ac6cc1c91fd4",
+            "bd45f2009e7c601e",
+            "647183c45f0aa6ed",
+            "1219e3f839befd0d",
+            "5df1ebdbced304ae",
+            "e213a6989d497ead",
+            "306ecffca0b254b7",
+            "f1eeeb8e47630ef7",
+            "5a22bc8799eada1d",
+            "f6a1ed3c3d6992de"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 49.40241697477177
+        },
+        {
+          "id": "search-22-tr",
+          "group": "search-22",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "EEE 207 devre analizi",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "a2a4ac6cc1c91fd4"
+          ],
+          "slice": "code",
+          "hits": [
+            "a2a4ac6cc1c91fd4",
+            "647183c45f0aa6ed",
+            "670b8d73e4c14bb2",
+            "f6a1ed3c3d6992de",
+            "bd45f2009e7c601e",
+            "1219e3f839befd0d",
+            "306ecffca0b254b7",
+            "5a22bc8799eada1d",
+            "7aa181e23cbad9ce",
+            "e213a6989d497ead"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 53.40249999426305
+        },
+        {
+          "id": "search-23-en",
+          "group": "search-23",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "IE 215 engineering economics",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "707d9fe3f4beeb8e"
+          ],
+          "slice": "code",
+          "hits": [
+            "707d9fe3f4beeb8e",
+            "8ffd6d09c7b30a08",
+            "8b67ce23e8d108e6",
+            "b9e73d1090da5937",
+            "410ffd51befc9666",
+            "9f5c786f55fbd02d",
+            "5007faed1f469fb3",
+            "9c35a7af3a961864",
+            "e4aa5eecf289deb5",
+            "9f46e2878c0ae9a8"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 50.02950003836304
+        },
+        {
+          "id": "search-23-tr",
+          "group": "search-23",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "IE 215 mühendislik ekonomisi",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "707d9fe3f4beeb8e"
+          ],
+          "slice": "code",
+          "hits": [
+            "707d9fe3f4beeb8e",
+            "8b67ce23e8d108e6",
+            "b9e73d1090da5937",
+            "410ffd51befc9666",
+            "5007faed1f469fb3",
+            "9c35a7af3a961864",
+            "9f46e2878c0ae9a8",
+            "9f5c786f55fbd02d",
+            "e4aa5eecf289deb5",
+            "2ee9c3e4ed86d0b3"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 55.485791992396116
+        },
+        {
+          "id": "search-24-en",
+          "group": "search-24",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "EEE 242 digital design",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "dc568ff915080690"
+          ],
+          "slice": "code",
+          "hits": [
+            "dc568ff915080690",
+            "95827bcba136056f",
+            "86f432c4a3e3c980",
+            "f8326d4978987949",
+            "eadb0c9827460dae",
+            "301d5573e27e077a",
+            "9d0c0027a4398cff",
+            "f0c2b7befb52485e",
+            "f45b81de5aae6b1e",
+            "20e5a594d8c3c5b1"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 52.45137499878183
+        },
+        {
+          "id": "search-24-tr",
+          "group": "search-24",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "EEE 242 sayısal tasarım",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "dc568ff915080690"
+          ],
+          "slice": "code",
+          "hits": [
+            "95827bcba136056f",
+            "dc568ff915080690",
+            "86f432c4a3e3c980",
+            "f8326d4978987949",
+            "eadb0c9827460dae",
+            "eae1e4e3b36b6a26",
+            "9d0c0027a4398cff",
+            "301d5573e27e077a",
+            "993a706a01aca791",
+            "f0c2b7befb52485e"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 51.86366697307676
+        }
+      ]
+    },
+    "hybrid": {
+      "dev": {
+        "n": 16,
+        "recall_at_10": 1.0,
+        "ndcg_at_10": 0.9456831095982161,
+        "p50_ms": 65.07793796481565,
+        "p95_ms": 93.12049997970462
+      },
+      "test": {
+        "n": 32,
+        "recall_at_10": 1.0,
+        "ndcg_at_10": 0.8586910808326579,
+        "p50_ms": 64.69143749563955,
+        "p95_ms": 71.27012498676777
+      },
+      "test_slices": {
+        "en": {
+          "n": 16,
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.9307993287946483,
+          "p50_ms": 63.74468747526407,
+          "p95_ms": 73.14374996349216
+        },
+        "tr": {
+          "n": 16,
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.7865828328706675,
+          "p50_ms": 65.29379150015302,
+          "p95_ms": 70.4544170293957
+        },
+        "code": {
+          "n": 16,
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.8952166136742353,
+          "p50_ms": 64.1962079971563,
+          "p95_ms": 71.27012498676777
+        },
+        "semantic": {
+          "n": 16,
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.8221655479910804,
+          "p50_ms": 65.17291651107371,
+          "p95_ms": 73.14374996349216
+        }
+      },
+      "queries": [
+        {
+          "id": "search-01-en",
+          "group": "search-01",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "operating system kernel and scheduling",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "e18f6776aae10753"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "e18f6776aae10753",
+            "306d0c69305a55e6",
+            "e62d0c92bfb9e796",
+            "14cd4e9317436fec",
+            "e78acacadd571098",
+            "301d5573e27e077a",
+            "06a717751d929158",
+            "6dff5a5cdbf23e94",
+            "447931d800ee73aa",
+            "1440e62e4a3baea2"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 66.88354100333527
+        },
+        {
+          "id": "search-01-tr",
+          "group": "search-01",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "işletim sistemi çekirdeği ve süreç zamanlama",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "e18f6776aae10753"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "24616e70123dd109",
+            "e18f6776aae10753",
+            "20f0517399da4f9c",
+            "14cd4e9317436fec",
+            "e78acacadd571098",
+            "06a717751d929158",
+            "0a9c17cce07a4559",
+            "8151a71f7c8a85b6",
+            "f80f9fe95c9cf4bc",
+            "6e4f39920bcef1e9"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 69.00008401134983
+        },
+        {
+          "id": "search-02-en",
+          "group": "search-02",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "computer networks and transport protocols",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "b7030c68065d6332"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "b7030c68065d6332",
+            "7712043fe6a0c73e",
+            "ad182f51d7a6128d",
+            "6e4f39920bcef1e9",
+            "cb30815db889f669",
+            "d70e5ba94b1a9a16",
+            "6dff5a5cdbf23e94",
+            "20f0517399da4f9c",
+            "20e5a594d8c3c5b1",
+            "f45b81de5aae6b1e"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 65.22966700140387
+        },
+        {
+          "id": "search-02-tr",
+          "group": "search-02",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "bilgisayar ağları ve taşıma katmanı protokolleri",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "b7030c68065d6332"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "b7030c68065d6332",
+            "ad182f51d7a6128d",
+            "20f0517399da4f9c",
+            "6dff5a5cdbf23e94",
+            "cb30815db889f669",
+            "7712043fe6a0c73e",
+            "6e4f39920bcef1e9",
+            "e62d0c92bfb9e796",
+            "1440e62e4a3baea2",
+            "e18f6776aae10753"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 69.22879198100418
+        },
+        {
+          "id": "search-03-en",
+          "group": "search-03",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "verification and validation of software",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "3c58ac8fc4ffd6bf"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "3c58ac8fc4ffd6bf",
+            "22d284fa181feff7",
+            "1c83b77a243e5f83",
+            "4e35ca5649ae10cf",
+            "f13c9cbe35c25737",
+            "eb46a0496e816efe",
+            "f1e7e8b0b04694cc",
+            "9bb41a1c4fe1cf50",
+            "99a34f64aacc3a8b",
+            "f2bf533d0ebf66ce"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 73.14374996349216
+        },
+        {
+          "id": "search-03-tr",
+          "group": "search-03",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "yazılım doğrulama ve geçerleme",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "3c58ac8fc4ffd6bf"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "3c58ac8fc4ffd6bf",
+            "22d284fa181feff7",
+            "d3569e85190fddb6",
+            "1c83b77a243e5f83",
+            "6da8bd340b81fff9",
+            "600f15dc1ff50f43",
+            "a62a3af280f9ccc3",
+            "99a34f64aacc3a8b",
+            "0b54d20deaf3f51e",
+            "9963cbe0d2fcc8aa"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 66.76962500205263
+        },
+        {
+          "id": "search-04-en",
+          "group": "search-04",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "architectural design of software systems",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "8322b85852ec17d7"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "8322b85852ec17d7",
+            "f13c9cbe35c25737",
+            "d9d673a19688a040",
+            "ea6831b34c6b1ee6",
+            "38ee7cc8cd192381",
+            "dcc98b0738ddd88b",
+            "b4dd814e1855dfb3",
+            "33a258025ffc5806",
+            "02c52dded7493138",
+            "efaacf63f4c4a541"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 65.11616602074355
+        },
+        {
+          "id": "search-04-tr",
+          "group": "search-04",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "yazılım sistemlerinin mimari tasarımı",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "8322b85852ec17d7"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "8322b85852ec17d7",
+            "38ee7cc8cd192381",
+            "ea6831b34c6b1ee6",
+            "481a14c4a38e10aa",
+            "f13c9cbe35c25737",
+            "33a258025ffc5806",
+            "d3569e85190fddb6",
+            "fe54770d80d981ea",
+            "687f6ccd1a69aad6",
+            "dcc98b0738ddd88b"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 53.45274996943772
+        },
+        {
+          "id": "search-05-en",
+          "group": "search-05",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "signals and systems frequency analysis",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "b78e17b6a95d4047"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "236643457fa714b0",
+            "b78e17b6a95d4047",
+            "e257eb47b6c15399",
+            "1e7917e0161ff6af",
+            "a43d9acf48a685ec",
+            "bd45f2009e7c601e",
+            "8738913db5166c56",
+            "e4b9b6da7e2fb087",
+            "5707450760059d21",
+            "f1eeeb8e47630ef7"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 63.694458978716284
+        },
+        {
+          "id": "search-05-tr",
+          "group": "search-05",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "sinyaller ve sistemlerin frekans analizi",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "b78e17b6a95d4047"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "4d2e17306451cb56",
+            "a43d9acf48a685ec",
+            "b78e17b6a95d4047",
+            "8738913db5166c56",
+            "e257eb47b6c15399",
+            "bd45f2009e7c601e",
+            "236643457fa714b0",
+            "e4b9b6da7e2fb087",
+            "e227cf4967360aa4",
+            "08e5ae8a7de13f1a"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.5,
+          "ms": 65.70079101948068
+        },
+        {
+          "id": "search-06-en",
+          "group": "search-06",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "feedback and control system fundamentals",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "1e7917e0161ff6af"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "1e7917e0161ff6af",
+            "f1eeeb8e47630ef7",
+            "741a7606fa3d5db2",
+            "b684526c54d784a8",
+            "ab8068bbf16dbe5a",
+            "a43d9acf48a685ec",
+            "08e5ae8a7de13f1a",
+            "23b8eae3353668e1",
+            "b78e17b6a95d4047",
+            "9e87b01dacd77f58"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 63.1126249791123
+        },
+        {
+          "id": "search-06-tr",
+          "group": "search-06",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "geri besleme ve kontrol sistemlerinin temelleri",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "1e7917e0161ff6af"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "4d2e17306451cb56",
+            "1e7917e0161ff6af",
+            "741a7606fa3d5db2",
+            "b684526c54d784a8",
+            "e227cf4967360aa4",
+            "ab8068bbf16dbe5a",
+            "2d806b39fbffdec1",
+            "11b2f34139f41a6e",
+            "56758f5b456c3bec",
+            "08e5ae8a7de13f1a"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 68.73658299446106
+        },
+        {
+          "id": "search-07-en",
+          "group": "search-07",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "optimization I",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "2ef63e9888fc92e3"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "2ef63e9888fc92e3",
+            "7024134adead76cb",
+            "d7c79efa8812c4aa",
+            "3e01e79eada8cb43",
+            "ef3428dc8916384c",
+            "d90349ad9d154c64",
+            "8ffd6d09c7b30a08",
+            "28403a4f1c8cb2b7",
+            "26051bbdc8b943ed",
+            "a09793a685560f17"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 60.7989170239307
+        },
+        {
+          "id": "search-07-tr",
+          "group": "search-07",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "optimizasyon I",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "2ef63e9888fc92e3"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "4867ba8a314801dd",
+            "7024134adead76cb",
+            "2ef63e9888fc92e3",
+            "ee02653d915ab8b8",
+            "3e01e79eada8cb43",
+            "4c5876349893c2ee",
+            "71788381f5a09e3f",
+            "d90349ad9d154c64",
+            "b9e73d1090da5937",
+            "4db11b24ccc3604f"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.5,
+          "ms": 61.47725001210347
+        },
+        {
+          "id": "search-08-en",
+          "group": "search-08",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "simulation in industrial engineering",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "3fbc7a4b27624dd8"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "aed0a39756c45abc",
+            "3fbc7a4b27624dd8",
+            "deb02232ac6af64e",
+            "d90349ad9d154c64",
+            "8ffd6d09c7b30a08",
+            "58ee7455fa36e6ea",
+            "af5a67463673a543",
+            "3e01e79eada8cb43",
+            "c51a24f957199594",
+            "8b67ce23e8d108e6"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 62.84266599686816
+        },
+        {
+          "id": "search-08-tr",
+          "group": "search-08",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "endüstri mühendisliği simülasyonu",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "3fbc7a4b27624dd8"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "aed0a39756c45abc",
+            "3fbc7a4b27624dd8",
+            "9f46e2878c0ae9a8",
+            "e4aa5eecf289deb5",
+            "c0525e74423fca37",
+            "deb02232ac6af64e",
+            "fa486fee863991d3",
+            "8189ea37b6ce8a27",
+            "4bd8489ec82e39cd",
+            "9f5c786f55fbd02d"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 53.18787501892075
+        },
+        {
+          "id": "search-09-en",
+          "group": "search-09",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "CE 223 database systems",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "02c52dded7493138"
+          ],
+          "slice": "code",
+          "hits": [
+            "b4dd814e1855dfb3",
+            "02c52dded7493138",
+            "efaacf63f4c4a541",
+            "ea6831b34c6b1ee6",
+            "687f6ccd1a69aad6",
+            "739056540541a8c8",
+            "d3569e85190fddb6",
+            "ad384a11b082bf8b",
+            "0f2c95076e326110",
+            "22cd7e54326dc06c"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 64.59750002250075
+        },
+        {
+          "id": "search-09-tr",
+          "group": "search-09",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "CE 223 veritabanı sistemleri",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "02c52dded7493138"
+          ],
+          "slice": "code",
+          "hits": [
+            "efaacf63f4c4a541",
+            "02c52dded7493138",
+            "b4dd814e1855dfb3",
+            "687f6ccd1a69aad6",
+            "d3569e85190fddb6",
+            "ea6831b34c6b1ee6",
+            "9f6f48dd217ba241",
+            "44b6aa2b80d0e329",
+            "be11adc0617716e7",
+            "3addc15035dfbd12"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 61.29924999549985
+        },
+        {
+          "id": "search-10-en",
+          "group": "search-10",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "CE 315 automata and formal languages",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "7a29ce1721e9a45e"
+          ],
+          "slice": "code",
+          "hits": [
+            "7a29ce1721e9a45e",
+            "447931d800ee73aa",
+            "6c3cace561e14113",
+            "ab6512523961df3e",
+            "9df969601f29dd52",
+            "de3b16a4131448f2",
+            "488cae86d72b1925",
+            "6111a7f2ac680fd6",
+            "ce231d5569d8f7eb",
+            "28950acc9d47140c"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 63.20199999026954
+        },
+        {
+          "id": "search-10-tr",
+          "group": "search-10",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "CE 315 otomatlar ve biçimsel diller",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "7a29ce1721e9a45e"
+          ],
+          "slice": "code",
+          "hits": [
+            "7a29ce1721e9a45e",
+            "1440e62e4a3baea2",
+            "256700f3ad4baf99",
+            "e62d0c92bfb9e796",
+            "9df969601f29dd52",
+            "e18f6776aae10753",
+            "06a717751d929158",
+            "24616e70123dd109",
+            "488cae86d72b1925",
+            "e365468c92856643"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 70.4544170293957
+        },
+        {
+          "id": "search-11-en",
+          "group": "search-11",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "SE 226 advanced programming",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "739056540541a8c8"
+          ],
+          "slice": "code",
+          "hits": [
+            "739056540541a8c8",
+            "0f2c95076e326110",
+            "5e5356e17b699c2c",
+            "098786e69924b430",
+            "22cd7e54326dc06c",
+            "8f332bd65ff3cb86",
+            "757ec0eb81ef7871",
+            "6d0d84b3575226f6",
+            "6da8bd340b81fff9",
+            "5c5e26932b128c8f"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 62.96929199015722
+        },
+        {
+          "id": "search-11-tr",
+          "group": "search-11",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "SE 226 ileri programlama",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "739056540541a8c8"
+          ],
+          "slice": "code",
+          "hits": [
+            "739056540541a8c8",
+            "22d284fa181feff7",
+            "5e5356e17b699c2c",
+            "f13c9cbe35c25737",
+            "3addc15035dfbd12",
+            "eb46a0496e816efe",
+            "99a34f64aacc3a8b",
+            "8f332bd65ff3cb86",
+            "3c58ac8fc4ffd6bf",
+            "6d0d84b3575226f6"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 64.88679198082536
+        },
+        {
+          "id": "search-12-en",
+          "group": "search-12",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "EEE 232 microelectronic devices",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "5df1ebdbced304ae"
+          ],
+          "slice": "code",
+          "hits": [
+            "5df1ebdbced304ae",
+            "e227cf4967360aa4",
+            "f1eeeb8e47630ef7",
+            "647183c45f0aa6ed",
+            "1599c6481c163b11",
+            "34df12d5b4233e3e",
+            "b684526c54d784a8",
+            "a2a4ac6cc1c91fd4",
+            "8738913db5166c56",
+            "ef04fee7dffede54"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 63.327708980068564
+        },
+        {
+          "id": "search-12-tr",
+          "group": "search-12",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "EEE 232 mikroelektronik aygıtlar",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "5df1ebdbced304ae"
+          ],
+          "slice": "code",
+          "hits": [
+            "f1eeeb8e47630ef7",
+            "5df1ebdbced304ae",
+            "b684526c54d784a8",
+            "1599c6481c163b11",
+            "647183c45f0aa6ed",
+            "8738913db5166c56",
+            "e227cf4967360aa4",
+            "34df12d5b4233e3e",
+            "8d0cc1d725bb72d3",
+            "6d73a5c40a086a0a"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 66.86483300291002
+        },
+        {
+          "id": "search-13-en",
+          "group": "search-13",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "IE 334 statistical quality control",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "88f5435d1d1178e0"
+          ],
+          "slice": "code",
+          "hits": [
+            "88f5435d1d1178e0",
+            "f3459dd0fd9f211f",
+            "b3ece0f841664aa0",
+            "3fbc7a4b27624dd8",
+            "d639386361ae6184",
+            "8189ea37b6ce8a27",
+            "49813f30ba33f159",
+            "deb02232ac6af64e",
+            "2ee9c3e4ed86d0b3",
+            "ef3428dc8916384c"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 63.79491597181186
+        },
+        {
+          "id": "search-13-tr",
+          "group": "search-13",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "IE 334 istatistiksel kalite kontrol",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "88f5435d1d1178e0"
+          ],
+          "slice": "code",
+          "hits": [
+            "88f5435d1d1178e0",
+            "f3459dd0fd9f211f",
+            "3fbc7a4b27624dd8",
+            "800c627b96c23498",
+            "295595f270f031f7",
+            "2ee9c3e4ed86d0b3",
+            "aed0a39756c45abc",
+            "8189ea37b6ce8a27",
+            "d7c79efa8812c4aa",
+            "49813f30ba33f159"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 64.78537496877834
+        },
+        {
+          "id": "search-14-en",
+          "group": "search-14",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "CE 221 data structures and algorithms",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "28950acc9d47140c"
+          ],
+          "slice": "code",
+          "hits": [
+            "28950acc9d47140c",
+            "e78acacadd571098",
+            "14cd4e9317436fec",
+            "e18f6776aae10753",
+            "20f0517399da4f9c",
+            "ab6512523961df3e",
+            "d70e5ba94b1a9a16",
+            "447931d800ee73aa",
+            "b7030c68065d6332",
+            "24616e70123dd109"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 71.27012498676777
+        },
+        {
+          "id": "search-14-tr",
+          "group": "search-14",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "CE 221 veri yapıları ve algoritmalar",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "28950acc9d47140c"
+          ],
+          "slice": "code",
+          "hits": [
+            "14cd4e9317436fec",
+            "e78acacadd571098",
+            "e18f6776aae10753",
+            "28950acc9d47140c",
+            "ab6512523961df3e",
+            "24616e70123dd109",
+            "02755b94276ac47b",
+            "e365468c92856643",
+            "256700f3ad4baf99",
+            "6dff5a5cdbf23e94"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.43067655807339306,
+          "ms": 69.77008300600573
+        },
+        {
+          "id": "search-15-en",
+          "group": "search-15",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "EEE 307 energy conversion",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "8d0cc1d725bb72d3"
+          ],
+          "slice": "code",
+          "hits": [
+            "8d0cc1d725bb72d3",
+            "1ec9a7406a0a8245",
+            "b3c1524c87a8d8b9",
+            "08e5ae8a7de13f1a",
+            "7aa181e23cbad9ce",
+            "a43d9acf48a685ec",
+            "866cbbe2be54ba9c",
+            "ef04fee7dffede54",
+            "8738913db5166c56",
+            "0be9147eb3f69ce6"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 60.404457966797054
+        },
+        {
+          "id": "search-15-tr",
+          "group": "search-15",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "EEE 307 enerji dönüşümü",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "8d0cc1d725bb72d3"
+          ],
+          "slice": "code",
+          "hits": [
+            "8d0cc1d725bb72d3",
+            "08e5ae8a7de13f1a",
+            "6d73a5c40a086a0a",
+            "1ec9a7406a0a8245",
+            "8738913db5166c56",
+            "7aa181e23cbad9ce",
+            "bd45f2009e7c601e",
+            "a43d9acf48a685ec",
+            "236643457fa714b0",
+            "e227cf4967360aa4"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 61.00400001741946
+        },
+        {
+          "id": "search-16-en",
+          "group": "search-16",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "IE 323 production planning design",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "d639386361ae6184"
+          ],
+          "slice": "code",
+          "hits": [
+            "d639386361ae6184",
+            "f58ee326b37922df",
+            "4867ba8a314801dd",
+            "3e01e79eada8cb43",
+            "aed0a39756c45abc",
+            "dc767ae385794e2d",
+            "e8d2f962206cf9b7",
+            "462dfdd9a72efbcc",
+            "a4c221c7ba9021b7",
+            "af5a67463673a543"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 66.11891702050343
+        },
+        {
+          "id": "search-16-tr",
+          "group": "search-16",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "IE 323 üretim planlama tasarımı",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "d639386361ae6184"
+          ],
+          "slice": "code",
+          "hits": [
+            "d639386361ae6184",
+            "aed0a39756c45abc",
+            "800c627b96c23498",
+            "dc767ae385794e2d",
+            "3fbc7a4b27624dd8",
+            "3e01e79eada8cb43",
+            "295595f270f031f7",
+            "f58ee326b37922df",
+            "4867ba8a314801dd",
+            "af5a67463673a543"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 63.33254202036187
+        },
+        {
+          "id": "search-17-en",
+          "group": "search-17",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "paradigms of programming languages",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "447931d800ee73aa"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "447931d800ee73aa",
+            "02755b94276ac47b",
+            "6111a7f2ac680fd6",
+            "7a29ce1721e9a45e",
+            "7d46d8035b0c6ef9",
+            "d0e88e92f63a23ab",
+            "7b3b3532eaadf8b0",
+            "26f4a5d8c82f42d6",
+            "1440e62e4a3baea2",
+            "29cd1fd28767c57d"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 62.36216699471697
+        },
+        {
+          "id": "search-17-tr",
+          "group": "search-17",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "programlama paradigmaları",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "447931d800ee73aa"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "447931d800ee73aa",
+            "02755b94276ac47b",
+            "d0e88e92f63a23ab",
+            "47ce4e903d0aa2c1",
+            "6111a7f2ac680fd6",
+            "547b997c295f1f92",
+            "29cd1fd28767c57d",
+            "99dfca4697caac0a",
+            "26f4a5d8c82f42d6",
+            "7d46d8035b0c6ef9"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 55.250875011552125
+        },
+        {
+          "id": "search-18-en",
+          "group": "search-18",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "work system design and analysis",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "b1817e6f01a17194"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "b1817e6f01a17194",
+            "f58ee326b37922df",
+            "c0525e74423fca37",
+            "88f5435d1d1178e0",
+            "deb02232ac6af64e",
+            "e8d2f962206cf9b7",
+            "5a694b316ba23752",
+            "af5a67463673a543",
+            "58ee7455fa36e6ea",
+            "b3ece0f841664aa0"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 69.8562499601394
+        },
+        {
+          "id": "search-18-tr",
+          "group": "search-18",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "iş sistemi analizi ve tasarımı",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "b1817e6f01a17194"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "d90349ad9d154c64",
+            "f58ee326b37922df",
+            "b1817e6f01a17194",
+            "462dfdd9a72efbcc",
+            "af5a67463673a543",
+            "d639386361ae6184",
+            "4867ba8a314801dd",
+            "58ee7455fa36e6ea",
+            "5a694b316ba23752",
+            "8189ea37b6ce8a27"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.5,
+          "ms": 66.20233395369723
+        },
+        {
+          "id": "search-19-en",
+          "group": "search-19",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "engineering electromagnetics",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "4387d904d1c32e1c"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "4387d904d1c32e1c",
+            "508f878c6a296629",
+            "73a9212b52b88898",
+            "34df12d5b4233e3e",
+            "749a2f3656509d7a",
+            "9d2d0f8e962a3004",
+            "3ef6389b65c7b16b",
+            "cdeaaa670bc418d5",
+            "9344043ce18401a4",
+            "f18fa06d5c23f292"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 61.08562502777204
+        },
+        {
+          "id": "search-19-tr",
+          "group": "search-19",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "mühendislik elektromanyetiği",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "4387d904d1c32e1c"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "4387d904d1c32e1c",
+            "34df12d5b4233e3e",
+            "8d0cc1d725bb72d3",
+            "f5ea2d8f8c7f0f34",
+            "3ef6389b65c7b16b",
+            "73a9212b52b88898",
+            "508f878c6a296629",
+            "cdeaaa670bc418d5",
+            "f1eeeb8e47630ef7",
+            "e227cf4967360aa4"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 54.450666008051485
+        },
+        {
+          "id": "search-20-en",
+          "group": "search-20",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "software project management",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "434599137e9e06c3"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "434599137e9e06c3",
+            "a7e5f71dbe62c77d",
+            "f13c9cbe35c25737",
+            "8ae8f1f21f5ca004",
+            "3c58ac8fc4ffd6bf",
+            "739056540541a8c8",
+            "efaacf63f4c4a541",
+            "22d284fa181feff7",
+            "eb46a0496e816efe",
+            "8ecd6012f178949b"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 66.74500001827255
+        },
+        {
+          "id": "search-20-tr",
+          "group": "search-20",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "yazılım proje yönetimi",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "434599137e9e06c3"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "a7e5f71dbe62c77d",
+            "434599137e9e06c3",
+            "8ae8f1f21f5ca004",
+            "8ecd6012f178949b",
+            "f13c9cbe35c25737",
+            "481a14c4a38e10aa",
+            "9f6f48dd217ba241",
+            "0b54d20deaf3f51e",
+            "22d284fa181feff7",
+            "a5374a8d97e93040"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 58.06058301823214
+        },
+        {
+          "id": "search-21-en",
+          "group": "search-21",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "SE 321 software specification",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "f13c9cbe35c25737"
+          ],
+          "slice": "code",
+          "hits": [
+            "f13c9cbe35c25737",
+            "3c58ac8fc4ffd6bf",
+            "22d284fa181feff7",
+            "22cd7e54326dc06c",
+            "eb46a0496e816efe",
+            "225d338baf1360a3",
+            "8322b85852ec17d7",
+            "434599137e9e06c3",
+            "1c83b77a243e5f83",
+            "207900c0aef12d12"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 93.12049997970462
+        },
+        {
+          "id": "search-21-tr",
+          "group": "search-21",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "SE 321 yazılım belirtimi",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "f13c9cbe35c25737"
+          ],
+          "slice": "code",
+          "hits": [
+            "f13c9cbe35c25737",
+            "22cd7e54326dc06c",
+            "22d284fa181feff7",
+            "eb46a0496e816efe",
+            "207900c0aef12d12",
+            "0387c75b8ccbe7c3",
+            "8f332bd65ff3cb86",
+            "3c58ac8fc4ffd6bf",
+            "6d0d84b3575226f6",
+            "b301b74464276c71"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 73.72904202202335
+        },
+        {
+          "id": "search-22-en",
+          "group": "search-22",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "EEE 207 circuit analysis",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "a2a4ac6cc1c91fd4"
+          ],
+          "slice": "code",
+          "hits": [
+            "a2a4ac6cc1c91fd4",
+            "5df1ebdbced304ae",
+            "bd45f2009e7c601e",
+            "8d0cc1d725bb72d3",
+            "647183c45f0aa6ed",
+            "fbf2842684587ebe",
+            "f1eeeb8e47630ef7",
+            "1219e3f839befd0d",
+            "8738913db5166c56",
+            "9d2d0f8e962a3004"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 64.51295898295939
+        },
+        {
+          "id": "search-22-tr",
+          "group": "search-22",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "EEE 207 devre analizi",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "a2a4ac6cc1c91fd4"
+          ],
+          "slice": "code",
+          "hits": [
+            "a2a4ac6cc1c91fd4",
+            "8d0cc1d725bb72d3",
+            "bd45f2009e7c601e",
+            "08e5ae8a7de13f1a",
+            "647183c45f0aa6ed",
+            "5df1ebdbced304ae",
+            "670b8d73e4c14bb2",
+            "f6a1ed3c3d6992de",
+            "236643457fa714b0",
+            "6d73a5c40a086a0a"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 65.6429169466719
+        },
+        {
+          "id": "search-23-en",
+          "group": "search-23",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "IE 215 engineering economics",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "707d9fe3f4beeb8e"
+          ],
+          "slice": "code",
+          "hits": [
+            "707d9fe3f4beeb8e",
+            "800c627b96c23498",
+            "8ffd6d09c7b30a08",
+            "295595f270f031f7",
+            "8b67ce23e8d108e6",
+            "3fbc7a4b27624dd8",
+            "b9e73d1090da5937",
+            "88f5435d1d1178e0",
+            "410ffd51befc9666",
+            "7024134adead76cb"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 61.80045899236575
+        },
+        {
+          "id": "search-23-tr",
+          "group": "search-23",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "IE 215 mühendislik ekonomisi",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "707d9fe3f4beeb8e"
+          ],
+          "slice": "code",
+          "hits": [
+            "707d9fe3f4beeb8e",
+            "800c627b96c23498",
+            "8b67ce23e8d108e6",
+            "295595f270f031f7",
+            "b9e73d1090da5937",
+            "3fbc7a4b27624dd8",
+            "410ffd51befc9666",
+            "aed0a39756c45abc",
+            "88f5435d1d1178e0",
+            "5007faed1f469fb3"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 66.08979101292789
+        },
+        {
+          "id": "search-24-en",
+          "group": "search-24",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "EEE 242 digital design",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "dc568ff915080690"
+          ],
+          "slice": "code",
+          "hits": [
+            "dc568ff915080690",
+            "301d5573e27e077a",
+            "20e5a594d8c3c5b1",
+            "95827bcba136056f",
+            "86f432c4a3e3c980",
+            "ce231d5569d8f7eb",
+            "f8326d4978987949",
+            "f45b81de5aae6b1e",
+            "06a717751d929158",
+            "4fefe5fac947e98e"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 61.45445798756555
+        },
+        {
+          "id": "search-24-tr",
+          "group": "search-24",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "EEE 242 sayısal tasarım",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "dc568ff915080690"
+          ],
+          "slice": "code",
+          "hits": [
+            "dc568ff915080690",
+            "20e5a594d8c3c5b1",
+            "95827bcba136056f",
+            "301d5573e27e077a",
+            "f45b81de5aae6b1e",
+            "86f432c4a3e3c980",
+            "5c219a89509428c5",
+            "f8326d4978987949",
+            "eadb0c9827460dae",
+            "e14379fd6d6833cd"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 65.64583297586069
+        }
+      ]
+    },
+    "rerank": {
+      "dev": {
+        "n": 16,
+        "recall_at_10": 1.0,
+        "ndcg_at_10": 1.0,
+        "p50_ms": 7791.8169159966055,
+        "p95_ms": 21535.829833999742
+      },
+      "test": {
+        "n": 32,
+        "recall_at_10": 1.0,
+        "ndcg_at_10": 0.9538662191964322,
+        "p50_ms": 7235.140812001191,
+        "p95_ms": 36626.21062499238
+      },
+      "test_slices": {
+        "en": {
+          "n": 16,
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.9538662191964322,
+          "p50_ms": 7155.8659994916525,
+          "p95_ms": 48409.241917019244
+        },
+        "tr": {
+          "n": 16,
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.9538662191964322,
+          "p50_ms": 7271.188500017161,
+          "p95_ms": 30624.81220799964
+        },
+        "code": {
+          "n": 16,
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.9769331095982161,
+          "p50_ms": 7271.188500017161,
+          "p95_ms": 36626.21062499238
+        },
+        "semantic": {
+          "n": 16,
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.9307993287946483,
+          "p50_ms": 7155.8659994916525,
+          "p95_ms": 48409.241917019244
+        }
+      },
+      "queries": [
+        {
+          "id": "search-01-en",
+          "group": "search-01",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "operating system kernel and scheduling",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "e18f6776aae10753"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "e18f6776aae10753",
+            "306d0c69305a55e6",
+            "e62d0c92bfb9e796",
+            "14cd4e9317436fec",
+            "20f0517399da4f9c",
+            "20e5a594d8c3c5b1",
+            "301d5573e27e077a",
+            "c097eb8c306e589f",
+            "e78acacadd571098",
+            "24616e70123dd109"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 34091.119207965676
+        },
+        {
+          "id": "search-01-tr",
+          "group": "search-01",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "işletim sistemi çekirdeği ve süreç zamanlama",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "e18f6776aae10753"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "e18f6776aae10753",
+            "301d5573e27e077a",
+            "f80f9fe95c9cf4bc",
+            "8151a71f7c8a85b6",
+            "49186a182c553c08",
+            "24616e70123dd109",
+            "20f0517399da4f9c",
+            "bd32fc074043a37f",
+            "06a717751d929158",
+            "28950acc9d47140c"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 30624.81220799964
+        },
+        {
+          "id": "search-02-en",
+          "group": "search-02",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "computer networks and transport protocols",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "b7030c68065d6332"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "b7030c68065d6332",
+            "7712043fe6a0c73e",
+            "6e4f39920bcef1e9",
+            "6dff5a5cdbf23e94",
+            "256700f3ad4baf99",
+            "488cae86d72b1925",
+            "20f0517399da4f9c",
+            "ad182f51d7a6128d",
+            "28950acc9d47140c",
+            "447931d800ee73aa"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 24959.210707980674
+        },
+        {
+          "id": "search-02-tr",
+          "group": "search-02",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "bilgisayar ağları ve taşıma katmanı protokolleri",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "b7030c68065d6332"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "b7030c68065d6332",
+            "7712043fe6a0c73e",
+            "ad182f51d7a6128d",
+            "6e4f39920bcef1e9",
+            "a7b6463094011494",
+            "c1b7678051414d72",
+            "6dff5a5cdbf23e94",
+            "20f0517399da4f9c",
+            "256700f3ad4baf99",
+            "24616e70123dd109"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 14315.812333021313
+        },
+        {
+          "id": "search-03-en",
+          "group": "search-03",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "verification and validation of software",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "3c58ac8fc4ffd6bf"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "3c58ac8fc4ffd6bf",
+            "1c83b77a243e5f83",
+            "22d284fa181feff7",
+            "f13c9cbe35c25737",
+            "f2bf533d0ebf66ce",
+            "ed3eb4e7ed6ddd15",
+            "eb46a0496e816efe",
+            "99a34f64aacc3a8b",
+            "600f15dc1ff50f43",
+            "9963cbe0d2fcc8aa"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 48409.241917019244
+        },
+        {
+          "id": "search-03-tr",
+          "group": "search-03",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "yazılım doğrulama ve geçerleme",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "3c58ac8fc4ffd6bf"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "3c58ac8fc4ffd6bf",
+            "1c83b77a243e5f83",
+            "02c52dded7493138",
+            "0037e86186d75751",
+            "22d284fa181feff7",
+            "d3569e85190fddb6",
+            "b4dd814e1855dfb3",
+            "6da8bd340b81fff9",
+            "f13c9cbe35c25737",
+            "ed3eb4e7ed6ddd15"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 18093.73033302836
+        },
+        {
+          "id": "search-04-en",
+          "group": "search-04",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "architectural design of software systems",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "8322b85852ec17d7"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "8322b85852ec17d7",
+            "687f6ccd1a69aad6",
+            "f13c9cbe35c25737",
+            "ea6831b34c6b1ee6",
+            "02c52dded7493138",
+            "efaacf63f4c4a541",
+            "38ee7cc8cd192381",
+            "dcc98b0738ddd88b",
+            "d9d673a19688a040",
+            "22d284fa181feff7"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 6359.271166962571
+        },
+        {
+          "id": "search-04-tr",
+          "group": "search-04",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "yazılım sistemlerinin mimari tasarımı",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "8322b85852ec17d7"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "f13c9cbe35c25737",
+            "8322b85852ec17d7",
+            "38ee7cc8cd192381",
+            "efaacf63f4c4a541",
+            "739056540541a8c8",
+            "ea6831b34c6b1ee6",
+            "0b54d20deaf3f51e",
+            "9f6f48dd217ba241",
+            "8f332bd65ff3cb86",
+            "dcc98b0738ddd88b"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 6721.111249993555
+        },
+        {
+          "id": "search-05-en",
+          "group": "search-05",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "signals and systems frequency analysis",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "b78e17b6a95d4047"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "236643457fa714b0",
+            "b78e17b6a95d4047",
+            "e257eb47b6c15399",
+            "a43d9acf48a685ec",
+            "1e7917e0161ff6af",
+            "dc9364f5cc205e55",
+            "bd45f2009e7c601e",
+            "6d73a5c40a086a0a",
+            "8738913db5166c56",
+            "e4b9b6da7e2fb087"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 7256.385540997144
+        },
+        {
+          "id": "search-05-tr",
+          "group": "search-05",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "sinyaller ve sistemlerin frekans analizi",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "b78e17b6a95d4047"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "b78e17b6a95d4047",
+            "236643457fa714b0",
+            "e257eb47b6c15399",
+            "a43d9acf48a685ec",
+            "8738913db5166c56",
+            "1e7917e0161ff6af",
+            "e4b9b6da7e2fb087",
+            "bd45f2009e7c601e",
+            "f1eeeb8e47630ef7",
+            "dc9364f5cc205e55"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 7488.29679103801
+        },
+        {
+          "id": "search-06-en",
+          "group": "search-06",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "feedback and control system fundamentals",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "1e7917e0161ff6af"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "1e7917e0161ff6af",
+            "b78e17b6a95d4047",
+            "f1eeeb8e47630ef7",
+            "ab8068bbf16dbe5a",
+            "741a7606fa3d5db2",
+            "2d806b39fbffdec1",
+            "ce634e37bc652c02",
+            "e227cf4967360aa4",
+            "23b8eae3353668e1",
+            "9e87b01dacd77f58"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 7055.346457986161
+        },
+        {
+          "id": "search-06-tr",
+          "group": "search-06",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "geri besleme ve kontrol sistemlerinin temelleri",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "1e7917e0161ff6af"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "1e7917e0161ff6af",
+            "ab8068bbf16dbe5a",
+            "741a7606fa3d5db2",
+            "b684526c54d784a8",
+            "23b8eae3353668e1",
+            "ce634e37bc652c02",
+            "b78e17b6a95d4047",
+            "2d806b39fbffdec1",
+            "56758f5b456c3bec",
+            "a864510209d2f438"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 7053.553332982119
+        },
+        {
+          "id": "search-07-en",
+          "group": "search-07",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "optimization I",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "2ef63e9888fc92e3"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "2ef63e9888fc92e3",
+            "28403a4f1c8cb2b7",
+            "a09793a685560f17",
+            "d7c79efa8812c4aa",
+            "7024134adead76cb",
+            "3e01e79eada8cb43",
+            "d90349ad9d154c64",
+            "8ffd6d09c7b30a08",
+            "800c627b96c23498",
+            "71e4a8ead50216ba"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 6163.771082996391
+        },
+        {
+          "id": "search-07-tr",
+          "group": "search-07",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "optimizasyon I",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "2ef63e9888fc92e3"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "2ef63e9888fc92e3",
+            "7024134adead76cb",
+            "d7c79efa8812c4aa",
+            "a09793a685560f17",
+            "3e01e79eada8cb43",
+            "d90349ad9d154c64",
+            "800c627b96c23498",
+            "b9e73d1090da5937",
+            "3017df57240894d0",
+            "4867ba8a314801dd"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 5812.872625014279
+        },
+        {
+          "id": "search-08-en",
+          "group": "search-08",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "simulation in industrial engineering",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "3fbc7a4b27624dd8"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "3fbc7a4b27624dd8",
+            "aed0a39756c45abc",
+            "4bd8489ec82e39cd",
+            "d90349ad9d154c64",
+            "58ee7455fa36e6ea",
+            "3e01e79eada8cb43",
+            "8ffd6d09c7b30a08",
+            "af5a67463673a543",
+            "deb02232ac6af64e",
+            "f3459dd0fd9f211f"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 5882.516041980125
+        },
+        {
+          "id": "search-08-tr",
+          "group": "search-08",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "endüstri mühendisliği simülasyonu",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "3fbc7a4b27624dd8"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "aed0a39756c45abc",
+            "3fbc7a4b27624dd8",
+            "4bd8489ec82e39cd",
+            "410ffd51befc9666",
+            "5007faed1f469fb3",
+            "9c35a7af3a961864",
+            "8b67ce23e8d108e6",
+            "9f46e2878c0ae9a8",
+            "deb02232ac6af64e",
+            "fd31088ad543d8e3"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 6000.8743749931455
+        },
+        {
+          "id": "search-09-en",
+          "group": "search-09",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "CE 223 database systems",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "02c52dded7493138"
+          ],
+          "slice": "code",
+          "hits": [
+            "efaacf63f4c4a541",
+            "02c52dded7493138",
+            "b4dd814e1855dfb3",
+            "687f6ccd1a69aad6",
+            "ea6831b34c6b1ee6",
+            "d3569e85190fddb6",
+            "cd1a36f08b0024af",
+            "38ee7cc8cd192381",
+            "9f6f48dd217ba241",
+            "3addc15035dfbd12"
+          ],
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575,
+          "ms": 6171.872166974936
+        },
+        {
+          "id": "search-09-tr",
+          "group": "search-09",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "CE 223 veritabanı sistemleri",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "02c52dded7493138"
+          ],
+          "slice": "code",
+          "hits": [
+            "02c52dded7493138",
+            "b4dd814e1855dfb3",
+            "efaacf63f4c4a541",
+            "687f6ccd1a69aad6",
+            "ea6831b34c6b1ee6",
+            "2390c74201501ea7",
+            "ad1e43dad25e935e",
+            "9f6f48dd217ba241",
+            "0b54d20deaf3f51e",
+            "d3569e85190fddb6"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 6472.8344999603
+        },
+        {
+          "id": "search-10-en",
+          "group": "search-10",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "CE 315 automata and formal languages",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "7a29ce1721e9a45e"
+          ],
+          "slice": "code",
+          "hits": [
+            "7a29ce1721e9a45e",
+            "447931d800ee73aa",
+            "ab6512523961df3e",
+            "28950acc9d47140c",
+            "256700f3ad4baf99",
+            "9d0c0027a4398cff",
+            "eadb0c9827460dae",
+            "a7b6463094011494",
+            "c1b7678051414d72",
+            "de3b16a4131448f2"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 7703.795041015837
+        },
+        {
+          "id": "search-10-tr",
+          "group": "search-10",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "CE 315 otomatlar ve biçimsel diller",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "7a29ce1721e9a45e"
+          ],
+          "slice": "code",
+          "hits": [
+            "7a29ce1721e9a45e",
+            "06a717751d929158",
+            "e78acacadd571098",
+            "14cd4e9317436fec",
+            "488cae86d72b1925",
+            "9df969601f29dd52",
+            "de3b16a4131448f2",
+            "256700f3ad4baf99",
+            "c1b7678051414d72",
+            "a7b6463094011494"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 7213.896083005238
+        },
+        {
+          "id": "search-11-en",
+          "group": "search-11",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "SE 226 advanced programming",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "739056540541a8c8"
+          ],
+          "slice": "code",
+          "hits": [
+            "739056540541a8c8",
+            "0f2c95076e326110",
+            "90bff5ed059b2f79",
+            "098786e69924b430",
+            "5c5e26932b128c8f",
+            "8f332bd65ff3cb86",
+            "b301b74464276c71",
+            "6da8bd340b81fff9",
+            "811198254c1fb246",
+            "3f1cac14cf5f450f"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 6347.377458005212
+        },
+        {
+          "id": "search-11-tr",
+          "group": "search-11",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "SE 226 ileri programlama",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "739056540541a8c8"
+          ],
+          "slice": "code",
+          "hits": [
+            "739056540541a8c8",
+            "5c5e26932b128c8f",
+            "811198254c1fb246",
+            "8f332bd65ff3cb86",
+            "b301b74464276c71",
+            "4f6523b25470ea32",
+            "6da8bd340b81fff9",
+            "eb46a0496e816efe",
+            "3c58ac8fc4ffd6bf",
+            "f13c9cbe35c25737"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 6308.434665959794
+        },
+        {
+          "id": "search-12-en",
+          "group": "search-12",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "EEE 232 microelectronic devices",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "5df1ebdbced304ae"
+          ],
+          "slice": "code",
+          "hits": [
+            "5df1ebdbced304ae",
+            "1599c6481c163b11",
+            "f1eeeb8e47630ef7",
+            "b684526c54d784a8",
+            "a2a4ac6cc1c91fd4",
+            "e227cf4967360aa4",
+            "34df12d5b4233e3e",
+            "1ec9a7406a0a8245",
+            "8738913db5166c56",
+            "8d0cc1d725bb72d3"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 6965.440416010097
+        },
+        {
+          "id": "search-12-tr",
+          "group": "search-12",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "EEE 232 mikroelektronik aygıtlar",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "5df1ebdbced304ae"
+          ],
+          "slice": "code",
+          "hits": [
+            "5df1ebdbced304ae",
+            "f1eeeb8e47630ef7",
+            "1599c6481c163b11",
+            "b684526c54d784a8",
+            "e227cf4967360aa4",
+            "34df12d5b4233e3e",
+            "9d2d0f8e962a3004",
+            "8738913db5166c56",
+            "866cbbe2be54ba9c",
+            "cdeaaa670bc418d5"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 11037.427750008646
+        },
+        {
+          "id": "search-13-en",
+          "group": "search-13",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "IE 334 statistical quality control",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "88f5435d1d1178e0"
+          ],
+          "slice": "code",
+          "hits": [
+            "88f5435d1d1178e0",
+            "f3459dd0fd9f211f",
+            "b3ece0f841664aa0",
+            "3fbc7a4b27624dd8",
+            "4bd8489ec82e39cd",
+            "49813f30ba33f159",
+            "aed0a39756c45abc",
+            "deb02232ac6af64e",
+            "8189ea37b6ce8a27",
+            "295595f270f031f7"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 36626.21062499238
+        },
+        {
+          "id": "search-13-tr",
+          "group": "search-13",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "IE 334 istatistiksel kalite kontrol",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "88f5435d1d1178e0"
+          ],
+          "slice": "code",
+          "hits": [
+            "88f5435d1d1178e0",
+            "f3459dd0fd9f211f",
+            "b3ece0f841664aa0",
+            "3fbc7a4b27624dd8",
+            "4bd8489ec82e39cd",
+            "49813f30ba33f159",
+            "295595f270f031f7",
+            "dc767ae385794e2d",
+            "aed0a39756c45abc",
+            "a09793a685560f17"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 23098.160375026055
+        },
+        {
+          "id": "search-14-en",
+          "group": "search-14",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "CE 221 data structures and algorithms",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "28950acc9d47140c"
+          ],
+          "slice": "code",
+          "hits": [
+            "28950acc9d47140c",
+            "e78acacadd571098",
+            "14cd4e9317436fec",
+            "e18f6776aae10753",
+            "d70e5ba94b1a9a16",
+            "02755b94276ac47b",
+            "24616e70123dd109",
+            "d0e88e92f63a23ab",
+            "1ebe0d6429102b5c",
+            "ab6512523961df3e"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 25799.653707945254
+        },
+        {
+          "id": "search-14-tr",
+          "group": "search-14",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "CE 221 veri yapıları ve algoritmalar",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "28950acc9d47140c"
+          ],
+          "slice": "code",
+          "hits": [
+            "28950acc9d47140c",
+            "e78acacadd571098",
+            "14cd4e9317436fec",
+            "e18f6776aae10753",
+            "e365468c92856643",
+            "f80f9fe95c9cf4bc",
+            "20f0517399da4f9c",
+            "24616e70123dd109",
+            "02755b94276ac47b",
+            "7a29ce1721e9a45e"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 28667.859917040914
+        },
+        {
+          "id": "search-15-en",
+          "group": "search-15",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "EEE 307 energy conversion",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "8d0cc1d725bb72d3"
+          ],
+          "slice": "code",
+          "hits": [
+            "8d0cc1d725bb72d3",
+            "b3c1524c87a8d8b9",
+            "1ec9a7406a0a8245",
+            "a2a4ac6cc1c91fd4",
+            "08e5ae8a7de13f1a",
+            "866cbbe2be54ba9c",
+            "bd45f2009e7c601e",
+            "0be9147eb3f69ce6",
+            "7aa181e23cbad9ce",
+            "1219e3f839befd0d"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 13369.860250037163
+        },
+        {
+          "id": "search-15-tr",
+          "group": "search-15",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "EEE 307 enerji dönüşümü",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "8d0cc1d725bb72d3"
+          ],
+          "slice": "code",
+          "hits": [
+            "8d0cc1d725bb72d3",
+            "1ec9a7406a0a8245",
+            "08e5ae8a7de13f1a",
+            "dc9364f5cc205e55",
+            "e257eb47b6c15399",
+            "6d73a5c40a086a0a",
+            "bd45f2009e7c601e",
+            "866cbbe2be54ba9c",
+            "236643457fa714b0",
+            "5df1ebdbced304ae"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 7328.480917029083
+        },
+        {
+          "id": "search-16-en",
+          "group": "search-16",
+          "split": "test",
+          "kind": "search",
+          "language": "en",
+          "question": "IE 323 production planning design",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "d639386361ae6184"
+          ],
+          "slice": "code",
+          "hits": [
+            "d639386361ae6184",
+            "3e01e79eada8cb43",
+            "f58ee326b37922df",
+            "deb02232ac6af64e",
+            "4867ba8a314801dd",
+            "e8d2f962206cf9b7",
+            "dc767ae385794e2d",
+            "b1817e6f01a17194",
+            "a4c221c7ba9021b7",
+            "af5a67463673a543"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 5775.758666975889
+        },
+        {
+          "id": "search-16-tr",
+          "group": "search-16",
+          "split": "test",
+          "kind": "search",
+          "language": "tr",
+          "question": "IE 323 üretim planlama tasarımı",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "d639386361ae6184"
+          ],
+          "slice": "code",
+          "hits": [
+            "d639386361ae6184",
+            "3e01e79eada8cb43",
+            "f58ee326b37922df",
+            "dc767ae385794e2d",
+            "4867ba8a314801dd",
+            "af5a67463673a543",
+            "a4c221c7ba9021b7",
+            "b1817e6f01a17194",
+            "462dfdd9a72efbcc",
+            "800c627b96c23498"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 6005.289124965202
+        },
+        {
+          "id": "search-17-en",
+          "group": "search-17",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "paradigms of programming languages",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "447931d800ee73aa"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "447931d800ee73aa",
+            "6111a7f2ac680fd6",
+            "02755b94276ac47b",
+            "26f4a5d8c82f42d6",
+            "29cd1fd28767c57d",
+            "d0e88e92f63a23ab",
+            "7d46d8035b0c6ef9",
+            "47ce4e903d0aa2c1",
+            "7a29ce1721e9a45e",
+            "99dfca4697caac0a"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 6702.482625027187
+        },
+        {
+          "id": "search-17-tr",
+          "group": "search-17",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "programlama paradigmaları",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "447931d800ee73aa"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "447931d800ee73aa",
+            "02755b94276ac47b",
+            "d0e88e92f63a23ab",
+            "6111a7f2ac680fd6",
+            "26f4a5d8c82f42d6",
+            "29cd1fd28767c57d",
+            "47ce4e903d0aa2c1",
+            "99dfca4697caac0a",
+            "547b997c295f1f92",
+            "7d46d8035b0c6ef9"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 6515.782499976922
+        },
+        {
+          "id": "search-18-en",
+          "group": "search-18",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "work system design and analysis",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "b1817e6f01a17194"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "b1817e6f01a17194",
+            "f58ee326b37922df",
+            "e8d2f962206cf9b7",
+            "58ee7455fa36e6ea",
+            "26e7936d3e1fbe9e",
+            "af5a67463673a543",
+            "d639386361ae6184",
+            "5531477f8b5dd490",
+            "5a694b316ba23752",
+            "c0525e74423fca37"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 6100.1365830306895
+        },
+        {
+          "id": "search-18-tr",
+          "group": "search-18",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "iş sistemi analizi ve tasarımı",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "b1817e6f01a17194"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "b1817e6f01a17194",
+            "58ee7455fa36e6ea",
+            "f58ee326b37922df",
+            "d639386361ae6184",
+            "e8d2f962206cf9b7",
+            "5a694b316ba23752",
+            "4bd8489ec82e39cd",
+            "3fbc7a4b27624dd8",
+            "deb02232ac6af64e",
+            "af5a67463673a543"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 9460.371916007716
+        },
+        {
+          "id": "search-19-en",
+          "group": "search-19",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "engineering electromagnetics",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "4387d904d1c32e1c"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "4387d904d1c32e1c",
+            "73a9212b52b88898",
+            "508f878c6a296629",
+            "9d2d0f8e962a3004",
+            "34df12d5b4233e3e",
+            "866cbbe2be54ba9c",
+            "3ef6389b65c7b16b",
+            "cdeaaa670bc418d5",
+            "1219e3f839befd0d",
+            "e213a6989d497ead"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 8380.206416011788
+        },
+        {
+          "id": "search-19-tr",
+          "group": "search-19",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "mühendislik elektromanyetiği",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "4387d904d1c32e1c"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "4387d904d1c32e1c",
+            "508f878c6a296629",
+            "73a9212b52b88898",
+            "749a2f3656509d7a",
+            "3ef6389b65c7b16b",
+            "cdeaaa670bc418d5",
+            "1219e3f839befd0d",
+            "e213a6989d497ead",
+            "8d0cc1d725bb72d3",
+            "34df12d5b4233e3e"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 16789.736667007674
+        },
+        {
+          "id": "search-20-en",
+          "group": "search-20",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "software project management",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "434599137e9e06c3"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "434599137e9e06c3",
+            "a7e5f71dbe62c77d",
+            "f13c9cbe35c25737",
+            "8ecd6012f178949b",
+            "3c58ac8fc4ffd6bf",
+            "8ae8f1f21f5ca004",
+            "8b7cc969ba262ff8",
+            "1c83b77a243e5f83",
+            "eb46a0496e816efe",
+            "22d284fa181feff7"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 10017.274165991694
+        },
+        {
+          "id": "search-20-tr",
+          "group": "search-20",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "yazılım proje yönetimi",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "434599137e9e06c3"
+          ],
+          "slice": "semantic",
+          "hits": [
+            "434599137e9e06c3",
+            "a7e5f71dbe62c77d",
+            "8ae8f1f21f5ca004",
+            "f13c9cbe35c25737",
+            "8ecd6012f178949b",
+            "d337fd18acded27b",
+            "dcc98b0738ddd88b",
+            "a5374a8d97e93040",
+            "eb46a0496e816efe",
+            "17b63bb6f460e34e"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 6166.44100000849
+        },
+        {
+          "id": "search-21-en",
+          "group": "search-21",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "SE 321 software specification",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "f13c9cbe35c25737"
+          ],
+          "slice": "code",
+          "hits": [
+            "f13c9cbe35c25737",
+            "3c58ac8fc4ffd6bf",
+            "1c83b77a243e5f83",
+            "8322b85852ec17d7",
+            "f2bf533d0ebf66ce",
+            "434599137e9e06c3",
+            "6da8bd340b81fff9",
+            "22d284fa181feff7",
+            "eb46a0496e816efe",
+            "0387c75b8ccbe7c3"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 6037.156916980166
+        },
+        {
+          "id": "search-21-tr",
+          "group": "search-21",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "SE 321 yazılım belirtimi",
+          "departments": [
+            "Software Engineering"
+          ],
+          "expected": [
+            "f13c9cbe35c25737"
+          ],
+          "slice": "code",
+          "hits": [
+            "f13c9cbe35c25737",
+            "8f332bd65ff3cb86",
+            "739056540541a8c8",
+            "811198254c1fb246",
+            "3c58ac8fc4ffd6bf",
+            "b301b74464276c71",
+            "4f6523b25470ea32",
+            "6da8bd340b81fff9",
+            "eb46a0496e816efe",
+            "8322b85852ec17d7"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 6337.114457972348
+        },
+        {
+          "id": "search-22-en",
+          "group": "search-22",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "EEE 207 circuit analysis",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "a2a4ac6cc1c91fd4"
+          ],
+          "slice": "code",
+          "hits": [
+            "a2a4ac6cc1c91fd4",
+            "bd45f2009e7c601e",
+            "5df1ebdbced304ae",
+            "8d0cc1d725bb72d3",
+            "08e5ae8a7de13f1a",
+            "f1eeeb8e47630ef7",
+            "fbf2842684587ebe",
+            "34df12d5b4233e3e",
+            "8738913db5166c56",
+            "670b8d73e4c14bb2"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 7203.427415981423
+        },
+        {
+          "id": "search-22-tr",
+          "group": "search-22",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "EEE 207 devre analizi",
+          "departments": [
+            "Electrical and Electronics Engineering"
+          ],
+          "expected": [
+            "a2a4ac6cc1c91fd4"
+          ],
+          "slice": "code",
+          "hits": [
+            "a2a4ac6cc1c91fd4",
+            "bd45f2009e7c601e",
+            "5df1ebdbced304ae",
+            "08e5ae8a7de13f1a",
+            "8d0cc1d725bb72d3",
+            "236643457fa714b0",
+            "f1eeeb8e47630ef7",
+            "6d73a5c40a086a0a",
+            "f6a1ed3c3d6992de",
+            "8738913db5166c56"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 8520.289124979172
+        },
+        {
+          "id": "search-23-en",
+          "group": "search-23",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "IE 215 engineering economics",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "707d9fe3f4beeb8e"
+          ],
+          "slice": "code",
+          "hits": [
+            "707d9fe3f4beeb8e",
+            "8ffd6d09c7b30a08",
+            "a09793a685560f17",
+            "800c627b96c23498",
+            "88f5435d1d1178e0",
+            "fe8e4ee9b637f432",
+            "3fbc7a4b27624dd8",
+            "b9e73d1090da5937",
+            "7024134adead76cb",
+            "410ffd51befc9666"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 21535.829833999742
+        },
+        {
+          "id": "search-23-tr",
+          "group": "search-23",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "IE 215 mühendislik ekonomisi",
+          "departments": [
+            "Industrial Engineering"
+          ],
+          "expected": [
+            "707d9fe3f4beeb8e"
+          ],
+          "slice": "code",
+          "hits": [
+            "707d9fe3f4beeb8e",
+            "a09793a685560f17",
+            "e4aa5eecf289deb5",
+            "9f46e2878c0ae9a8",
+            "b9e73d1090da5937",
+            "88f5435d1d1178e0",
+            "410ffd51befc9666",
+            "aed0a39756c45abc",
+            "8b67ce23e8d108e6",
+            "2ee9c3e4ed86d0b3"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 13013.861000014003
+        },
+        {
+          "id": "search-24-en",
+          "group": "search-24",
+          "split": "dev",
+          "kind": "search",
+          "language": "en",
+          "question": "EEE 242 digital design",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "dc568ff915080690"
+          ],
+          "slice": "code",
+          "hits": [
+            "dc568ff915080690",
+            "301d5573e27e077a",
+            "20e5a594d8c3c5b1",
+            "ce231d5569d8f7eb",
+            "4fefe5fac947e98e",
+            "1889dc4e55ff970d",
+            "c1b7678051414d72",
+            "9d0c0027a4398cff",
+            "f0c2b7befb52485e",
+            "86f432c4a3e3c980"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 12321.952166967094
+        },
+        {
+          "id": "search-24-tr",
+          "group": "search-24",
+          "split": "dev",
+          "kind": "search",
+          "language": "tr",
+          "question": "EEE 242 sayısal tasarım",
+          "departments": [
+            "Computer Engineering"
+          ],
+          "expected": [
+            "dc568ff915080690"
+          ],
+          "slice": "code",
+          "hits": [
+            "dc568ff915080690",
+            "301d5573e27e077a",
+            "20e5a594d8c3c5b1",
+            "5c219a89509428c5",
+            "c1b7678051414d72",
+            "256700f3ad4baf99",
+            "eae1e4e3b36b6a26",
+            "a7b6463094011494",
+            "9d0c0027a4398cff",
+            "f8326d4978987949"
+          ],
+          "recall": 1.0,
+          "ndcg": 1.0,
+          "ms": 6179.132624994963
+        }
+      ]
+    }
+  },
+  "selected": "rerank",
+  "comparison": {
+    "baseline": "dense",
+    "candidate": "rerank",
+    "paired_test_ndcg": {
+      "groups": 16,
+      "mean": 0.06392513836377428,
+      "percentile_95": [
+        0.0,
+        0.12785027672754856
+      ]
+    }
+  },
+  "answer_checks": [
+    {
+      "id": "search-01-en",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [],
+      "ms": 4567.137166042812
+    },
+    {
+      "id": "search-01-tr",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [],
+      "ms": 2447.623207990546
+    },
+    {
+      "id": "search-02-en",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [
+        {
+          "id": "6dff5a5cdbf23e94",
+          "quote": "This course covers introductory level information security concepts, encryption algorithms and systems, and addresses the creation of protection mechanisms using the techniques and approaches required to ensure network security."
+        }
+      ],
+      "ms": 6018.374165985733
+    },
+    {
+      "id": "search-02-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "b7030c68065d6332",
+          "quote": "Students will be able to enumerate the architectural structures of the ISO/OSI and TCP/IP and explain functions of each layer. TCP/IP layers and their network traffic will be analyzed using dedicated tools such as TCPDUMP and Wireshark."
+        }
+      ],
+      "ms": 6440.912667021621
+    },
+    {
+      "id": "search-03-en",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "3c58ac8fc4ffd6bf",
+          "quote": "The first objective of this course is to provide students with information about the fundamentals and principles of software testing."
+        },
+        {
+          "id": "1c83b77a243e5f83",
+          "quote": "The primary objective of this course is to provide students with foundational knowledge of the principles and fundamentals of software testing."
+        }
+      ],
+      "ms": 4484.120042005088
+    },
+    {
+      "id": "search-03-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "3c58ac8fc4ffd6bf",
+          "quote": "The first objective of this course is to provide students with information about the fundamentals and principles of software testing."
+        },
+        {
+          "id": "1c83b77a243e5f83",
+          "quote": "The primary objective of this course is to provide students with foundational knowledge of the principles and fundamentals of software testing."
+        },
+        {
+          "id": "22d284fa181feff7",
+          "quote": "SE 460 aims to develop a common understanding of software measurement and metrics among students."
+        }
+      ],
+      "ms": 5544.750500004739
+    },
+    {
+      "id": "search-04-en",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "8322b85852ec17d7",
+          "quote": "The goal of this course to arm the students with the knowledge needed in architecting effective and maintainable complex software systems of high quality by applying design patterns."
+        }
+      ],
+      "ms": 6139.0283340006135
+    },
+    {
+      "id": "search-04-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "8322b85852ec17d7",
+          "quote": "The goal of this course to arm the students with the knowledge needed in architecting effective and maintainable complex software systems of high quality by applying design patterns."
+        },
+        {
+          "id": "8322b85852ec17d7",
+          "quote": "Each pattern represents a best practice solution to a software problem in some context."
+        },
+        {
+          "id": "8322b85852ec17d7",
+          "quote": "The course will sensitize the student that there is rarely one \"right\" design and an engineer is faced with a spectrum of possibilities representing tradeoffs."
+        }
+      ],
+      "ms": 6101.063916983549
+    },
+    {
+      "id": "search-05-en",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [],
+      "ms": 5668.116541986819
+    },
+    {
+      "id": "search-05-tr",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [],
+      "ms": 5766.82012504898
+    },
+    {
+      "id": "search-06-en",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "1e7917e0161ff6af",
+          "quote": "The main objective of this course is to introduce the fundamental concepts of feedback control and dynamical systems."
+        },
+        {
+          "id": "f1eeeb8e47630ef7",
+          "quote": "Study on feedback amplifiers and stability, and power amplifiers will help students to understand complex amplifiers circuits."
+        }
+      ],
+      "ms": 5733.308082970325
+    },
+    {
+      "id": "search-06-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "1e7917e0161ff6af",
+          "quote": "The main objective of this course is to introduce the fundamental concepts of feedback control and dynamical systems."
+        },
+        {
+          "id": "1e7917e0161ff6af",
+          "quote": "The Routh-Hurwitz and Nyquist stability test, the Root locus method, the Nyquist criterion and design of feedback controllers"
+        }
+      ],
+      "ms": 6992.895958013833
+    },
+    {
+      "id": "search-07-en",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [],
+      "ms": 8989.278417022433
+    },
+    {
+      "id": "search-07-tr",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [],
+      "ms": 9968.125624989625
+    },
+    {
+      "id": "search-08-en",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "3fbc7a4b27624dd8",
+          "quote": "This course aims to teach basic concepts and approaches related to the modelling of stochastic and dynamic discrete-event systems and to reinforce them using with software applications."
+        },
+        {
+          "id": "3fbc7a4b27624dd8",
+          "quote": "This course includes queueing models apart from main steps of a simulation project such as conceptual modelling, input analysis, verification, validation and output analysis."
+        },
+        {
+          "id": "aed0a39756c45abc",
+          "quote": "This course aims to teach modelling of intermediate and advanced simulation applications and explain simulation applications for the industrial applications."
+        }
+      ],
+      "ms": 6102.956291986629
+    },
+    {
+      "id": "search-08-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "aed0a39756c45abc",
+          "quote": "This course aims to teach modelling of intermediate and advanced simulation applications and explain simulation applications for the industrial applications."
+        },
+        {
+          "id": "3fbc7a4b27624dd8",
+          "quote": "This course aims to teach basic concepts and approaches related to the modelling of stochastic and dynamic discrete-event systems and to reinforce them using with software applications."
+        }
+      ],
+      "ms": 5152.961249987129
+    },
+    {
+      "id": "search-09-en",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "02c52dded7493138",
+          "quote": "CE 223 Database Systems | Software Engineering | mandatory\nThe goal of this course is to give basic knowledge of database systems to a student who intends to be a computer or software engineer."
+        }
+      ],
+      "ms": 6761.973999964539
+    },
+    {
+      "id": "search-09-tr",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [],
+      "ms": 8777.765374979936
+    },
+    {
+      "id": "search-10-en",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [],
+      "ms": 6088.070333003998
+    },
+    {
+      "id": "search-10-tr",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [],
+      "ms": 6077.467583003454
+    },
+    {
+      "id": "search-11-en",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [],
+      "ms": 6013.466416043229
+    },
+    {
+      "id": "search-11-tr",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [],
+      "ms": 6003.21883300785
+    },
+    {
+      "id": "search-12-en",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [],
+      "ms": 7399.502125044819
+    },
+    {
+      "id": "search-12-tr",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [],
+      "ms": 7926.2389579671435
+    },
+    {
+      "id": "search-13-en",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [],
+      "ms": 5077.664082986303
+    },
+    {
+      "id": "search-13-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "88f5435d1d1178e0",
+          "quote": "IE 334 Statistical Quality Control | Industrial Engineering | mandatory\nThis course aims to provide knowledge in quality costs, basic concepts, tools and statistical techniques for quality control."
+        }
+      ],
+      "ms": 3840.774916985538
+    },
+    {
+      "id": "search-14-en",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [],
+      "ms": 9644.029166956898
+    },
+    {
+      "id": "search-14-tr",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [],
+      "ms": 9861.019250005484
+    },
+    {
+      "id": "search-15-en",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [],
+      "ms": 4308.85066697374
+    },
+    {
+      "id": "search-15-tr",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [],
+      "ms": 4191.97779201204
+    },
+    {
+      "id": "search-16-en",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [],
+      "ms": 7410.362707974855
+    },
+    {
+      "id": "search-16-tr",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [],
+      "ms": 5536.827333038673
+    },
+    {
+      "id": "exact-01-en",
+      "kind": "exact",
+      "correct": true
+    },
+    {
+      "id": "exact-01-tr",
+      "kind": "exact",
+      "correct": true
+    },
+    {
+      "id": "exact-02-en",
+      "kind": "exact",
+      "correct": true
+    },
+    {
+      "id": "exact-02-tr",
+      "kind": "exact",
+      "correct": true
+    },
+    {
+      "id": "exact-03-en",
+      "kind": "exact",
+      "correct": true
+    },
+    {
+      "id": "exact-03-tr",
+      "kind": "exact",
+      "correct": true
+    },
+    {
+      "id": "exact-04-en",
+      "kind": "exact",
+      "correct": true
+    },
+    {
+      "id": "exact-04-tr",
+      "kind": "exact",
+      "correct": true
+    },
+    {
+      "id": "exact-05-en",
+      "kind": "exact",
+      "correct": true
+    },
+    {
+      "id": "exact-05-tr",
+      "kind": "exact",
+      "correct": true
+    },
+    {
+      "id": "exact-06-en",
+      "kind": "exact",
+      "correct": true
+    },
+    {
+      "id": "exact-06-tr",
+      "kind": "exact",
+      "correct": true
+    },
+    {
+      "id": "negative-01-en",
+      "kind": "negative",
+      "correct": true
+    },
+    {
+      "id": "negative-01-tr",
+      "kind": "negative",
+      "correct": true
+    },
+    {
+      "id": "negative-02-en",
+      "kind": "negative",
+      "correct": true
+    },
+    {
+      "id": "negative-02-tr",
+      "kind": "negative",
+      "correct": true
+    },
+    {
+      "id": "negative-03-en",
+      "kind": "negative",
+      "correct": true
+    },
+    {
+      "id": "negative-03-tr",
+      "kind": "negative",
+      "correct": true
+    },
+    {
+      "id": "negative-04-en",
+      "kind": "negative",
+      "correct": true
+    },
+    {
+      "id": "negative-04-tr",
+      "kind": "negative",
+      "correct": true
+    },
+    {
+      "id": "negative-05-en",
+      "kind": "negative",
+      "correct": true
+    },
+    {
+      "id": "negative-05-tr",
+      "kind": "negative",
+      "correct": true
+    },
+    {
+      "id": "negative-06-en",
+      "kind": "negative",
+      "correct": true
+    },
+    {
+      "id": "negative-06-tr",
+      "kind": "negative",
+      "correct": true
+    }
+  ],
+  "legacy_reference": {
+    "summary": {
+      "n": 32,
+      "recall_at_10": 0.625,
+      "ndcg_at_10": 0.4470472333280799,
+      "p50_ms": 10.04570847726427,
+      "p95_ms": 684.4351660110988
+    },
+    "queries": [
+      {
+        "id": "search-01-en",
+        "recall": 1.0,
+        "ndcg": 0.5,
+        "ms": 2716.0530000110157
+      },
+      {
+        "id": "search-01-tr",
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "ms": 172.8082500048913
+      },
+      {
+        "id": "search-02-en",
+        "recall": 1.0,
+        "ndcg": 0.6309297535714575,
+        "ms": 11.970709019806236
+      },
+      {
+        "id": "search-02-tr",
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "ms": 9.878041979391128
+      },
+      {
+        "id": "search-03-en",
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "ms": 8.970208989921957
+      },
+      {
+        "id": "search-03-tr",
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "ms": 8.44037503702566
+      },
+      {
+        "id": "search-04-en",
+        "recall": 1.0,
+        "ndcg": 0.6309297535714575,
+        "ms": 10.213374975137413
+      },
+      {
+        "id": "search-04-tr",
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "ms": 8.486500009894371
+      },
+      {
+        "id": "search-05-en",
+        "recall": 1.0,
+        "ndcg": 0.6309297535714575,
+        "ms": 15.150291961617768
+      },
+      {
+        "id": "search-05-tr",
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "ms": 39.0064159873873
+      },
+      {
+        "id": "search-06-en",
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "ms": 573.4936249791645
+      },
+      {
+        "id": "search-06-tr",
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "ms": 11.37066597584635
+      },
+      {
+        "id": "search-07-en",
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "ms": 684.4351660110988
+      },
+      {
+        "id": "search-07-tr",
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "ms": 12.12791702710092
+      },
+      {
+        "id": "search-08-en",
+        "recall": 1.0,
+        "ndcg": 0.5,
+        "ms": 9.763166948687285
+      },
+      {
+        "id": "search-08-tr",
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "ms": 190.2178750024177
+      },
+      {
+        "id": "search-09-en",
+        "recall": 1.0,
+        "ndcg": 0.3333333333333333,
+        "ms": 518.8997499644756
+      },
+      {
+        "id": "search-09-tr",
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "ms": 189.4481250201352
+      },
+      {
+        "id": "search-10-en",
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "ms": 171.69316700892523
+      },
+      {
+        "id": "search-10-tr",
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "ms": 7.9428330063819885
+      },
+      {
+        "id": "search-11-en",
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "ms": 8.00483295461163
+      },
+      {
+        "id": "search-11-tr",
+        "recall": 1.0,
+        "ndcg": 0.43067655807339306,
+        "ms": 7.120041991584003
+      },
+      {
+        "id": "search-12-en",
+        "recall": 1.0,
+        "ndcg": 0.38685280723454163,
+        "ms": 175.91395799536258
+      },
+      {
+        "id": "search-12-tr",
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "ms": 7.610000029671937
+      },
+      {
+        "id": "search-13-en",
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "ms": 8.020083012524992
+      },
+      {
+        "id": "search-13-tr",
+        "recall": 1.0,
+        "ndcg": 0.6309297535714575,
+        "ms": 171.82254197541624
+      },
+      {
+        "id": "search-14-en",
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "ms": 9.663332952186465
+      },
+      {
+        "id": "search-14-tr",
+        "recall": 1.0,
+        "ndcg": 0.6309297535714575,
+        "ms": 7.955541019327939
+      },
+      {
+        "id": "search-15-en",
+        "recall": 1.0,
+        "ndcg": 0.5,
+        "ms": 8.595041988883168
+      },
+      {
+        "id": "search-15-tr",
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "ms": 8.6682079709135
+      },
+      {
+        "id": "search-16-en",
+        "recall": 1.0,
+        "ndcg": 0.5,
+        "ms": 8.613833982963115
+      },
+      {
+        "id": "search-16-tr",
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "ms": 7.06387497484684
+      }
+    ]
+  }
+}

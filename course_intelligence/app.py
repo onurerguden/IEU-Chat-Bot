@@ -8,7 +8,7 @@ from pathlib import Path
 from .corpus import CODE, Corpus, normalized
 from .search import MODES, Search, evidence
 
-DEFAULT_MODE = "bm25"
+DEFAULT_MODE = "rerank"
 SEMESTER = re.compile(r"(?:semester\s*(\d+)|(\d+)\.?\s*(?:dönem|donem|semester))")
 AGGREGATE = re.compile(r"\b(ects|akts|how many|kaç|kac|count|total|toplam)\b")
 OUTSIDE = re.compile(r"\b(tuition|enrollment deadline|visa|scholarship|vize|burs|harç)\b")

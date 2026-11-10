@@ -28,11 +28,11 @@ python -m course_intelligence.app 'What is the tuition for Software Engineering?
 python -m course_intelligence.app --mode rerank 'Which Software Engineering course covers architectural design?'
 ```
 
-The first neural run downloads pinned Qwen embedding and reranking weights. Set `COURSE_RETRIEVAL` to `bm25`, `dense`, `hybrid` or `rerank` for the desktop app. The CPU is the default. Apple Silicon users can set `COURSE_DEVICE=mps`. Ollama listens on loopback by default. `OLLAMA_HOST` overrides its address.
+The first neural run downloads pinned Qwen embedding and reranking weights. Set `COURSE_RETRIEVAL` to `bm25`, `dense`, `hybrid` or `rerank` for the desktop app. The CPU is the default. Apple Silicon users can set `COURSE_DEVICE=mps`. The measured default is reranking. Use `--mode dense` for faster interactive searches. Ollama listens on loopback by default. `OLLAMA_HOST` overrides its address.
 
 ## How the application answers
 
-Exact course-code matches use stable record IDs. Counts and ECTS use all records matching the requested department, semester and type. Missing credits are reported separately. For open-ended questions, retrieval returns candidate records and the local model selects excerpts. The service displays an excerpt only if its record ID and literal text match the supplied evidence. The snapshot link and record IDs identify the evidence used. The snapshot has no academic-year field.
+Exact course-code matches use stable record IDs. Counts and ECTS use all records matching the requested department, semester and type. Missing credits are reported separately. For open-ended questions, retrieval returns candidate records and the local model selects excerpts. The service creates excerpts from retrieved records and resolves only valid excerpt IDs selected by the model. The snapshot link and record IDs identify the evidence used. The snapshot has no academic-year field.
 
 The Qdrant index is local and built from the committed snapshot. It uses the same records, filters and candidate limit for sparse BM25, dense cosine, RRF and the reranked variant. The original FAISS/SBERT implementation remains available as a separate reference.
 

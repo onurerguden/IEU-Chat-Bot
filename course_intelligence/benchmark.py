@@ -50,11 +50,22 @@ def peak_mb():
     return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / (1048576 if sys.platform == "darwin" else 1024)
 
 
+def score_evidence(corpus, case, hits):
+    start = time.perf_counter()
+    quotes = evidence(case["question"], [corpus.records[id_] for id_ in hits])
+    ids = {row.id for row, _ in quotes}
+    return {"id": case["id"], "kind": "evidence",
+            "expected_record_selected": bool(ids & set(case["expected"])),
+            "accepted_excerpts": [{"id": row.id, "quote": quote} for row, quote in quotes],
+            "ms": (time.perf_counter() - start) * 1000}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--mode", choices=MODES, action="append")
     parser.add_argument("--answers", action="store_true", help="Use local Ollama to score evidence selection")
+    parser.add_argument("--evidence-replay", type=Path, help="Re-evaluate generation on frozen retrieval hits")
     parser.add_argument("--legacy", action="store_true", help="Run the pre-existing FAISS path as a separate reference")
     parser.add_argument("--profile-batch", type=int, choices=[1, 8], help="Measure one embedding batch size in a fresh process")
     args = parser.parse_args()
@@ -62,6 +73,22 @@ def main():
     fixtures = json.loads((ROOT / "evaluation/curriculum_questions.json").read_text())
     assert fixtures["snapshot_sha256"] == corpus.sha
     cases = fixtures["questions"]
+    if args.evidence_replay:
+        frozen = json.loads(args.evidence_replay.read_text())
+        if frozen["snapshot_sha256"] != corpus.sha:
+            parser.error("The frozen results use another snapshot.")
+        mode = frozen["selected"]
+        hits = {row["id"]: row["hits"] for row in frozen["modes"][mode]["queries"]}
+        rows = []
+        for case in cases:
+            if case["kind"] != "search" or case["split"] != "test":
+                continue
+            rows.append(score_evidence(corpus, case, hits[case["id"]]))
+        args.output.write_text(json.dumps({"snapshot_sha256": corpus.sha, "retrieval_mode": mode,
+                                           "generator": MODEL, "answer_checks": rows},
+                                          indent=2, ensure_ascii=False) + "\n")
+        return
+
     modes = args.mode or MODES
     start = time.perf_counter()
     if args.profile_batch:
@@ -140,13 +167,7 @@ def main():
                              (answer.values == case["values"] if case["kind"] == "exact" else not answer.records)})
         elif args.answers:
             sample = next(row for row in runs[selected] if row["id"] == case["id"])
-            start = time.perf_counter()
-            quotes = evidence(case["question"], [corpus.records[id_] for id_ in sample["hits"]])
-            ids = [row.id for row, _ in quotes]
-            outcomes.append({"id": case["id"], "kind": "evidence",
-                             "expected_record_selected": bool(set(ids) & set(case["expected"])),
-                             "accepted_excerpts": [{"id": row.id, "quote": quote} for row, quote in quotes],
-                             "ms": (time.perf_counter() - start) * 1000})
+            outcomes.append(score_evidence(corpus, case, sample["hits"]))
 
     legacy = None
     if args.legacy:
