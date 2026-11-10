@@ -1,0 +1,12 @@
+{
+  "batch_size": 8,
+  "hardware": "macOS-27.0.1-arm64-arm-64bit",
+  "model": "Qwen/Qwen3-Embedding-0.6B",
+  "device": "mps",
+  "revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+  "documents": 64,
+  "throughput_per_second": 3.0506577752777684,
+  "p50_batch_ms": 2510.4177290049847,
+  "p95_batch_ms": 3522.6356660132296,
+  "peak_process_mib": 2685.75
+}

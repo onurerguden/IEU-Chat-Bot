@@ -1,0 +1,1515 @@
+{
+  "snapshot_sha256": "ed99b97459aa20635e93912f66a2592c9479371351065fb95b049704672af21e",
+  "questions": [
+    {
+      "id": "search-01-en",
+      "group": "search-01",
+      "split": "test",
+      "kind": "search",
+      "language": "en",
+      "question": "operating system kernel and scheduling",
+      "departments": [
+        "Computer Engineering"
+      ],
+      "expected": [
+        "e18f6776aae10753"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-01-tr",
+      "group": "search-01",
+      "split": "test",
+      "kind": "search",
+      "language": "tr",
+      "question": "işletim sistemi çekirdeği ve süreç zamanlama",
+      "departments": [
+        "Computer Engineering"
+      ],
+      "expected": [
+        "e18f6776aae10753"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-02-en",
+      "group": "search-02",
+      "split": "test",
+      "kind": "search",
+      "language": "en",
+      "question": "computer networks and transport protocols",
+      "departments": [
+        "Computer Engineering"
+      ],
+      "expected": [
+        "b7030c68065d6332"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-02-tr",
+      "group": "search-02",
+      "split": "test",
+      "kind": "search",
+      "language": "tr",
+      "question": "bilgisayar ağları ve taşıma katmanı protokolleri",
+      "departments": [
+        "Computer Engineering"
+      ],
+      "expected": [
+        "b7030c68065d6332"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-03-en",
+      "group": "search-03",
+      "split": "test",
+      "kind": "search",
+      "language": "en",
+      "question": "verification and validation of software",
+      "departments": [
+        "Software Engineering"
+      ],
+      "expected": [
+        "3c58ac8fc4ffd6bf"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-03-tr",
+      "group": "search-03",
+      "split": "test",
+      "kind": "search",
+      "language": "tr",
+      "question": "yazılım doğrulama ve geçerleme",
+      "departments": [
+        "Software Engineering"
+      ],
+      "expected": [
+        "3c58ac8fc4ffd6bf"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-04-en",
+      "group": "search-04",
+      "split": "test",
+      "kind": "search",
+      "language": "en",
+      "question": "architectural design of software systems",
+      "departments": [
+        "Software Engineering"
+      ],
+      "expected": [
+        "8322b85852ec17d7"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-04-tr",
+      "group": "search-04",
+      "split": "test",
+      "kind": "search",
+      "language": "tr",
+      "question": "yazılım sistemlerinin mimari tasarımı",
+      "departments": [
+        "Software Engineering"
+      ],
+      "expected": [
+        "8322b85852ec17d7"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-05-en",
+      "group": "search-05",
+      "split": "test",
+      "kind": "search",
+      "language": "en",
+      "question": "signals and systems frequency analysis",
+      "departments": [
+        "Electrical and Electronics Engineering"
+      ],
+      "expected": [
+        "b78e17b6a95d4047"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-05-tr",
+      "group": "search-05",
+      "split": "test",
+      "kind": "search",
+      "language": "tr",
+      "question": "sinyaller ve sistemlerin frekans analizi",
+      "departments": [
+        "Electrical and Electronics Engineering"
+      ],
+      "expected": [
+        "b78e17b6a95d4047"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-06-en",
+      "group": "search-06",
+      "split": "test",
+      "kind": "search",
+      "language": "en",
+      "question": "feedback and control system fundamentals",
+      "departments": [
+        "Electrical and Electronics Engineering"
+      ],
+      "expected": [
+        "1e7917e0161ff6af"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-06-tr",
+      "group": "search-06",
+      "split": "test",
+      "kind": "search",
+      "language": "tr",
+      "question": "geri besleme ve kontrol sistemlerinin temelleri",
+      "departments": [
+        "Electrical and Electronics Engineering"
+      ],
+      "expected": [
+        "1e7917e0161ff6af"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-07-en",
+      "group": "search-07",
+      "split": "test",
+      "kind": "search",
+      "language": "en",
+      "question": "optimization I",
+      "departments": [
+        "Industrial Engineering"
+      ],
+      "expected": [
+        "2ef63e9888fc92e3"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-07-tr",
+      "group": "search-07",
+      "split": "test",
+      "kind": "search",
+      "language": "tr",
+      "question": "optimizasyon I",
+      "departments": [
+        "Industrial Engineering"
+      ],
+      "expected": [
+        "2ef63e9888fc92e3"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-08-en",
+      "group": "search-08",
+      "split": "test",
+      "kind": "search",
+      "language": "en",
+      "question": "simulation in industrial engineering",
+      "departments": [
+        "Industrial Engineering"
+      ],
+      "expected": [
+        "3fbc7a4b27624dd8"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-08-tr",
+      "group": "search-08",
+      "split": "test",
+      "kind": "search",
+      "language": "tr",
+      "question": "endüstri mühendisliği simülasyonu",
+      "departments": [
+        "Industrial Engineering"
+      ],
+      "expected": [
+        "3fbc7a4b27624dd8"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-09-en",
+      "group": "search-09",
+      "split": "test",
+      "kind": "search",
+      "language": "en",
+      "question": "CE 223 database systems",
+      "departments": [
+        "Software Engineering"
+      ],
+      "expected": [
+        "02c52dded7493138"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-09-tr",
+      "group": "search-09",
+      "split": "test",
+      "kind": "search",
+      "language": "tr",
+      "question": "CE 223 veritabanı sistemleri",
+      "departments": [
+        "Software Engineering"
+      ],
+      "expected": [
+        "02c52dded7493138"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-10-en",
+      "group": "search-10",
+      "split": "test",
+      "kind": "search",
+      "language": "en",
+      "question": "CE 315 automata and formal languages",
+      "departments": [
+        "Computer Engineering"
+      ],
+      "expected": [
+        "7a29ce1721e9a45e"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-10-tr",
+      "group": "search-10",
+      "split": "test",
+      "kind": "search",
+      "language": "tr",
+      "question": "CE 315 otomatlar ve biçimsel diller",
+      "departments": [
+        "Computer Engineering"
+      ],
+      "expected": [
+        "7a29ce1721e9a45e"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-11-en",
+      "group": "search-11",
+      "split": "test",
+      "kind": "search",
+      "language": "en",
+      "question": "SE 226 advanced programming",
+      "departments": [
+        "Software Engineering"
+      ],
+      "expected": [
+        "739056540541a8c8"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-11-tr",
+      "group": "search-11",
+      "split": "test",
+      "kind": "search",
+      "language": "tr",
+      "question": "SE 226 ileri programlama",
+      "departments": [
+        "Software Engineering"
+      ],
+      "expected": [
+        "739056540541a8c8"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-12-en",
+      "group": "search-12",
+      "split": "test",
+      "kind": "search",
+      "language": "en",
+      "question": "EEE 232 microelectronic devices",
+      "departments": [
+        "Electrical and Electronics Engineering"
+      ],
+      "expected": [
+        "5df1ebdbced304ae"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-12-tr",
+      "group": "search-12",
+      "split": "test",
+      "kind": "search",
+      "language": "tr",
+      "question": "EEE 232 mikroelektronik aygıtlar",
+      "departments": [
+        "Electrical and Electronics Engineering"
+      ],
+      "expected": [
+        "5df1ebdbced304ae"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-13-en",
+      "group": "search-13",
+      "split": "test",
+      "kind": "search",
+      "language": "en",
+      "question": "IE 334 statistical quality control",
+      "departments": [
+        "Industrial Engineering"
+      ],
+      "expected": [
+        "88f5435d1d1178e0"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-13-tr",
+      "group": "search-13",
+      "split": "test",
+      "kind": "search",
+      "language": "tr",
+      "question": "IE 334 istatistiksel kalite kontrol",
+      "departments": [
+        "Industrial Engineering"
+      ],
+      "expected": [
+        "88f5435d1d1178e0"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-14-en",
+      "group": "search-14",
+      "split": "test",
+      "kind": "search",
+      "language": "en",
+      "question": "CE 221 data structures and algorithms",
+      "departments": [
+        "Computer Engineering"
+      ],
+      "expected": [
+        "28950acc9d47140c"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-14-tr",
+      "group": "search-14",
+      "split": "test",
+      "kind": "search",
+      "language": "tr",
+      "question": "CE 221 veri yapıları ve algoritmalar",
+      "departments": [
+        "Computer Engineering"
+      ],
+      "expected": [
+        "28950acc9d47140c"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-15-en",
+      "group": "search-15",
+      "split": "test",
+      "kind": "search",
+      "language": "en",
+      "question": "EEE 307 energy conversion",
+      "departments": [
+        "Electrical and Electronics Engineering"
+      ],
+      "expected": [
+        "8d0cc1d725bb72d3"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-15-tr",
+      "group": "search-15",
+      "split": "test",
+      "kind": "search",
+      "language": "tr",
+      "question": "EEE 307 enerji dönüşümü",
+      "departments": [
+        "Electrical and Electronics Engineering"
+      ],
+      "expected": [
+        "8d0cc1d725bb72d3"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-16-en",
+      "group": "search-16",
+      "split": "test",
+      "kind": "search",
+      "language": "en",
+      "question": "IE 323 production planning design",
+      "departments": [
+        "Industrial Engineering"
+      ],
+      "expected": [
+        "d639386361ae6184"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-16-tr",
+      "group": "search-16",
+      "split": "test",
+      "kind": "search",
+      "language": "tr",
+      "question": "IE 323 üretim planlama tasarımı",
+      "departments": [
+        "Industrial Engineering"
+      ],
+      "expected": [
+        "d639386361ae6184"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-17-en",
+      "group": "search-17",
+      "split": "dev",
+      "kind": "search",
+      "language": "en",
+      "question": "paradigms of programming languages",
+      "departments": [
+        "Computer Engineering"
+      ],
+      "expected": [
+        "447931d800ee73aa"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-17-tr",
+      "group": "search-17",
+      "split": "dev",
+      "kind": "search",
+      "language": "tr",
+      "question": "programlama paradigmaları",
+      "departments": [
+        "Computer Engineering"
+      ],
+      "expected": [
+        "447931d800ee73aa"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-18-en",
+      "group": "search-18",
+      "split": "dev",
+      "kind": "search",
+      "language": "en",
+      "question": "work system design and analysis",
+      "departments": [
+        "Industrial Engineering"
+      ],
+      "expected": [
+        "b1817e6f01a17194"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-18-tr",
+      "group": "search-18",
+      "split": "dev",
+      "kind": "search",
+      "language": "tr",
+      "question": "iş sistemi analizi ve tasarımı",
+      "departments": [
+        "Industrial Engineering"
+      ],
+      "expected": [
+        "b1817e6f01a17194"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-19-en",
+      "group": "search-19",
+      "split": "dev",
+      "kind": "search",
+      "language": "en",
+      "question": "engineering electromagnetics",
+      "departments": [
+        "Electrical and Electronics Engineering"
+      ],
+      "expected": [
+        "4387d904d1c32e1c"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-19-tr",
+      "group": "search-19",
+      "split": "dev",
+      "kind": "search",
+      "language": "tr",
+      "question": "mühendislik elektromanyetiği",
+      "departments": [
+        "Electrical and Electronics Engineering"
+      ],
+      "expected": [
+        "4387d904d1c32e1c"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-20-en",
+      "group": "search-20",
+      "split": "dev",
+      "kind": "search",
+      "language": "en",
+      "question": "software project management",
+      "departments": [
+        "Software Engineering"
+      ],
+      "expected": [
+        "434599137e9e06c3"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-20-tr",
+      "group": "search-20",
+      "split": "dev",
+      "kind": "search",
+      "language": "tr",
+      "question": "yazılım proje yönetimi",
+      "departments": [
+        "Software Engineering"
+      ],
+      "expected": [
+        "434599137e9e06c3"
+      ],
+      "slice": "semantic"
+    },
+    {
+      "id": "search-21-en",
+      "group": "search-21",
+      "split": "dev",
+      "kind": "search",
+      "language": "en",
+      "question": "SE 321 software specification",
+      "departments": [
+        "Software Engineering"
+      ],
+      "expected": [
+        "f13c9cbe35c25737"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-21-tr",
+      "group": "search-21",
+      "split": "dev",
+      "kind": "search",
+      "language": "tr",
+      "question": "SE 321 yazılım belirtimi",
+      "departments": [
+        "Software Engineering"
+      ],
+      "expected": [
+        "f13c9cbe35c25737"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-22-en",
+      "group": "search-22",
+      "split": "dev",
+      "kind": "search",
+      "language": "en",
+      "question": "EEE 207 circuit analysis",
+      "departments": [
+        "Electrical and Electronics Engineering"
+      ],
+      "expected": [
+        "a2a4ac6cc1c91fd4"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-22-tr",
+      "group": "search-22",
+      "split": "dev",
+      "kind": "search",
+      "language": "tr",
+      "question": "EEE 207 devre analizi",
+      "departments": [
+        "Electrical and Electronics Engineering"
+      ],
+      "expected": [
+        "a2a4ac6cc1c91fd4"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-23-en",
+      "group": "search-23",
+      "split": "dev",
+      "kind": "search",
+      "language": "en",
+      "question": "IE 215 engineering economics",
+      "departments": [
+        "Industrial Engineering"
+      ],
+      "expected": [
+        "707d9fe3f4beeb8e"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-23-tr",
+      "group": "search-23",
+      "split": "dev",
+      "kind": "search",
+      "language": "tr",
+      "question": "IE 215 mühendislik ekonomisi",
+      "departments": [
+        "Industrial Engineering"
+      ],
+      "expected": [
+        "707d9fe3f4beeb8e"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-24-en",
+      "group": "search-24",
+      "split": "dev",
+      "kind": "search",
+      "language": "en",
+      "question": "EEE 242 digital design",
+      "departments": [
+        "Computer Engineering"
+      ],
+      "expected": [
+        "dc568ff915080690"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "search-24-tr",
+      "group": "search-24",
+      "split": "dev",
+      "kind": "search",
+      "language": "tr",
+      "question": "EEE 242 sayısal tasarım",
+      "departments": [
+        "Computer Engineering"
+      ],
+      "expected": [
+        "dc568ff915080690"
+      ],
+      "slice": "code"
+    },
+    {
+      "id": "exact-01-en",
+      "group": "exact-01",
+      "split": "test",
+      "kind": "exact",
+      "language": "en",
+      "question": "Compare total mandatory ECTS in semester 4 in Computer Engineering and Software Engineering.",
+      "departments": [
+        "Computer Engineering",
+        "Software Engineering"
+      ],
+      "expected": [
+        "de3b16a4131448f2",
+        "f80f9fe95c9cf4bc",
+        "d0e88e92f63a23ab",
+        "b6c6880eb1a0bf6d",
+        "6c3cace561e14113",
+        "71373c14e93539b8",
+        "02c52dded7493138",
+        "5e5356e17b699c2c",
+        "11d8ee423d90a99d",
+        "739056540541a8c8",
+        "434599137e9e06c3",
+        "a5374a8d97e93040"
+      ],
+      "values": {
+        "Computer Engineering": {
+          "count": 6,
+          "ects": 30,
+          "unknown_ects": 0
+        },
+        "Software Engineering": {
+          "count": 6,
+          "ects": 30,
+          "unknown_ects": 0
+        }
+      }
+    },
+    {
+      "id": "exact-01-tr",
+      "group": "exact-01",
+      "split": "test",
+      "kind": "exact",
+      "language": "tr",
+      "question": "Bilgisayar Mühendisliği ve Yazılım Mühendisliği için 4. dönem zorunlu ders toplam AKTS nedir?",
+      "departments": [
+        "Computer Engineering",
+        "Software Engineering"
+      ],
+      "expected": [
+        "de3b16a4131448f2",
+        "f80f9fe95c9cf4bc",
+        "d0e88e92f63a23ab",
+        "b6c6880eb1a0bf6d",
+        "6c3cace561e14113",
+        "71373c14e93539b8",
+        "02c52dded7493138",
+        "5e5356e17b699c2c",
+        "11d8ee423d90a99d",
+        "739056540541a8c8",
+        "434599137e9e06c3",
+        "a5374a8d97e93040"
+      ],
+      "values": {
+        "Computer Engineering": {
+          "count": 6,
+          "ects": 30,
+          "unknown_ects": 0
+        },
+        "Software Engineering": {
+          "count": 6,
+          "ects": 30,
+          "unknown_ects": 0
+        }
+      }
+    },
+    {
+      "id": "exact-02-en",
+      "group": "exact-02",
+      "split": "test",
+      "kind": "exact",
+      "language": "en",
+      "question": "Compare total mandatory ECTS in semester 5 in Computer Engineering and Electrical and Electronics Engineering.",
+      "departments": [
+        "Computer Engineering",
+        "Electrical and Electronics Engineering"
+      ],
+      "expected": [
+        "dc568ff915080690",
+        "49186a182c553c08",
+        "e18f6776aae10753",
+        "7a29ce1721e9a45e",
+        "f628712f2210132d",
+        "b78e17b6a95d4047",
+        "f1eeeb8e47630ef7",
+        "e07b67fc723cc1cf",
+        "62716ea58b04aaf1",
+        "4387d904d1c32e1c"
+      ],
+      "values": {
+        "Computer Engineering": {
+          "count": 5,
+          "ects": 30,
+          "unknown_ects": 0
+        },
+        "Electrical and Electronics Engineering": {
+          "count": 5,
+          "ects": 30,
+          "unknown_ects": 0
+        }
+      }
+    },
+    {
+      "id": "exact-02-tr",
+      "group": "exact-02",
+      "split": "test",
+      "kind": "exact",
+      "language": "tr",
+      "question": "Bilgisayar Mühendisliği ve Elektrik Elektronik Mühendisliği için 5. dönem zorunlu ders toplam AKTS nedir?",
+      "departments": [
+        "Computer Engineering",
+        "Electrical and Electronics Engineering"
+      ],
+      "expected": [
+        "dc568ff915080690",
+        "49186a182c553c08",
+        "e18f6776aae10753",
+        "7a29ce1721e9a45e",
+        "f628712f2210132d",
+        "b78e17b6a95d4047",
+        "f1eeeb8e47630ef7",
+        "e07b67fc723cc1cf",
+        "62716ea58b04aaf1",
+        "4387d904d1c32e1c"
+      ],
+      "values": {
+        "Computer Engineering": {
+          "count": 5,
+          "ects": 30,
+          "unknown_ects": 0
+        },
+        "Electrical and Electronics Engineering": {
+          "count": 5,
+          "ects": 30,
+          "unknown_ects": 0
+        }
+      }
+    },
+    {
+      "id": "exact-03-en",
+      "group": "exact-03",
+      "split": "test",
+      "kind": "exact",
+      "language": "en",
+      "question": "Compare total mandatory ECTS in semester 6 in Industrial Engineering and Software Engineering.",
+      "departments": [
+        "Industrial Engineering",
+        "Software Engineering"
+      ],
+      "expected": [
+        "3fbc7a4b27624dd8",
+        "462dfdd9a72efbcc",
+        "9f46e2878c0ae9a8",
+        "3017df57240894d0",
+        "f3459dd0fd9f211f",
+        "8322b85852ec17d7",
+        "6da8bd340b81fff9",
+        "af050ed66ef19a23",
+        "3c58ac8fc4ffd6bf",
+        "6d7ccbf72b60a2d3"
+      ],
+      "values": {
+        "Industrial Engineering": {
+          "count": 5,
+          "ects": 30,
+          "unknown_ects": 0
+        },
+        "Software Engineering": {
+          "count": 5,
+          "ects": 30,
+          "unknown_ects": 0
+        }
+      }
+    },
+    {
+      "id": "exact-03-tr",
+      "group": "exact-03",
+      "split": "test",
+      "kind": "exact",
+      "language": "tr",
+      "question": "Endüstri Mühendisliği ve Yazılım Mühendisliği için 6. dönem zorunlu ders toplam AKTS nedir?",
+      "departments": [
+        "Industrial Engineering",
+        "Software Engineering"
+      ],
+      "expected": [
+        "3fbc7a4b27624dd8",
+        "462dfdd9a72efbcc",
+        "9f46e2878c0ae9a8",
+        "3017df57240894d0",
+        "f3459dd0fd9f211f",
+        "8322b85852ec17d7",
+        "6da8bd340b81fff9",
+        "af050ed66ef19a23",
+        "3c58ac8fc4ffd6bf",
+        "6d7ccbf72b60a2d3"
+      ],
+      "values": {
+        "Industrial Engineering": {
+          "count": 5,
+          "ects": 30,
+          "unknown_ects": 0
+        },
+        "Software Engineering": {
+          "count": 5,
+          "ects": 30,
+          "unknown_ects": 0
+        }
+      }
+    },
+    {
+      "id": "exact-04-en",
+      "group": "exact-04",
+      "split": "test",
+      "kind": "exact",
+      "language": "en",
+      "question": "Compare total mandatory ECTS in semester 3 in Computer Engineering and Industrial Engineering.",
+      "departments": [
+        "Computer Engineering",
+        "Industrial Engineering"
+      ],
+      "expected": [
+        "28950acc9d47140c",
+        "ab6512523961df3e",
+        "9df969601f29dd52",
+        "f45b81de5aae6b1e",
+        "9f7bfdae2eb62997",
+        "2ef63e9888fc92e3",
+        "61aaae9c6f07ed2d",
+        "ea978197f6a8a7d2",
+        "707d9fe3f4beeb8e",
+        "f6fd252cc4d3ff1d",
+        "b87f5a1a303b889a"
+      ],
+      "values": {
+        "Computer Engineering": {
+          "count": 5,
+          "ects": 30,
+          "unknown_ects": 0
+        },
+        "Industrial Engineering": {
+          "count": 6,
+          "ects": 30,
+          "unknown_ects": 0
+        }
+      }
+    },
+    {
+      "id": "exact-04-tr",
+      "group": "exact-04",
+      "split": "test",
+      "kind": "exact",
+      "language": "tr",
+      "question": "Bilgisayar Mühendisliği ve Endüstri Mühendisliği için 3. dönem zorunlu ders toplam AKTS nedir?",
+      "departments": [
+        "Computer Engineering",
+        "Industrial Engineering"
+      ],
+      "expected": [
+        "28950acc9d47140c",
+        "ab6512523961df3e",
+        "9df969601f29dd52",
+        "f45b81de5aae6b1e",
+        "9f7bfdae2eb62997",
+        "2ef63e9888fc92e3",
+        "61aaae9c6f07ed2d",
+        "ea978197f6a8a7d2",
+        "707d9fe3f4beeb8e",
+        "f6fd252cc4d3ff1d",
+        "b87f5a1a303b889a"
+      ],
+      "values": {
+        "Computer Engineering": {
+          "count": 5,
+          "ects": 30,
+          "unknown_ects": 0
+        },
+        "Industrial Engineering": {
+          "count": 6,
+          "ects": 30,
+          "unknown_ects": 0
+        }
+      }
+    },
+    {
+      "id": "exact-05-en",
+      "group": "exact-05",
+      "split": "test",
+      "kind": "exact",
+      "language": "en",
+      "question": "Compare total mandatory ECTS in semester 2 in Electrical and Electronics Engineering and Industrial Engineering.",
+      "departments": [
+        "Electrical and Electronics Engineering",
+        "Industrial Engineering"
+      ],
+      "expected": [
+        "f4ed44e0eeb023c3",
+        "28df8d7e29f776fb",
+        "1545e6b2875ab8b2",
+        "3a58a4c693ef7e55",
+        "508f878c6a296629",
+        "749a2f3656509d7a",
+        "d65b84e41028e210",
+        "11a948239bd12c4f",
+        "71788381f5a09e3f",
+        "7a7fa5e1a0a31455",
+        "6e3e8c6aed3c7290",
+        "deb02232ac6af64e"
+      ],
+      "values": {
+        "Electrical and Electronics Engineering": {
+          "count": 6,
+          "ects": 30,
+          "unknown_ects": 0
+        },
+        "Industrial Engineering": {
+          "count": 6,
+          "ects": 30,
+          "unknown_ects": 0
+        }
+      }
+    },
+    {
+      "id": "exact-05-tr",
+      "group": "exact-05",
+      "split": "test",
+      "kind": "exact",
+      "language": "tr",
+      "question": "Elektrik Elektronik Mühendisliği ve Endüstri Mühendisliği için 2. dönem zorunlu ders toplam AKTS nedir?",
+      "departments": [
+        "Electrical and Electronics Engineering",
+        "Industrial Engineering"
+      ],
+      "expected": [
+        "f4ed44e0eeb023c3",
+        "28df8d7e29f776fb",
+        "1545e6b2875ab8b2",
+        "3a58a4c693ef7e55",
+        "508f878c6a296629",
+        "749a2f3656509d7a",
+        "d65b84e41028e210",
+        "11a948239bd12c4f",
+        "71788381f5a09e3f",
+        "7a7fa5e1a0a31455",
+        "6e3e8c6aed3c7290",
+        "deb02232ac6af64e"
+      ],
+      "values": {
+        "Electrical and Electronics Engineering": {
+          "count": 6,
+          "ects": 30,
+          "unknown_ects": 0
+        },
+        "Industrial Engineering": {
+          "count": 6,
+          "ects": 30,
+          "unknown_ects": 0
+        }
+      }
+    },
+    {
+      "id": "exact-06-en",
+      "group": "exact-06",
+      "split": "test",
+      "kind": "exact",
+      "language": "en",
+      "question": "Compare total mandatory ECTS in semester 7 in Electrical and Electronics Engineering and Software Engineering.",
+      "departments": [
+        "Electrical and Electronics Engineering",
+        "Software Engineering"
+      ],
+      "expected": [
+        "0a75562a72fd8517",
+        "000f9920c5100bb4",
+        "647183c45f0aa6ed",
+        "866cbbe2be54ba9c",
+        "1219e3f839befd0d",
+        "7aa181e23cbad9ce",
+        "8ecd6012f178949b",
+        "3addc15035dfbd12",
+        "225d338baf1360a3",
+        "9963cbe0d2fcc8aa",
+        "f53890cf72aedf2c",
+        "0b54d20deaf3f51e"
+      ],
+      "values": {
+        "Electrical and Electronics Engineering": {
+          "count": 6,
+          "ects": 30,
+          "unknown_ects": 0
+        },
+        "Software Engineering": {
+          "count": 6,
+          "ects": 30,
+          "unknown_ects": 0
+        }
+      }
+    },
+    {
+      "id": "exact-06-tr",
+      "group": "exact-06",
+      "split": "test",
+      "kind": "exact",
+      "language": "tr",
+      "question": "Elektrik Elektronik Mühendisliği ve Yazılım Mühendisliği için 7. dönem zorunlu ders toplam AKTS nedir?",
+      "departments": [
+        "Electrical and Electronics Engineering",
+        "Software Engineering"
+      ],
+      "expected": [
+        "0a75562a72fd8517",
+        "000f9920c5100bb4",
+        "647183c45f0aa6ed",
+        "866cbbe2be54ba9c",
+        "1219e3f839befd0d",
+        "7aa181e23cbad9ce",
+        "8ecd6012f178949b",
+        "3addc15035dfbd12",
+        "225d338baf1360a3",
+        "9963cbe0d2fcc8aa",
+        "f53890cf72aedf2c",
+        "0b54d20deaf3f51e"
+      ],
+      "values": {
+        "Electrical and Electronics Engineering": {
+          "count": 6,
+          "ects": 30,
+          "unknown_ects": 0
+        },
+        "Software Engineering": {
+          "count": 6,
+          "ects": 30,
+          "unknown_ects": 0
+        }
+      }
+    },
+    {
+      "id": "exact-07-en",
+      "group": "exact-07",
+      "split": "dev",
+      "kind": "exact",
+      "language": "en",
+      "question": "Compare total mandatory ECTS in semester 1 in Computer Engineering and Electrical and Electronics Engineering.",
+      "departments": [
+        "Computer Engineering",
+        "Electrical and Electronics Engineering"
+      ],
+      "expected": [
+        "26f4a5d8c82f42d6",
+        "d02cfd6176bbca98",
+        "bba9a51cff98bc6b",
+        "84cf24112d61e9bf",
+        "12f48e44f472bed1",
+        "488cae86d72b1925",
+        "346bb5ec547828eb",
+        "3ce162ff3eeee96a",
+        "2a8063cfd3e1aa38",
+        "0be9147eb3f69ce6",
+        "5a3e4eb45a5cf069",
+        "8bece62fb0821b78",
+        "71f371ab72aff534",
+        "9344043ce18401a4"
+      ],
+      "values": {
+        "Computer Engineering": {
+          "count": 7,
+          "ects": 30,
+          "unknown_ects": 0
+        },
+        "Electrical and Electronics Engineering": {
+          "count": 7,
+          "ects": 30,
+          "unknown_ects": 0
+        }
+      }
+    },
+    {
+      "id": "exact-07-tr",
+      "group": "exact-07",
+      "split": "dev",
+      "kind": "exact",
+      "language": "tr",
+      "question": "Bilgisayar Mühendisliği ve Elektrik Elektronik Mühendisliği için 1. dönem zorunlu ders toplam AKTS nedir?",
+      "departments": [
+        "Computer Engineering",
+        "Electrical and Electronics Engineering"
+      ],
+      "expected": [
+        "26f4a5d8c82f42d6",
+        "d02cfd6176bbca98",
+        "bba9a51cff98bc6b",
+        "84cf24112d61e9bf",
+        "12f48e44f472bed1",
+        "488cae86d72b1925",
+        "346bb5ec547828eb",
+        "3ce162ff3eeee96a",
+        "2a8063cfd3e1aa38",
+        "0be9147eb3f69ce6",
+        "5a3e4eb45a5cf069",
+        "8bece62fb0821b78",
+        "71f371ab72aff534",
+        "9344043ce18401a4"
+      ],
+      "values": {
+        "Computer Engineering": {
+          "count": 7,
+          "ects": 30,
+          "unknown_ects": 0
+        },
+        "Electrical and Electronics Engineering": {
+          "count": 7,
+          "ects": 30,
+          "unknown_ects": 0
+        }
+      }
+    },
+    {
+      "id": "exact-08-en",
+      "group": "exact-08",
+      "split": "dev",
+      "kind": "exact",
+      "language": "en",
+      "question": "Compare total mandatory ECTS in semester 5 in Industrial Engineering and Software Engineering.",
+      "departments": [
+        "Industrial Engineering",
+        "Software Engineering"
+      ],
+      "expected": [
+        "d639386361ae6184",
+        "b1817e6f01a17194",
+        "800c627b96c23498",
+        "58ee7455fa36e6ea",
+        "88f5435d1d1178e0",
+        "ba8e5ca8d517b88e",
+        "f13c9cbe35c25737",
+        "8f332bd65ff3cb86",
+        "7fd47f78428999ae",
+        "35abfec63f7b881e"
+      ],
+      "values": {
+        "Industrial Engineering": {
+          "count": 5,
+          "ects": 30,
+          "unknown_ects": 0
+        },
+        "Software Engineering": {
+          "count": 5,
+          "ects": 30,
+          "unknown_ects": 0
+        }
+      }
+    },
+    {
+      "id": "exact-08-tr",
+      "group": "exact-08",
+      "split": "dev",
+      "kind": "exact",
+      "language": "tr",
+      "question": "Endüstri Mühendisliği ve Yazılım Mühendisliği için 5. dönem zorunlu ders toplam AKTS nedir?",
+      "departments": [
+        "Industrial Engineering",
+        "Software Engineering"
+      ],
+      "expected": [
+        "d639386361ae6184",
+        "b1817e6f01a17194",
+        "800c627b96c23498",
+        "58ee7455fa36e6ea",
+        "88f5435d1d1178e0",
+        "ba8e5ca8d517b88e",
+        "f13c9cbe35c25737",
+        "8f332bd65ff3cb86",
+        "7fd47f78428999ae",
+        "35abfec63f7b881e"
+      ],
+      "values": {
+        "Industrial Engineering": {
+          "count": 5,
+          "ects": 30,
+          "unknown_ects": 0
+        },
+        "Software Engineering": {
+          "count": 5,
+          "ects": 30,
+          "unknown_ects": 0
+        }
+      }
+    },
+    {
+      "id": "negative-01-en",
+      "group": "negative-01",
+      "split": "test",
+      "kind": "negative",
+      "language": "en",
+      "question": "Computer Engineering: CE 9999 course title",
+      "departments": [
+        "Computer Engineering"
+      ],
+      "expected": []
+    },
+    {
+      "id": "negative-01-tr",
+      "group": "negative-01",
+      "split": "test",
+      "kind": "negative",
+      "language": "tr",
+      "question": "Bilgisayar Mühendisliği: CE 9999 ders adı",
+      "departments": [
+        "Computer Engineering"
+      ],
+      "expected": []
+    },
+    {
+      "id": "negative-02-en",
+      "group": "negative-02",
+      "split": "test",
+      "kind": "negative",
+      "language": "en",
+      "question": "Software Engineering: SE 9999 prerequisites",
+      "departments": [
+        "Software Engineering"
+      ],
+      "expected": []
+    },
+    {
+      "id": "negative-02-tr",
+      "group": "negative-02",
+      "split": "test",
+      "kind": "negative",
+      "language": "tr",
+      "question": "Yazılım Mühendisliği: SE 9999 ön koşulları",
+      "departments": [
+        "Software Engineering"
+      ],
+      "expected": []
+    },
+    {
+      "id": "negative-03-en",
+      "group": "negative-03",
+      "split": "test",
+      "kind": "negative",
+      "language": "en",
+      "question": "Industrial Engineering: IE 9999 semester",
+      "departments": [
+        "Industrial Engineering"
+      ],
+      "expected": []
+    },
+    {
+      "id": "negative-03-tr",
+      "group": "negative-03",
+      "split": "test",
+      "kind": "negative",
+      "language": "tr",
+      "question": "Endüstri Mühendisliği: IE 9999 hangi dönem",
+      "departments": [
+        "Industrial Engineering"
+      ],
+      "expected": []
+    },
+    {
+      "id": "negative-04-en",
+      "group": "negative-04",
+      "split": "test",
+      "kind": "negative",
+      "language": "en",
+      "question": "Electrical and Electronics Engineering: EEE 9999 course",
+      "departments": [
+        "Electrical and Electronics Engineering"
+      ],
+      "expected": []
+    },
+    {
+      "id": "negative-04-tr",
+      "group": "negative-04",
+      "split": "test",
+      "kind": "negative",
+      "language": "tr",
+      "question": "Elektrik Elektronik Mühendisliği: EEE 9999 dersi",
+      "departments": [
+        "Electrical and Electronics Engineering"
+      ],
+      "expected": []
+    },
+    {
+      "id": "negative-05-en",
+      "group": "negative-05",
+      "split": "test",
+      "kind": "negative",
+      "language": "en",
+      "question": "Computer Engineering: tuition for semester 4",
+      "departments": [
+        "Computer Engineering"
+      ],
+      "expected": []
+    },
+    {
+      "id": "negative-05-tr",
+      "group": "negative-05",
+      "split": "test",
+      "kind": "negative",
+      "language": "tr",
+      "question": "Bilgisayar Mühendisliği: 4. dönem harç tutarı",
+      "departments": [
+        "Computer Engineering"
+      ],
+      "expected": []
+    },
+    {
+      "id": "negative-06-en",
+      "group": "negative-06",
+      "split": "test",
+      "kind": "negative",
+      "language": "en",
+      "question": "Software Engineering: visa requirements for admission",
+      "departments": [
+        "Software Engineering"
+      ],
+      "expected": []
+    },
+    {
+      "id": "negative-06-tr",
+      "group": "negative-06",
+      "split": "test",
+      "kind": "negative",
+      "language": "tr",
+      "question": "Yazılım Mühendisliği: kabul için vize şartları",
+      "departments": [
+        "Software Engineering"
+      ],
+      "expected": []
+    },
+    {
+      "id": "negative-07-en",
+      "group": "negative-07",
+      "split": "dev",
+      "kind": "negative",
+      "language": "en",
+      "question": "Electrical and Electronics Engineering: scholarship amount for engineering students",
+      "departments": [
+        "Electrical and Electronics Engineering"
+      ],
+      "expected": []
+    },
+    {
+      "id": "negative-07-tr",
+      "group": "negative-07",
+      "split": "dev",
+      "kind": "negative",
+      "language": "tr",
+      "question": "Elektrik Elektronik Mühendisliği: mühendislik öğrencileri burs tutarı",
+      "departments": [
+        "Electrical and Electronics Engineering"
+      ],
+      "expected": []
+    },
+    {
+      "id": "negative-08-en",
+      "group": "negative-08",
+      "split": "dev",
+      "kind": "negative",
+      "language": "en",
+      "question": "Industrial Engineering: enrollment deadline for new applicants",
+      "departments": [
+        "Industrial Engineering"
+      ],
+      "expected": []
+    },
+    {
+      "id": "negative-08-tr",
+      "group": "negative-08",
+      "split": "dev",
+      "kind": "negative",
+      "language": "tr",
+      "question": "Endüstri Mühendisliği: yeni adayların vize son günü",
+      "departments": [
+        "Industrial Engineering"
+      ],
+      "expected": []
+    }
+  ]
+}

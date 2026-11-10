@@ -1,0 +1,559 @@
+{
+  "snapshot_sha256": "ed99b97459aa20635e93912f66a2592c9479371351065fb95b049704672af21e",
+  "retrieval_mode": "rerank",
+  "generator": "qwen3:4b-instruct-2507-q4_K_M",
+  "answer_checks": [
+    {
+      "id": "search-01-en",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "e18f6776aae10753",
+          "quote": "[{'week': '1', 'topic': 'Introduction'}, {'week': '2', 'topic': 'Operating System Structures'}, {'week': '3', 'topic': 'Processes'}, {'week': '4', 'topic': 'Threads'}, {'week': '5', 'topic': 'CPU Scheduling'}, {'week': '6', 'topic': 'Proces"
+        }
+      ],
+      "ms": 4530.565041990485
+    },
+    {
+      "id": "search-01-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "e18f6776aae10753",
+          "quote": "The goal of this course is to give basic knowledge of operating systems to a student who intends to be a computer or software engineer."
+        }
+      ],
+      "ms": 1926.0484999977052
+    },
+    {
+      "id": "search-02-en",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "b7030c68065d6332",
+          "quote": "Alongside each layer and protocols of computer networks, the following topics will also be discussed: OSI model of network; MAC protocol; TCP and UDP protocols; error control, detection and correction; IPv4; routing; socket programming; net"
+        }
+      ],
+      "ms": 2072.726916987449
+    },
+    {
+      "id": "search-02-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "b7030c68065d6332",
+          "quote": "The goal of this course is to familiarize students with the concepts of data communication, computer networks, and Internetworking."
+        }
+      ],
+      "ms": 2118.8112079980783
+    },
+    {
+      "id": "search-03-en",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "3c58ac8fc4ffd6bf",
+          "quote": "SE 322 Software Verification and Validation | Software Engineering | mandatory"
+        },
+        {
+          "id": "3c58ac8fc4ffd6bf",
+          "quote": "The first objective of this course is to provide students with information about the fundamentals and principles of software testing."
+        }
+      ],
+      "ms": 1816.5814999956638
+    },
+    {
+      "id": "search-03-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "3c58ac8fc4ffd6bf",
+          "quote": "SE 322 Software Verification and Validation | Software Engineering | mandatory"
+        },
+        {
+          "id": "3c58ac8fc4ffd6bf",
+          "quote": "The first objective of this course is to provide students with information about the fundamentals and principles of software testing."
+        },
+        {
+          "id": "1c83b77a243e5f83",
+          "quote": "The primary objective of this course is to provide students with foundational knowledge of the principles and fundamentals of software testing."
+        }
+      ],
+      "ms": 1859.4669579761103
+    },
+    {
+      "id": "search-04-en",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "8322b85852ec17d7",
+          "quote": "The goal of this course to arm the students with the knowledge needed in architecting effective and maintainable complex software systems of high quality by applying design patterns."
+        },
+        {
+          "id": "687f6ccd1a69aad6",
+          "quote": "Mainly focusing on cloud computing models, techniques, and architecture, this course will provide students with the knowledge and handson experience in designing and implementing cloudbased software systems."
+        },
+        {
+          "id": "f13c9cbe35c25737",
+          "quote": "SE 321 Software Specification and Design | Software Engineering | mandatory"
+        }
+      ],
+      "ms": 1937.1488749748096
+    },
+    {
+      "id": "search-04-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "8322b85852ec17d7",
+          "quote": "SE 311 Software Architecture | Software Engineering | mandatory"
+        },
+        {
+          "id": "8322b85852ec17d7",
+          "quote": "The goal of this course to arm the students with the knowledge needed in architecting effective and maintainable complex software systems of high quality by applying design patterns."
+        }
+      ],
+      "ms": 1769.941457954701
+    },
+    {
+      "id": "search-05-en",
+      "kind": "evidence",
+      "expected_record_selected": false,
+      "accepted_excerpts": [
+        {
+          "id": "e257eb47b6c15399",
+          "quote": "Topics include the representation, analysis, and design of discrete-time signals and systems; sampling and discrete-time processing of continuous-time signals; frequency domain representations such as Fourier series and transform; Z-transfo"
+        }
+      ],
+      "ms": 1905.7864170172252
+    },
+    {
+      "id": "search-05-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "b78e17b6a95d4047",
+          "quote": "The aim of this course is to provide students with the mathematical foundations and tools necessary for the analysis of signals processed by systems."
+        },
+        {
+          "id": "e257eb47b6c15399",
+          "quote": "EEE 413 Digital Signal Processing | Electrical and Electronics Engineering | elective"
+        },
+        {
+          "id": "e257eb47b6c15399",
+          "quote": "This course covers the principles and applications of digital signal processing."
+        }
+      ],
+      "ms": 1770.4950000043027
+    },
+    {
+      "id": "search-06-en",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "1e7917e0161ff6af",
+          "quote": "properties and advantages of feedback systems, time-domain and frequency-domain performance measures, stability and degree of stability, the Nyquist criterion, frequency-domain control system design, the Root-locus method and application to"
+        },
+        {
+          "id": "f1eeeb8e47630ef7",
+          "quote": "Study on feedback amplifiers and stability, and power amplifiers will help students to understand complex amplifiers circuits."
+        }
+      ],
+      "ms": 1851.1759999673814
+    },
+    {
+      "id": "search-06-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "1e7917e0161ff6af",
+          "quote": "The main objective of this course is to introduce the fundamental concepts of feedback control and dynamical systems."
+        }
+      ],
+      "ms": 1859.652167011518
+    },
+    {
+      "id": "search-07-en",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "2ef63e9888fc92e3",
+          "quote": "IE 251 Optimization I | Industrial Engineering | mandatory"
+        },
+        {
+          "id": "2ef63e9888fc92e3",
+          "quote": "The main subjects of the course are the construction of linear programming models, the geometrical interpretation of solutions to the linear optimization problems and their algebraic groundwork, the simplex method, duality theory, sensitivi"
+        },
+        {
+          "id": "7024134adead76cb",
+          "quote": "IE 252 Optimization II | Industrial Engineering | mandatory"
+        }
+      ],
+      "ms": 1951.357249985449
+    },
+    {
+      "id": "search-07-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "2ef63e9888fc92e3",
+          "quote": "IE 251 Optimization I | Industrial Engineering | mandatory"
+        },
+        {
+          "id": "2ef63e9888fc92e3",
+          "quote": "This course is the first part of a two term sequence, aims to give students a good foundation in the theory and applications of linear programming problems as well as an appreciation of its potential applications extensively in such diverse"
+        }
+      ],
+      "ms": 1890.549290983472
+    },
+    {
+      "id": "search-08-en",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "3fbc7a4b27624dd8",
+          "quote": "IE 335 Simulation | Industrial Engineering | mandatory"
+        },
+        {
+          "id": "3fbc7a4b27624dd8",
+          "quote": "This course includes queueing models apart from main steps of a simulation project such as conceptual modelling, input analysis, verification, validation and output analysis."
+        },
+        {
+          "id": "aed0a39756c45abc",
+          "quote": "This course aims to teach modelling of intermediate and advanced simulation applications and explain simulation applications for the industrial applications."
+        }
+      ],
+      "ms": 1865.1305410312489
+    },
+    {
+      "id": "search-08-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "aed0a39756c45abc",
+          "quote": "IE 337 Industrial Applications of Simulations | Industrial Engineering | elective"
+        },
+        {
+          "id": "aed0a39756c45abc",
+          "quote": "This course aims to teach modelling of intermediate and advanced simulation applications and explain simulation applications for the industrial applications."
+        },
+        {
+          "id": "3fbc7a4b27624dd8",
+          "quote": "IE 335 Simulation | Industrial Engineering | mandatory"
+        }
+      ],
+      "ms": 2230.0489580375142
+    },
+    {
+      "id": "search-09-en",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "02c52dded7493138",
+          "quote": "CE 223 Database Systems | Software Engineering | mandatory"
+        },
+        {
+          "id": "02c52dded7493138",
+          "quote": "The goal of this course is to give basic knowledge of database systems to a student who intends to be a computer or software engineer."
+        }
+      ],
+      "ms": 1772.140999964904
+    },
+    {
+      "id": "search-09-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "02c52dded7493138",
+          "quote": "CE 223 Database Systems | Software Engineering | mandatory"
+        },
+        {
+          "id": "02c52dded7493138",
+          "quote": "To get a grade of at least FD in CE 215"
+        },
+        {
+          "id": "efaacf63f4c4a541",
+          "quote": "CE 223 To succeed (To get a grade of at least DD)"
+        }
+      ],
+      "ms": 1827.8978330199607
+    },
+    {
+      "id": "search-10-en",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "7a29ce1721e9a45e",
+          "quote": "CE 315 Automata Theory and Formal Languages | Computer Engineering | mandatory"
+        },
+        {
+          "id": "7a29ce1721e9a45e",
+          "quote": "The aim of this course is to introduce automata theory and formal languages, which are one step more abstract than existing programming languages."
+        }
+      ],
+      "ms": 2008.2132079987787
+    },
+    {
+      "id": "search-10-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "7a29ce1721e9a45e",
+          "quote": "CE 315 Automata Theory and Formal Languages | Computer Engineering | mandatory"
+        },
+        {
+          "id": "7a29ce1721e9a45e",
+          "quote": "CE 215 To Succeed (To get a grade of at least DD)"
+        },
+        {
+          "id": "14cd4e9317436fec",
+          "quote": "CE 221 To succeed (To get a grade of at least DD)"
+        }
+      ],
+      "ms": 2052.8977920184843
+    },
+    {
+      "id": "search-11-en",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "739056540541a8c8",
+          "quote": "SE 226 Advanced Programming | Software Engineering | mandatory"
+        },
+        {
+          "id": "739056540541a8c8",
+          "quote": "The main objective of the course is to develop students' programming, design and analysis skills in various languages and platforms."
+        }
+      ],
+      "ms": 1792.24079096457
+    },
+    {
+      "id": "search-11-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "739056540541a8c8",
+          "quote": "SE 226 Advanced Programming | Software Engineering | mandatory"
+        },
+        {
+          "id": "739056540541a8c8",
+          "quote": "SE 115 To succeed (To get a grade of at least DD)"
+        },
+        {
+          "id": "8f332bd65ff3cb86",
+          "quote": "SE 116 To succeed (To get a grade of at least DD)"
+        }
+      ],
+      "ms": 1786.478583002463
+    },
+    {
+      "id": "search-12-en",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "5df1ebdbced304ae",
+          "quote": "EEE 232 Microelectronic Devices and Circuits | Electrical and Electronics Engineering | mandatory"
+        },
+        {
+          "id": "5df1ebdbced304ae",
+          "quote": "The goal of this course at the first step is to give the basic theory of semiconductor devices, namely pn junction diode, bipolar junction transistor (BJT) and Metal Oxide Semiconductor Field Effect Transistor (MOSFET)."
+        },
+        {
+          "id": "1599c6481c163b11",
+          "quote": "EEE 232 To get a grade of at least FD"
+        }
+      ],
+      "ms": 1934.6545829903334
+    },
+    {
+      "id": "search-12-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "5df1ebdbced304ae",
+          "quote": "EEE 232 Microelectronic Devices and Circuits | Electrical and Electronics Engineering | mandatory"
+        },
+        {
+          "id": "f1eeeb8e47630ef7",
+          "quote": "EEE 232 To get a grade of at least FD"
+        },
+        {
+          "id": "1599c6481c163b11",
+          "quote": "EEE 232 To get a grade of at least FD"
+        }
+      ],
+      "ms": 1937.7091249916703
+    },
+    {
+      "id": "search-13-en",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "88f5435d1d1178e0",
+          "quote": "IE 334 Statistical Quality Control | Industrial Engineering | mandatory"
+        },
+        {
+          "id": "88f5435d1d1178e0",
+          "quote": "This course aims to provide knowledge in quality costs, basic concepts, tools and statistical techniques for quality control."
+        }
+      ],
+      "ms": 1684.77170803817
+    },
+    {
+      "id": "search-13-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "88f5435d1d1178e0",
+          "quote": "IE 334 Statistical Quality Control | Industrial Engineering | mandatory"
+        },
+        {
+          "id": "88f5435d1d1178e0",
+          "quote": "MATH 236 / IE 234To succeed (To get a grade of at least DD)"
+        },
+        {
+          "id": "3fbc7a4b27624dd8",
+          "quote": "being successful at IE 234 or MATH 236 (at least DD)"
+        }
+      ],
+      "ms": 1807.0240410161205
+    },
+    {
+      "id": "search-14-en",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "28950acc9d47140c",
+          "quote": "CE 221 Data Structures and Algorithms I | Computer Engineering | mandatory"
+        },
+        {
+          "id": "28950acc9d47140c",
+          "quote": "This course introduces abstract data types, and presents algorithms and data structures for implementing several ADTs."
+        }
+      ],
+      "ms": 1751.1677499860525
+    },
+    {
+      "id": "search-14-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "28950acc9d47140c",
+          "quote": "CE 221 Data Structures and Algorithms I | Computer Engineering | mandatory"
+        },
+        {
+          "id": "28950acc9d47140c",
+          "quote": "The objective of this course is to teach students the notion of an abstract data type (ADT) which is central to the design and analysis of computer algorithms."
+        },
+        {
+          "id": "e18f6776aae10753",
+          "quote": "SE 116 (minimum DD earned), CE 221 (minimum DD earned)"
+        }
+      ],
+      "ms": 1735.8433750341646
+    },
+    {
+      "id": "search-15-en",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "8d0cc1d725bb72d3",
+          "quote": "EEE 307 Electrical Energy Conversion | Electrical and Electronics Engineering | mandatory"
+        },
+        {
+          "id": "8d0cc1d725bb72d3",
+          "quote": "The aim of this course is to give the principles of conversion of electrical energy into mechanical energy and vice versa using electromagnetic fields, to study various machines and generators, their working principles and important charact"
+        }
+      ],
+      "ms": 2054.3702500290237
+    },
+    {
+      "id": "search-15-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "8d0cc1d725bb72d3",
+          "quote": "EEE 307 Electrical Energy Conversion | Electrical and Electronics Engineering | mandatory"
+        },
+        {
+          "id": "8d0cc1d725bb72d3",
+          "quote": "Passing EEE 201 (Receiving at least a DD grade) or Passing EEE 207 (Receiving at least a DD grade) and EEE 322 (at least FD)"
+        },
+        {
+          "id": "e257eb47b6c15399",
+          "quote": "EEE 301 To succeed (To get a grade of at least DD) or, EEE 309 To succeed (To get a grade of at least DD)"
+        }
+      ],
+      "ms": 1993.411792034749
+    },
+    {
+      "id": "search-16-en",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "d639386361ae6184",
+          "quote": "IE 323 Production Planning Design and Control | Industrial Engineering | mandatory"
+        },
+        {
+          "id": "d639386361ae6184",
+          "quote": "This course introduces production planning and production planning related activities to the students."
+        },
+        {
+          "id": "3e01e79eada8cb43",
+          "quote": "This course includes production planning, labor planning, critical path method, supply planning, quadratic assignment, travelling salesman planning problems and their modeling applications."
+        }
+      ],
+      "ms": 1868.7791660195217
+    },
+    {
+      "id": "search-16-tr",
+      "kind": "evidence",
+      "expected_record_selected": true,
+      "accepted_excerpts": [
+        {
+          "id": "d639386361ae6184",
+          "quote": "IE 323 Production Planning Design and Control | Industrial Engineering | mandatory"
+        },
+        {
+          "id": "d639386361ae6184",
+          "quote": "IE 222 To attend the classes (To enrol for the course and get a grade other than NA or W) ISE 216 To attend the classes (To enrol for the course and get a grade other than NA or W)"
+        },
+        {
+          "id": "dc767ae385794e2d",
+          "quote": "IE 222 To succeed (To get a grade of at least DD)"
+        }
+      ],
+      "ms": 1800.1247079810128
+    }
+  ]
+}
