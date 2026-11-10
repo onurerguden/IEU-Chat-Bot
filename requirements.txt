@@ -1,4 +1,10 @@
-sentence-transformers
-chromadb
+sentence-transformers==5.2.0
+qdrant-client==1.16.2
+transformers==4.57.3
+PyQt6==6.10.1
+ollama==0.6.1
+faiss-cpu==1.13.1
 numpy
 tqdm
+requests
+beautifulsoup4

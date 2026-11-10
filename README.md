@@ -1,77 +1,47 @@
 # Course Intelligence RAG
 
-A local retrieval-augmented generation assistant for İzmir University of Economics engineering curricula. It retrieves course evidence across departments before asking Llama 3.1 to answer, with filters for department, year, semester and course type.
+Ask questions about an İzmir University of Economics engineering curriculum snapshot in a desktop app or terminal. My contribution covers the data pipeline, shared application service, controlled retrieval benchmark and evidence display.
 
-Built by [Onur Ergüden](https://onurerguden.dev). [Read the case study](https://onurerguden.dev/en/projects/course-intelligence).
+[Desktop demo](docs/demo.mp4) · [Evaluation and failure analysis](evaluation/README.md) · [Frozen benchmark questions](evaluation/curriculum_questions.json)
 
-## What it demonstrates
-
-- Hierarchical course chunks, curriculum summaries and metadata-aware retrieval.
-- Sentence-transformer embeddings and a FAISS inner-product index over normalized vectors.
-- Query processing for comparisons, course counts and ECTS totals across departments.
-- Prompt constraints intended to reject questions that the retrieved curriculum cannot support.
-- A PyQt6 desktop interface and a command-line entry point.
-
-## Architecture
-
-```text
-Curriculum JSON → hierarchical chunks → SBERT embeddings → FAISS index
-Question → query filters → retrieved context → Llama 3.1 via Ollama → answer
+```sh
+python -m course_intelligence.app 'Find SE 226 in Software Engineering'
 ```
-
-The embedding model is `sentence-transformers/all-MiniLM-L6-v2`; the generation model is `llama3.1:8b`.
 
 ## Run locally
 
-Use a Python environment compatible with PyQt6, FAISS and sentence-transformers; Python 3.12 is a suitable starting point. Install [Ollama](https://ollama.com) and keep its local service running.
+From the repository root, use Python 3.11 and install the requirements in a virtual environment. Exact code lookup and credit totals run from the snapshot. Open-ended questions use local Ollama. Model weights are downloaded separately.
 
 ```sh
-git clone https://github.com/onurerguden/IEU-Chat-Bot.git
-cd IEU-Chat-Bot
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
-python -m pip install faiss-cpu ollama PyQt6
-ollama pull llama3.1:8b
+ollama pull qwen3:4b-instruct-2507-q4_K_M
 python gui_app.py
 ```
 
-On Windows, activate with `.venv\Scripts\activate`. The extra installation line supplies runtime imports missing from the current `requirements.txt`. The first run downloads the embedding model; local generation requires enough memory for the 8B model.
-
-The repository includes a FAISS index and metadata. To rebuild them from the committed curriculum snapshot, run from the repository root:
+To try the same service from the terminal:
 
 ```sh
-python chunking/chunk_courses.py
-python embedding/embed_chunks.py
-python vector_db/build_faiss.py
+python -m course_intelligence.app 'Compare total mandatory ECTS in semester 4 in Computer Engineering and Software Engineering'
+python -m course_intelligence.app 'What is the tuition for Software Engineering?'
+python -m course_intelligence.app --mode rerank 'Which Software Engineering course covers architectural design?'
 ```
 
-For a terminal interface:
+The first neural run downloads pinned Qwen embedding and reranking weights. Set `COURSE_RETRIEVAL` to `bm25`, `dense`, `hybrid` or `rerank` for the desktop app. The CPU is the default. Apple Silicon users can set `COURSE_DEVICE=mps`. Ollama listens on loopback by default. `OLLAMA_HOST` overrides its address.
+
+## How the application answers
+
+Exact course-code matches use stable record IDs. Counts and ECTS use all records matching the requested department, semester and type. Missing credits are reported separately. For open-ended questions, retrieval returns candidate records and the local model selects excerpts. The service displays an excerpt only if its record ID and literal text match the supplied evidence. The snapshot link and record IDs identify the evidence used. The snapshot has no academic-year field.
+
+The Qdrant index is local and built from the committed snapshot. It uses the same records, filters and candidate limit for sparse BM25, dense cosine, RRF and the reranked variant. The original FAISS/SBERT implementation remains available as a separate reference.
+
+## Reproduce the evaluation
 
 ```sh
-python rag/rag_app.py
+python -m pip install pytest
+python -m pytest -q
+python -m course_intelligence.benchmark --legacy --answers --output /tmp/course-results.json
+python -m course_intelligence.benchmark --profile-batch 1 --output /tmp/course-batch1.json
+python -m course_intelligence.benchmark --profile-batch 8 --output /tmp/course-batch8.json
 ```
-
-## Evaluation
-
-```sh
-python evaluation/evaluate_rag.py
-```
-
-The evaluator covers qualitative, quantitative and trap questions and writes `evaluation_results_enhanced.json` in the working directory. [Committed evaluation results](evaluation/evaluation_results_enhanced.json) are available for inspection.
-
-The evaluation uses project-specific answer heuristics. Its success labels describe this question set; they do not establish general accuracy or guarantee that unsupported answers never occur. Re-running with a different model or curriculum snapshot may change the results.
-
-## Repository guide
-
-| Path | Purpose |
-| --- | --- |
-| `data/raw/` | Curriculum snapshot |
-| `chunking/` | Course and summary chunk construction |
-| `embedding/` | Embedding generation |
-| `vector_db/` | Index builder and stored FAISS artifacts |
-| `rag/rag_app.py` | Query processing, retrieval and generation |
-| `gui_app.py` | Desktop interface |
-| `evaluation/` | Question set, evaluator and saved outputs |
-
-This is an academic project using a curriculum snapshot. Check the university's current official course information before making academic decisions.

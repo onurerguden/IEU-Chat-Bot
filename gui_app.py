@@ -28,7 +28,7 @@ from PyQt6.QtGui import (
 BASE_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(BASE_DIR))
 
-from rag.rag_app import FAISSRAG
+from course_intelligence.app import CourseIntelligence
 
 
 # ============================================================================
@@ -205,9 +205,6 @@ class MessageBubble(QFrame):
     def __init__(self, text: str, is_user: bool = False, parent=None):
         super().__init__(parent)
         self.is_user = is_user
-        self.full_text = text
-        self.displayed_text = ""
-        self.char_index = 0
         self.theme = Theme.DARK
         self.timestamp = datetime.now()
 
@@ -218,14 +215,7 @@ class MessageBubble(QFrame):
         self._setup_ui()
         self._apply_styles()
 
-        # Typing animation for assistant
-        if not is_user:
-            self.typing_timer = QTimer()
-            self.typing_timer.timeout.connect(self._animate_typing)
-            self.typing_timer.start(8)
-        else:
-            self.content_label.setText(text)
-            self.adjustSize()
+        self.content_label.setText(text)
 
     def _setup_ui(self):
         """Setup bubble layout"""
@@ -295,20 +285,6 @@ class MessageBubble(QFrame):
                     padding: 4px;
                 }}
             """)
-
-    @pyqtSlot()
-    def _animate_typing(self):
-        """Smooth typing animation"""
-        if self.char_index < len(self.full_text):
-            chunk_size = 2 if len(self.full_text) > 100 else 1
-            end_idx = min(self.char_index + chunk_size, len(self.full_text))
-
-            self.displayed_text = self.full_text[:end_idx]
-            self.content_label.setText(self.displayed_text)
-            self.char_index = end_idx
-            self.adjustSize()
-        else:
-            self.typing_timer.stop()
 
 
 class ChatContainer(QWidget):
@@ -473,7 +449,7 @@ class MainChatWindow(QMainWindow):
 
         # State management
         self.theme = Theme.DARK
-        self.rag: Optional[FAISSRAG] = None
+        self.rag: Optional[CourseIntelligence] = None
         self.is_processing = False
 
         # Signal handler
@@ -639,10 +615,10 @@ Try asking:
 
         def load_rag():
             try:
-                self.rag = FAISSRAG()
-                chunk_count = len(self.rag.data)
+                self.rag = CourseIntelligence()
+                record_count = len(self.rag.corpus.records)
                 self.signals.status_signal.emit(
-                    f"● Ready ({chunk_count} chunks loaded)",
+                    f"● Ready ({record_count} records loaded)",
                     self.theme.success,
                     "rgba(16, 185, 129, 0.1)"
                 )
